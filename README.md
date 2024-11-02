@@ -29,6 +29,4 @@ WEBDEV_241/
 ├── routes.php               # File quản lý các URL của ứng dụng
 └── .env                     # File chứa thông tin bảo mật (như mật khẩu cơ sở dữ liệu)
 
-
-
 public -> controller -> model -> view
