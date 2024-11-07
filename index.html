@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,
+    100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fjalla+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bayon' rel='stylesheet'>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+        nav {
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+        }
+        .logo {
+            flex-grow: 2;
+            padding-left: 50px;
+        }
+        .link {
+            flex-grow: 2;
+            justify-items: center;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+        }
+        li {
+            list-style-type: none;
+            font-size: 15px;
+            padding-right: 60px;
+        }
+        .button {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end;
+            padding-right: 15px;
+        }
+        button {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-size: 13px;
+            height: 40px;
+            width: 120px;
+        }
+        .reg {
+            background-color: transparent;
+            border: none;
+        }
+        .login {
+            margin-right: 0;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(to left, #F15E2C, #F15E2C);
+            color: white;
+            transition: 0.5s;
+        }
+        .login:hover {
+            background: linear-gradient(to left, #F15E2C 68%, #FFAE5C 100%);
+            box-shadow: 0 0 8px #F15E2C;
+            transition: 0.3s;
+        }
+        .love24ctn{
+            position: relative;
+            text-align: center;
+        }
+        .love24 {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .newrelease{
+            position: absolute;
+            z-index: 1;
+            color: #F15E2C;
+            top: 150px;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        .title {
+            font-family: "Bayon", sans-serif;
+            font-size: 120px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        .deliv {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            font-size: 16px;
+            left: 0;
+            top: 850px;
+        }
+
+        .love24but_con {
+            position: absolute;
+            top: 900px;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        .love24but {
+            font-size: 18px;
+            height: 50px;
+            width: 180px;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            width: 1260px;
+            margin: 15px auto;
+        }
+        .feature_content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 610px;
+        }
+        .feature_content > div {
+            margin: 15px;
+        }
+        .feature_content > div > img {
+            object-fit: cover;
+            width: 400px;
+            height: 600px;
+        }
+        .feature_content > div > h3 {
+            color: white;
+            position: relative;
+            bottom: 780px;
+            margin-left: 30px;
+            z-index: 2;
+        }
+        .feature_content > div > h4 {
+            color: white;
+            font-weight: normal;
+            position: relative;
+            margin-left: 30px;
+            bottom: 780px;
+            z-index: 2;
+        }
+        .feature_content > div > button {
+            bottom: 780px;
+            position: relative;
+            margin-left: 30px;
+            z-index: 2;
+        }
+        .ftr_back {
+            height: 600px;
+            width: 400px;
+            position: relative;
+            bottom: 605px;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        .track6line {
+            display: flex;
+            flex-direction: column;
+            width: 1260px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .track6line > h2 {
+            font-weight: normal;
+        }
+        .track6line_content {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            overflow-x: scroll;
+            line-height: 0.3;
+        }
+        .track6line_content::-webkit-scrollbar {
+             display: none;
+        }
+        .track6_og {
+            margin: 10px;
+        }
+        .track6_og:first-child {
+            margin-left: 0;
+        }
+        .track6_og:last-child {
+            margin-right: 0;
+        }
+        .track6_og > img{
+            width: 350px;
+            height: auto;
+        }
+        .track6_og > h5{
+            width: 300px;
+            height: auto;
+            font-weight: normal;
+        }
+
+
+
+        /*Vintas Vivu*/
+        /* Vintas Vivu Container */
+        .vintas_vivu {
+            margin: 20px 0 0;
+            width: 100%;
+            display: flex;
+            height: 68vh;
+        }
+
+        /* Vivu 1 */
+        .vivu_1 {
+            width: 100%;
+            display: flex;
+            background-color: #BCA984;
+        }
+
+        .vivu_1_img {
+            width: 70%;
+        }
+
+        .vivu_1_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Vivu 2 */
+        .vivu_2 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vivu_2_img {
+            width: 100%;
+            height: 40vh;
+        }
+
+        .vivu_2_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Vivu 3 */
+        .vivu_3 {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .vivu_content {
+            margin-left: 50px;
+            margin-top: 3.5vh;
+            width: calc(100% - 100px);
+
+        }
+        .vivu_content img {
+            width: 100px;
+        }
+
+        .vivu_content h2 {
+            font-size: 80px;
+            line-height: 0;
+            color: #FFFFFF;
+            position: relative;
+            bottom: 40px;
+            font-family: 'Bayon', sans-serif;
+            font-weight: lighter;
+            font-style: normal;
+        }
+
+        .vivu_content h3 {
+            position: relative;
+            bottom: 60px;
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 1;
+            font-weight: normal;
+        }
+
+        .vivu_content button {
+            position: relative;
+            bottom: 60px;
+        }
+
+
+        /* Vivu 4 */
+        .vivu_4 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rect {
+            width: 100px;
+            height: calc(100% - 100px);
+            background-color: #646F84;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #9A845C;
+        }
+
+        /*Basas RAW*/
+        .basas_raw {
+            display: flex;
+            flex-direction: column;
+            background-color: #ECE4D7;
+        }
+        .basas_raw_img {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .basas_raw_img > img {
+            width: 30vw;
+            height: auto;
+            margin: 2vw
+        }
+        .basas_raw_img > img:first-child {
+            margin-right: 0;
+        }
+        .basas_raw_img > img:last-child {
+            margin-left: 0;
+        }
+        .basas_raw_content > h3 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .basas_raw_content > h2 {
+            font-family: "Anton SC", sans-serif;
+            font-size: 5vw;
+            letter-spacing: 2px;
+            justify-content: center;
+            text-align: center;
+            margin: 10px auto;
+            font-weight: lighter;
+        }
+        .basas_raw_content > h4 {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .brbutton {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 2vw;
+        }
+
+
+
+
+        /*Footer*/
+        footer {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer_logo {
+            margin-top: 25px;
+            margin-left: 12.5vw;
+            vertical-align: middle;
+        }
+        .logo_shape {
+            height: 40px;
+            vertical-align: middle;
+        }
+        .logo_letter {
+            height: 60px;
+            vertical-align: middle;
+        }
+        .footer_content {
+            display: flex;
+            flex-direction: row;
+        }
+        table td{
+            width: 15vw;
+            height: 30px;
+            font-size: 14px;
+        }
+        table {
+            margin-top: 20px;
+        }
+        th {
+            padding-bottom: 5px;
+        }
+        td {
+            color: #888888;
+        }
+        table th {
+            text-align: left;
+            font-size: 16px;
+        }
+        .contact > h3{
+            font-size: 16px;
+        }
+        .contact > input {
+            height: 40px;
+            width: 25vw;
+            border: 2px solid #bbbbbb;
+            border-radius: 7px;
+            padding-left: 15px;
+        }
+        .contact > h3:first-child {
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        .contact > h3:last-child {
+            margin-top: 20px;
+        }
+        .footer_content {
+            justify-content: center;
+            padding-bottom: 5vw;
+        }
+        .footer_rect {
+            width: 100%;
+            height: 30px;
+            background-color: #F15E2C;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+<nav>
+    <div class="logo">
+        <img src="logo-black.png" height="60" width="auto" alt="Logo">
+    </div>
+
+    <div class="link">
+        <ul>
+            <li>SẢN PHẨM</li>
+            <li>SALE-OFF</li>
+            <li>TIN TỨC</li>
+            <li>GIỚI THIỆU</li>
+        </ul>
+    </div>
+
+    <div class="button">
+        <button type="button" class="reg">Đăng ký</button>
+        <button type="button" class="login">Đăng nhập</button>
+    </div>
+</nav>
+
+<div class="love24ctn">
+    <img src="IMG_7284.png" alt="Love+24" class="love24">
+    <p class="newrelease">Mới ra mắt</p>
+    <p class="title">URBAS LOVE+ 24</p>
+    <p class="deliv">Giao hàng từ 01.12.2024</p>
+    <div class="love24but_con">
+        <button type="button" class="login love24but">Đặt trước</button>
+    </div>
+</div>
+
+<div class="feature">
+    <h2 class="feature_text">Nổi bật</h2>
+
+    <div class="feature_content">
+        <div class="urbas_sc">
+            <img src="/img/urbas_sc.jpg" alt="urbas_sc">
+            <img src="img/ftr_back.png" class="ftr_back" alt="Featured_Black">
+            <h4>Your daily drive</h4>
+            <h3>URBAS SC - CORN SILK</h3>
+            <button class="login">Mua ngay</button>
+        </div>
+
+
+        <div class="ananas_dora">
+            <img src="img/ananas_dora.jpg" alt="ananas_dora">
+            <img src="img/ftr_back.png" class="ftr_back" alt="Featured_Black">
+            <h4>Chong chóng tre nè Nobita!</h4>
+            <h3>ANANAS x DORAEMON</h3>
+            <button class="login">Mua ngay</button>
+        </div>
+
+        <div class="isee">
+            <img src="img/isee.png" alt="isee">
+            <img src="img/ftr_back.png" class="ftr_back" alt="Featured_Black">
+            <h4>I.S.E.E that I'm icy</h4>
+            <h3>TRACK 6 I.S.E.E</h3>
+            <button class="login">Mua ngay</button>
+        </div>
+    </div>
+</div>
+
+<div class="track6line">
+    <h2>Khám phá dòng sản phẩm <b>Track 6</b> của chúng tôi</h2>
+
+    <div class="track6line_content">
+        <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+
+        <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+
+            <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+
+        <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+
+        <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+
+        <div class="track6_og">
+            <img src="img/Track6/pro_track6_A6T001_1.jpg">
+            <h4>Track 6 OG</h4>
+            <h5>990.000 VNĐ</h5>
+            <button class="login">Mua ngay</button>
+        </div>
+    </div>
+</div>
+
+<div class="vintas_vivu">
+    <div class="vivu_1">
+        <div class="vivu_1_img">
+            <img src="img/vintas_vivu1.jpg">
+        </div>
+
+        <div class="vivu_2">
+            <div class="vivu_2_img">
+                <img src="img/vintas_vivu2.jpeg">
+            </div>
+
+            <div class="vivu_3">
+                <div class="vivu_content">
+                    <img src="img/logo-white.png">
+                    <h2>VINTAS VIVU</h2>
+                    <h3>Giá từ: 610.000 VNĐ</h3>
+                    <button class="login">Mua ngay</button>
+                </div>
+
+                <div class="vivu_4">
+                    <div class="rect"></div>
+                    <div class="square"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="basas_raw">
+    <div class="basas_raw_img">
+        <img src="img/BasasRaw/pro_AV00136_6.jpg" alt="basasraw1">
+        <img src="img/BasasRaw/pro_AV00136_2.jpg" alt="basasraw2">
+        <img src="img/BasasRaw/pro_AV00136_7.jpg" alt="basasraw3">
+    </div>
+
+    <div class="basas_raw_content">
+        <h3>ANANAS BASAS RAW</h3>
+        <h2>NGUYÊN BẢN TRONG TỪNG BƯỚC CHÂN</h2>
+        <h4>Giá chỉ từ: 610.000 VNĐ</h4>
+        <div class="brbutton"><button class="login">Mua ngay</button></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer_logo">
+        <img src="img/Logo_Ananas.png" alt="logo_shape" class="logo_shape">
+        <img src="logo-black.png" alt="logo_letter" class="logo_letter">
+    </div>
+
+    <div class="footer_content">
+        <table>
+            <tr>
+                <th>SẢN PHẨM</th>
+                <th>VỀ ANANAS</th>
+                <th>HỖ TRỢ</th>
+            </tr>
+
+            <tr>
+                <td>Giày nam</td>
+                <td>Tuyển dụng</td>
+                <td>FAQs</td>
+            </tr>
+
+            <tr>
+                <td>Giày nữ</td>
+                <td>Giới thiệu</td>
+                <td>Bảo mật thông tin</td>
+            </tr>
+
+            <tr>
+                <td>Thời trang & Phụ kiện</td>
+                <td></td>
+                <td>Chính sách chung</td>
+            </tr>
+
+            <tr>
+                <td>Sale-off</td>
+                <td></td>
+                <td>Tra cứu đơn hàng</td>
+            </tr>
+        </table>
+
+        <div class="contact">
+            <h3>LIÊN HỆ</h3>
+            <input type="text" placeholder="Email">
+
+            <h3>HỆ THỐNG CỬA HÀNG
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                    <path d="M0.467209 12.0185C0.172957 12.3101 0.172957 12.7827 0.467209 13.0742C0.761461 13.3658 1.23854 13.3658 1.53279 13.0742L0.467209 12.0185ZM12.7535 1.64824C12.7535 1.23596 12.4161 0.901737 12 0.901736L5.21868 0.901736C4.80254 0.901736 4.4652 1.23596 4.4652 1.64824C4.4652 2.06052 4.80254 2.39474 5.21868 2.39474H11.2465V8.36677C11.2465 8.77905 11.5839 9.11328 12 9.11328C12.4161 9.11328 12.7535 8.77905 12.7535 8.36677L12.7535 1.64824ZM1.53279 13.0742L12.5328 2.1761L11.4672 1.12038L0.467209 12.0185L1.53279 13.0742Z" fill="#F15E2C"/>
+                </svg>
+            </h3>
+        </div>
+    </div>
+
+    <div class="footer_rect"></div>
+</footer>
+</body>
+</html>
