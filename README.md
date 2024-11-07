@@ -2,7 +2,7 @@
 # ANANAS
 
 1. git clone https://github.com/duongminhthuan2003/WebDev_241.git
-
+```bash
 WEBDEV_241/
 ├── public/
 │   ├── index.php            # File khởi động chính của ứng dụng
@@ -28,5 +28,6 @@ WEBDEV_241/
 ├── database/                # Thư mục chứa các file SQL tạo bảng và seed dữ liệu
 ├── routes.php               # File quản lý các URL của ứng dụng
 └── .env                     # File chứa thông tin bảo mật (như mật khẩu cơ sở dữ liệu)
+```
 
 public -> controller -> model -> view
