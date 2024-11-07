@@ -3,7 +3,6 @@
 require_once '../src/config/config.php'; // Tải các thiết lập cấu hình
 require_once '../src/routes.php'; // Tải file routes để định nghĩa các đường dẫn
 
-// Lấy URL từ request (ví dụ, "example" trong "/example")
 $url = $_GET['url'] ?? '';
 $url = rtrim($url, '/'); // Loại bỏ dấu gạch chéo ở cuối
 
