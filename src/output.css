@@ -809,6 +809,10 @@ video {
   padding-left: 16rem;
 }
 
+.pl-10{
+  padding-left: 2.5rem;
+}
+
 .font-BeVietnam{
   font-family: Be Vietnam Pro, sans-serif;
 }
