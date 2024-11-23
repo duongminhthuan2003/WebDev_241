@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        BeVietnam: ['Be Vietnam Pro', 'sans-serif']
+      },
+      colors: {
+        Cam_Ananas: '#F15E2C', 
+      },
+    },
   },
   plugins: [],
 }
