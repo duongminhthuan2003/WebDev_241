@@ -132,8 +132,11 @@
                                   <button class="ML_button ML_button:hover">
                                     Thêm vào giỏ hàng
                                   </button>
-                                  <button class="w-10 h-10 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
+                                  <!-- <button class="w-10 h-10 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
                                     <img src="img/prd_list_heart.png" alt="heart">
+                                  </button> -->
+                                  <button id="heartButton" class="w-11 h-10 flex border border-gray-300 rounded-md items-center justify-center" onclick="toggleHeart(this)">
+                                    <img src="img/prd_list_heart.png" alt="heart" class="heart-icon"/>
                                   </button>
                                 </div>
                               </div>
@@ -255,26 +258,26 @@
                     <col2 class="w-1/6">
                         <ul class="space-y-4">
                             <li class="font-bold">SẢN PHẨM</li>
-                            <li class="text-gray-600">Giày nam</li>
-                            <li class="text-gray-600">Giày nữ</li>
-                            <li class="text-gray-600">Thời trang & Phụ kiện</li>
-                            <li class="text-gray-600">Sale-off</li>
+                            <li class="text-gray-600"><a href="#">Giày nam</a></li>
+                            <li class="text-gray-600"><a href="#">Giày nữ</a></li>
+                            <li class="text-gray-600"><a href="#">Thời trang & Phụ kiện</a></li>
+                            <li class="text-gray-600"><a href="#">Sale-off</a></li>
                         </ul>
                     </col2>
                     <col3 class="w-1/6">
                         <ul class="space-y-4">
                             <li class="font-bold">VỀ ANANAS</li>
-                            <li class="text-gray-600">Tuyển dụng</li>
-                            <li class="text-gray-600">Giới thiệu</li>
+                            <li class="text-gray-600"><a href="#">Tuyển dụng</a></li>
+                            <li class="text-gray-600"><a href="#">Giới thiệu</a></li>
                         </ul>
                     </col3>
                     <col4 class="w-1/6">
                         <ul class="space-y-4">
                             <li class="font-bold">HỖ TRỢ</li>
-                            <li class="text-gray-600">FAQs</li>
-                            <li class="text-gray-600">Bảo mật thông tin</li>
-                            <li class="text-gray-600">Chính sách chung</li>
-                            <li class="text-gray-600">Tra cứu đơn hàng</li>
+                            <li class="text-gray-600"><a href="#">FAQs</a></li>
+                            <li class="text-gray-600"><a href="#">Bảo mật thông tin</a></li>
+                            <li class="text-gray-600"><a href="#">Chính sách chung</a></li>
+                            <li class="text-gray-600"><a href="#">Tra cứu đơn hàng</a></li>
                         </ul>
                     </col4>
                     <col5 class="w-1/6">
@@ -325,5 +328,6 @@
             </footer><!-- end footer -->
         </div><!-- end content -->
     </div><!-- end root -->
+    <script src="product_list.js"></script>
 </body>
 </html>
