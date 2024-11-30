@@ -20,6 +20,10 @@ module.exports = {
         prd_color11: '#E8662C',
         prd_color12: '#F1788B',
       },
+      spacing: {
+        '800': '800px',  // Chiều rộng 800px
+        '580': '580px',  // Chiều cao 580px
+      },
     },
   },
   plugins: [],
