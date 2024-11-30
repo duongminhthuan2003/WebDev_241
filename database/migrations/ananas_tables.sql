@@ -3,7 +3,7 @@ USE ananas_db;
 CREATE TABLE IF NOT EXISTS users (
   id SMALLINT NOT NULL AUTO_INCREMENT,
   user_name varchar(255) NOT NULL,
-  email_address varchar(255) NOT NULL,
+  email_address varchar(255),
   phone_number varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
   gender ENUM('he/him', 'she/her', 'prefer not to say') NOT NULL,
@@ -27,13 +27,16 @@ CREATE TABLE IF NOT EXISTS address (
 CREATE TABLE IF NOT EXISTS blogs (
   id SMALLINT NOT NULL AUTO_INCREMENT,
   admin_id SMALLINT,
+  blog_cate VARCHAR(255),
   blog_name varchar(255) NOT NULL,
+  main_image VARCHAR(255) NOT NULL,
+  sub_image VARCHAR(255) NOT NULL,
   main_content text NOT NULL,
   summary text NOT NULL,
   description text NOT NULL,
-  alias varchar(255) NOT NULL,
-  created_at datetime NOT NULL,
-  state ENUM('show', 'hide') NOT NULL,
+  alias varchar(255) NOT NULL UNIQUE,
+  created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  status ENUM('show', 'hide') NOT NULL DEFAULT 'show',
   PRIMARY KEY (id),
   CONSTRAINT fk_blog_admin FOREIGN KEY (admin_id) REFERENCES users(id) ON DELETE SET NULL
 );
@@ -101,7 +104,7 @@ CREATE TABLE IF NOT EXISTS product_items (
   size_id SMALLINT NOT NULL,
   promotion_id SMALLINT,
   SKU varchar(255) NOT NULL,
-  quantity_in_stock MEDIUMINT NOT NULL,
+  quantity_in_stock MEDIUMINT DEFAULT 0,
   product_image varchar(255) NOT NULL,
   price INT NOT NULL,
   PRIMARY KEY (id),
@@ -126,6 +129,15 @@ CREATE TABLE IF NOT EXISTS product_category (
   CONSTRAINT fk_productcategory_product FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE NO ACTION,
   CONSTRAINT fk_productcategory_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS outstanding (
+  os_id SMALLINT NOT NULL AUTO_INCREMENT,
+  os_name VARCHAR(255) NOT NULL,         
+  os_tag_line VARCHAR(255) NOT NULL,              
+  os_image VARCHAR(255) NOT NULL,
+  PRIMARY KEY (dis_id)            
+);
+
 
 CREATE TABLE IF NOT EXISTS warehouse (
   id SMALLINT NOT NULL AUTO_INCREMENT,
