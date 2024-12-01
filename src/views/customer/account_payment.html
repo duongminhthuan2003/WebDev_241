@@ -37,40 +37,74 @@
 </nav>
 
 <div class="flex-grow">
-    <div class="flex flex-row w-9/12 mx-auto mt-8">
-        <div class="flex flex-col items-start w-3/12 mr-6">
+    <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-8">
+        <div class="md:flex flex-col items-start mr-6 hidden lg:w-1/3 md:w-2/3">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin tài khoản</a>
-            <a class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg">Phương thức thanh toán</a>
+            <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Thông tin tài khoản</a></div>
+            <a class="px-4 mt-8">Phương thức thanh toán</a>
             <a class="px-4 mt-8">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
             <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
         </div>
 
-        <div class="w-9/12">
+        <!--Mobile Account navigation-->
+        <div class="md:hidden flex mb-8" id="account">
+            <svg xmlns="http://www.w3.org/2000/svg" class="my-auto mr-3" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" id="arrow">
+                <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+                <p class="font-bold text-2xl mb-2">THÔNG TIN TÀI KHOẢN</p>
+                <p>Phương thức thanh toán</p>
+            </div>
+        </div>
+
+        <div id="account_nav" class="border-2 border-gray-300 rounded-xl hidden flex-col duration-300 md:invisible bg-white shadow-md py-5 space-y-2 text-center absolute w-9/12 top-44 z-20">
+            <a class="py-3" href="#">Thông tin cá nhân</a>
+            <a class="py-3" href="#">Đơn hàng của tôi</a>
+            <a class="py-3" href="#">Phương thức thanh toán</a>
+            <a class="py-3" href="#">Đổi mật khẩu</a>
+            <button type="button" class="bg-[#FF4141] text-white w-11/12 mx-auto mt-3 py-3 rounded-md">Đăng xuất</button>
+        </div>
+        <!--End mobile account navigation-->
+
+        <div class="w-full">
             <div class="flex flex-row w-full">
                 <p class="flex font-bold w-9/12">Thẻ tín dụng & thẻ ghi nợ</p>
                 <div class="flex justify-end ml-auto w-3/12"><button class="px-4 py-1 bg-[#F15E2C] text-white text-[13px] rounded-md">Thêm</button></div>
             </div>
 
-            <div class="flex flex-row justify-center mt-5">
-                <div class="flex w-3/12 my-auto">
-                    <img src="../../../public/assets/account/Visa.png" class="flex h-4 mr-3 object-cover my-auto">
-                    <p>Visa</p>
+            <div class="flex md:flex-row justify-center mt-5">
+                <div class="flex flex-row md:w-9/12 w-full">
+                    <div class="flex w-1/3 my-auto">
+                        <img src="../../../public/assets/account/Visa.png" class="flex h-4 mr-3 object-cover my-auto">
+                        <p>Visa</p>
+                    </div>
+
+                    <div class="w-1/3"> <!--Để trống để đặt tên trong TKNH-->
+
+                    </div>
+
+                    <div class="flex w-1/3 my-auto justify-end mr-2">
+                        <p>**** 7091</p>
+                        <p class="ml-2 px-2 py-1 bg-[#35A16F] hidden md:block text-white text-[13px] rounded-md">Mặc định</p>
+                        <div class="flex my-auto w-2 h-2 bg-[#35A16F] rounded-full md:hidden ml-2"></div>
+                    </div>
                 </div>
 
-                <div class="w-3/12"> <!--Để trống để đặt tên trong TKNH-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" id="payOpt1Button" class="w-auto md:hidden">
+                    <path d="M11.9959 12H12.0049" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.9998 12H18.0088" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5.99981 12H6.00879" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
 
+                <div id="paymentOpt1" class="flex flex-col bg-amber-100 text-sm absolute z-10 px-5 py-3 right-16 translate-y-8 space-y-3 rounded-lg">
+                    <button>Làm mặc định</button>
+                    <button>Xóa</button>
                 </div>
 
-                <div class="flex w-3/12 my-auto">
-                    <p>**** 7091</p>
-                    <p class="ml-2 px-2 py-1 bg-[#35A16F] text-white text-[13px] rounded-md">Mặc định</p>
-                </div>
-
-                <div class="flex w-3/12 justify-end">
+                <div class="md:flex hidden md:w-3/12 w-full justify-end">
                     <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
                     <button class="text-sm underline">Làm mặc định</button>
                 </div>
@@ -129,7 +163,7 @@
 </div>
 
 
-<footer class="bottom-0 mb-0">
+<footer class="flex flex-col justify-end w-full mt-8 md:mt-0">
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
@@ -137,30 +171,33 @@
                 <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
-            <div class="flex flex-row w-9/12 mx-auto mt-5">
-                <div class="w-1/5 space-y-3">
-                    <p><strong>SẢN PHẨM</strong></p>
-                    <p class="text-sm text-[#888888]">Giày nam</p>
-                    <p class="text-sm text-[#888888]">Giày nữ</p>
-                    <p class="text-sm text-[#888888]">Thời trang & phụ kiện</p>
-                    <p class="text-sm text-[#888888]">Sale-off</p>
+            <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-5">
+                <div class="flex flex-row md:w-3/5 w-full">
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>SẢN PHẨM</strong></p>
+                        <p class="text-sm text-[#888888]">Giày nam</p>
+                        <p class="text-sm text-[#888888]">Giày nữ</p>
+                        <p class="text-sm text-[#888888]">Áo & Phụ kiện</p>
+                        <p class="text-sm text-[#888888]">Sale-off</p>
+                    </div>
+
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>VỀ ANANAS</strong></p>
+                        <p class="text-sm text-[#888888]">Tuyển dụng</p>
+                        <p class="text-sm text-[#888888]">Giới thiệu</p>
+                    </div>
+
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>HỖ TRỢ</strong></p>
+                        <p class="text-sm text-[#888888]">FAQs</p>
+                        <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
+                        <p class="text-sm text-[#888888]">Chính sách chung</p>
+                        <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
+                    </div>
                 </div>
 
-                <div class="w-1/5 space-y-3">
-                    <p><strong>VỀ ANANAS</strong></p>
-                    <p class="text-sm text-[#888888]">Tuyển dụng</p>
-                    <p class="text-sm text-[#888888]">Giới thiệu</p>
-                </div>
 
-                <div class="w-1/5 space-y-3">
-                    <p><strong>HỖ TRỢ</strong></p>
-                    <p class="text-sm text-[#888888]">FAQs</p>
-                    <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
-                    <p class="text-sm text-[#888888]">Chính sách chung</p>
-                    <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
-                </div>
-
-                <div class="w-2/5">
+                <div class="md:w-2/5 w-full mt-8 md:mt-0">
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
@@ -181,7 +218,47 @@
         </div>
     </div>
 
-    <div class="h-10 w-full bg-[#F15E2C]"></div>
+    <div class="h-10 md:mt-0 mt-8 w-full bg-[#F15E2C]"></div>
 </footer>
+
+<script>
+    let accountNav = document.querySelector("#account_nav");
+    let account = document.querySelector("#account");
+    let arrow = document.querySelector("#arrow");
+    let x = document.getElementById("arrow");
+
+    account.addEventListener('click',accountNavToggle);
+
+    function accountNavToggle() {
+        if (accountNav.classList.contains('hidden')) {
+            accountNav.classList.remove('hidden');
+            accountNav.classList.add('flex');
+
+            arrow.classList.add('rotate-90');
+            arrow.classList.add('duration-300');
+        } else {
+            accountNav.classList.remove('flex');
+            accountNav.classList.add('hidden');
+
+            arrow.classList.remove('rotate-90');
+            arrow.classList.add('duration-300');
+        }
+    }
+
+    let payOpt1Button = document.querySelector("#payOpt1Button");
+    let paymentOpt1 = document.querySelector("#paymentOpt1");
+
+    payOpt1Button.addEventListener('click',payOpt1Toggle);
+
+    function payOpt1Toggle() {
+        if (paymentOpt1.classList.contains('hidden')) {
+            paymentOpt1.classList.remove('hidden');
+            paymentOpt1.classList.add('flex');
+        } else {
+            paymentOpt1.classList.remove('flex');
+            paymentOpt1.classList.add('hidden');
+        }
+    }
+</script>
 </body>
 </html>
