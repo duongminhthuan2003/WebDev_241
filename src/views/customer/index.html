@@ -5,15 +5,8 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fjalla+One&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="../../output.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Be Vietnam Pro',sans-serif;
-            font-weight: normal;
-        }
         .track6_list::-webkit-scrollbar {
              display: none;
         }
@@ -22,11 +15,11 @@
         }
     </style>
 </head>
-<body>
+<body class="font-BeVietnam">
 <nav class="bg-white/30 flex flex-row items-center text-sm
             w-full border-white fixed backdrop-blur z-50">
     <div class="md:w-1/5 w-1/2">
-        <img src="../../../public/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        <img src="../../../public/assets/logo-black.png" alt="Logo" class="md:h-16 h-12 ml-7"/>
     </div>
 
     <div class="w-3/5 align-middle">
@@ -49,29 +42,29 @@
     </div>
 </nav>
 
-<div class="text-center lg:h-[90vh] md:h-[80vh] h-[90vh]">
-    <img src="../../../public/assets/index/IMG_7284.png" class="lg:h-[90vh] md:h-[80vh] w-full object-cover absolute z-0" alt="urbas 24">
-    <h3 class="relative xl:top-36 lg:top-48 text-[#F15E2C] ">Mới ra mắt</h3>
-    <h1 class="relative text-8xl xl:top-40 lg:top-52 font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
-    <h3 class="relative lg:top-[44rem] md:top-[35rem] mb-10">Giao hàng từ 15.12.2024</h3>
+<div class="text-center lg:h-[90vh] md:h-[80vh] h-[90vh] w-full">
+    <img src="../../../public/assets/index/IMG_7284.png" class="lg:h-[90vh] md:h-[80vh] h-[70vh] w-full object-cover absolute z-0" alt="urbas 24">
+    <h3 class="relative xl:top-36 lg:top-48 top-[18vh] text-[#F15E2C] ">Mới ra mắt</h3>
+    <h1 class="relative md:text-8xl text-6xl xl:top-40 lg:top-52 top-[20vh] font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
+    <h3 class="relative lg:top-[44rem] md:top-[35rem] top-[45vh] mb-10">Giao hàng từ 15.12.2024</h3>
     <button type="button" class="relative bg-gradient-to-r from-[#F15E2C]
-    from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-12 lg:top-[43rem] md:top-[34rem]">Đặt trước</button>
+    from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-12 lg:top-[43rem] md:top-[34rem] top-[42vh]">Đặt trước</button>
 </div>
 
 <!--Nổi bật-->
-<div class="w-9/12 mx-auto mt-16 text-2xl font-bold"><p>Nổi bật</p></div>
-<div class="flex flex-row w-9/12 2xl:w-[10/12] h-[600px] left-0 right-0 mx-auto mt-5">
-    <div class="w-1/3 pr-4 h-auto">
-        <img src="../../../public/assets/index/urbas_sc.jpg" class="h-[600px] w-full object-cover" alt="urbas_sc">
+<div class="w-10/12 md:w-9/12 mx-auto mt-0  text-2xl font-bold"><p>Nổi bật</p></div>
+<div class="flex flex-row w-10/12 md:w-9/12 2xl:w-[10/12] h-[450px] md:h-[600px] left-0 right-0 mx-auto mt-5 space-x-5">
+    <div class="w-1/2 md:w-1/3 h-auto">
+        <img src="../../../public/assets/index/urbas_sc.jpg" class="w-full h-full object-cover" alt="urbas_sc">
         <img src="../../../public/assets/index/ftr_back.png" class="w-full h-[300px] relative bottom-[300px] z-20" alt="Featured_Black">
-        <h4 class="text-white z-30 relative bottom-[450px] ml-7">Your daily drive</h4>
+        <h4 class="text-white z-30 relative bottom-[450px] ml-7 ">Your daily drive</h4>
         <h3 class="text-lg text-white relative bottom-[440px] font-bold z-30 ml-7">URBAS SC - CORN SILK</h3>
         <button class="text-[14px] relative bottom-[430px] ml-7 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-6
                 hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Mua ngay</button>
     </div>
 
-    <div class="w-1/3 px-2">
-        <img src="../../../public/assets/index/ananas_dora.jpg" class="h-[600px] object-cover" alt="ananas_dora">
+    <div class="w-1/2 md:w-1/3 h-auto">
+        <img src="../../../public/assets/index/ananas_dora.jpg" class="h-full w-full object-cover" alt="ananas_dora">
         <img src="../../../public/assets/index/ftr_back.png" class="w-full h-[300px] relative bottom-[300px] z-20" alt="Featured_Black">
         <h4 class="text-white z-30 relative bottom-[450px] ml-7">Chong chóng tre nè Nobita!</h4>
         <h3 class="text-lg text-white relative bottom-[440px] font-bold z-30 ml-7">ANANAS x DORAEMON</h3>
@@ -79,7 +72,7 @@
                 hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Mua ngay</button>
     </div>
 
-    <div class="w-1/3 pl-4">
+    <div class="w-1/3 pl-4 hidden md:block">
         <img src="../../../public/assets/index/isee.png" class="h-[600px] object-cover" alt="isee">
         <img src="../../../public/assets/index/ftr_back.png" class="w-full h-[300px] relative bottom-[300px] z-20" alt="Featured_Black">
         <h4 class="text-white z-30 relative bottom-[450px] ml-7">I.S.E.E that I'm icy</h4>
