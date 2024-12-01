@@ -23,7 +23,7 @@ window.onload = function() {
                 const descriptionListItems = sentences.map(sentence => `<li>${sentence.trim()}.</li>`).join('');
 
                 document.getElementById("page-content-detail-image").innerHTML = `
-                    <col1><img src=${data.product_image} alt="product" style="height: 450px; width: 600px"></col1>
+                    <col1><img src=${data.product_image} alt="product" style="height: 450px; width: 450px"></col1>
                 `;
                 document.getElementById("page-content-detail").innerHTML = `
                     <ul>
@@ -41,6 +41,7 @@ window.onload = function() {
                 `;
 
                 document.getElementById("page-product-color").innerHTML = `
+                
                                     <label for="color" class="font-semibold text-gray-800">Color</label>
                                     <select id="color" name="color" class="border border-gray-300 rounded-md px-2 py-1" required>
                                         <option value='${data.color_name}'>${data.color_name}</option>

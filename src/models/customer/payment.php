@@ -16,17 +16,17 @@
         }
         
         // Get the address_id for the user
-        $query = "  SELECT `address`.id 
+        $query = "  SELECT `address`.address_id
                     FROM `address`
-                    WHERE `address`.province = '$province' AND `address`.district = '$district' AND `address`.ward = '$ward' AND `address`.street_name = '$street'";
+                    WHERE `address`.province = '$province' AND `address`.district = '$district' AND `address`.ward = '$ward' AND `address`.detail = '$street'";
         $result2 = mysqli_query($DBConnect, $query);
         if ($result2 && mysqli_num_rows($result2) > 0) {
             // If an order exists, get the order_id
             $row = mysqli_fetch_assoc($result2);
-            $address_id = $row['id'];
+            $address_id = $row['address_id'];
         } else {
             // If no address exists, create a new address
-            $query = "INSERT INTO `address` (province, district, ward, street_name) VALUES ('$province', '$district', '$ward', '$street')";
+            $query = "INSERT INTO `address` (province, district, ward, detail) VALUES ('$province', '$district', '$ward', '$street')";
             $result = mysqli_query(mysql: $DBConnect, query: $query);
     
             if ($result) {
@@ -39,7 +39,7 @@
         // Update the order with the address_id
         $query = "  UPDATE `order`
                     SET shipping_address_id = $address_id
-                    WHERE id = $order_id";
+                    WHERE order_id = $order_id";
         $result = mysqli_query($DBConnect, $query);
         if (!$result) {
             die('Error updating order: ' . mysqli_error($DBConnect));

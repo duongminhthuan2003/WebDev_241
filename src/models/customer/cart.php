@@ -6,7 +6,7 @@
         // Get product id from product_item_id
         $query = "  SELECT product_id 
                     FROM product_item 
-                    WHERE id = $product_item_id";
+                    WHERE product_item_id = $product_item_id";
         $result0 = mysqli_query($DBConnect, $query);
         if ($result0 && mysqli_num_rows($result0) > 0) {
             $row = mysqli_fetch_assoc($result0);
@@ -16,15 +16,15 @@
         }
 
         // Get the order_id for the user
-        $query = "  SELECT `order`.id 
+        $query = "  SELECT `order`.order_id
                     FROM `order`
-                    JOIN order_status ON `order`.id = order_status.order_id
+                    JOIN order_status ON `order`.order_id = order_status.order_id
                     WHERE `order`.user_id = $user_id AND order_status.status = 0";
         $result1 = mysqli_query($DBConnect, $query);
         if ($result1 && mysqli_num_rows($result1) > 0) {
             // If an order exists, get the order_id
             $row = mysqli_fetch_assoc($result1);
-            $order_id = $row['id'];
+            $order_id = $row['order_id'];
         } else {
             // If no order exists, create a new order
             $query = "INSERT INTO `order` (user_id, total_price) VALUES ($user_id, 0)";
@@ -40,40 +40,40 @@
         }
 
         // Get the color_id
-        $query = "  SELECT id 
+        $query = "  SELECT color_id 
                     FROM color 
                     WHERE color_name = '$color_name'"; 
         $result2 = mysqli_query($DBConnect, $query);
         if ($result2 && mysqli_num_rows($result2) > 0) {
             // If an order exists, get the order_id
             $row = mysqli_fetch_assoc($result2);
-            $color_id = $row['id'];
+            $color_id = $row['color_id'];
         } else {
             die('Error: Color not found.');
         }
 
         // Get the size_id
-        $query = "  SELECT id 
-                    FROM size 
+        $query = "  SELECT size_id 
+                    FROM `size` 
                     WHERE size_value = $size";
         $result3 = mysqli_query($DBConnect, $query);
         if ($result3 && mysqli_num_rows($result3) > 0) {
             // If an order exists, get the order_id
             $row = mysqli_fetch_assoc($result3);
-            $size_id = $row['id'];
+            $size_id = $row['size_id'];
         } else {
             die('Error: Size not found.');
         }
 
         // Get the product_item_id
-        $query = "  SELECT id 
+        $query = "  SELECT product_item_id 
                     FROM product_item
                     WHERE product_item.product_id = $product_id AND product_item.color_id = $color_id AND product_item.size_id = $size_id";
         $result4 = mysqli_query($DBConnect, $query);
         if ($result4 && mysqli_num_rows($result4) > 0) {
             // If an order exists, get the order_id
             $row = mysqli_fetch_assoc($result4);
-            $product_item_id = $row['id'];
+            $product_item_id = $row['product_item_id'];
         } else {
             die($size_id);
         }
@@ -81,7 +81,7 @@
         // Get the price from product_item_id
         $query = "  SELECT price 
                     FROM product_item 
-                    WHERE id = $product_item_id";
+                    WHERE product_item_id = $product_item_id";
         $result6 = mysqli_query($DBConnect, $query);
         if ($result6 && mysqli_num_rows($result6) > 0) {
             $row = mysqli_fetch_assoc($result6);
@@ -91,7 +91,7 @@
         }
 
         // Check if the product_item_id already exists in the order
-        $query = "  SELECT id 
+        $query = "  SELECT order_item_id 
                     FROM order_item 
                     WHERE order_id = $order_id AND product_item_id = $product_item_id";
         $result7 = mysqli_query($DBConnect, $query);
@@ -114,7 +114,7 @@
             }
         }
 
-        $update_query = "UPDATE `order` SET total_price = total_price + ($price * $quantity) WHERE id = $order_id";
+        $update_query = "UPDATE `order` SET total_price = total_price + ($price * $quantity) WHERE order_id = $order_id";
         $update_result = mysqli_query($DBConnect, $update_query);
         if (!$update_result) {
             die('Error updating total price: ' . mysqli_error($DBConnect));
@@ -132,20 +132,20 @@
                         `size`.size_value AS `size`,
                         order_item.quantity,
                         order_item.price,
-                        product_item.id AS product_item_id
+                        product_item.product_item_id AS product_item_id
                     FROM 
                         (((((product 
-                        JOIN product_item ON product.id = product_item.product_id) 
-                        JOIN color ON product_item.color_id = color.id)
-                        JOIN `size` ON product_item.size_id = `size`.id)
-                        JOIN order_item ON product_item.id = order_item.product_item_id)
-                        JOIN `order` ON order_item.order_id = `order`.id)
-                        JOIN order_status ON `order`.id = order_status.order_id
+                        JOIN product_item ON product.product_id = product_item.product_id) 
+                        JOIN color ON product_item.color_id = color.color_id)
+                        JOIN `size` ON product_item.size_id = `size`.size_id)
+                        JOIN order_item ON product_item.product_item_id = order_item.product_item_id)
+                        JOIN `order` ON order_item.order_id = `order`.order_id)
+                        JOIN order_status ON `order`.order_id = order_status.order_id
                     WHERE `order`.user_id = $user_id AND order_status.status = 0";
         $product_info = mysqli_query(mysql: $DBConnect, query: $query);
         if (!$product_info) 
         {
-            $message = 'Invalid query: ' . mysqli_error(mysql: $DBConnect) . "<br>";
+            $message = 'Invalid query: ' . mysqli_error(mysql: $DBConnect);
             $message .= 'Whole query: ' . $query;
             die($message);
         }
@@ -162,7 +162,7 @@
         require_once(__DIR__."./../connectdb.php");
         $query = "  SELECT `order`.total_price
                     FROM `order`
-                    JOIN order_status ON `order`.id = order_status.order_id
+                    JOIN order_status ON `order`.order_id = order_status.order_id
                     WHERE `order`.user_id = $user_id AND order_status.status = 0";
         $result = mysqli_query($DBConnect, $query);
         if (!$result) 
@@ -185,9 +185,9 @@
         try {
             // Step 1: Retrieve the active order_id for the user
             $stmt = $DBConnect->prepare("
-                SELECT `order`.id 
+                SELECT `order`.order_id 
                 FROM `order`
-                JOIN order_status ON `order`.id = order_status.order_id
+                JOIN order_status ON `order`.order_id = order_status.order_id
                 WHERE `order`.user_id = ?
                   AND order_status.status = '0'
                 LIMIT 1
@@ -264,7 +264,7 @@
             $stmt = $DBConnect->prepare("
                 UPDATE `order` 
                 SET total_price = total_price - ? 
-                WHERE id = ?
+                WHERE order_id = ?
             ");
             if (!$stmt) {
                 throw new Exception('Prepare failed: ' . mysqli_error($DBConnect));

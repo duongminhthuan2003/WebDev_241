@@ -16,23 +16,23 @@
         }
         $category_id = mysqli_fetch_assoc($category_info)['category_id'];
         $query = "  SELECT 
-                        product_item.id AS product_item_id, 
+                        product_item.product_item_id AS product_item_id, 
                         product.name AS name, 
                         color.color_name AS color_name, 
                         product_item.price, 
                         product_item.product_image, 
                         product_item.quantity_in_stock,
-                        product.id AS product_id 
+                        product.product_id  AS product_id 
                     FROM 
                         ((product 
-                        JOIN product_item ON product.id = product_item.product_id) 
-                        JOIN color ON product_item.color_id = color.id)
-                        JOIN product_category ON product_item.id = product_category.product_id
+                        JOIN product_item ON product.product_id = product_item.product_id) 
+                        JOIN color ON product_item.color_id = color.color_id)
+                        JOIN product_category ON product_item.product_item_id = product_category.product_id
                     WHERE product_category.category_id = $category_id";
         $product_info = mysqli_query($DBConnect, $query);
         if (!$product_info) 
         {
-            $message = 'Invalid query: ' . mysqli_error($DBConnect) . "<br>";
+            $message = 'Invalid query: ' . mysqli_error($DBConnect);
             $message .= 'Whole query: ' . $query;
             die($message);
         }

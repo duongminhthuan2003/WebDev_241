@@ -59,44 +59,6 @@ function toggleHeart(button) {
   });
   
   
-  // Mở popup khi nhấn vào "VIẾT BÌNH LUẬN"
-  document.getElementById('write-comment').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.getElementById('comment-popup').classList.remove('hidden');
-  });
-  
-  // Đóng popup khi nhấn vào nút ×
-  document.getElementById('close-popup').addEventListener('click', function() {
-  document.getElementById('comment-popup').classList.add('hidden');
-  });
-  
-  // Đóng popup khi nhấn vào nút Hủy
-  document.getElementById('cancel-btn').addEventListener('click', function() {
-  document.getElementById('comment-popup').classList.add('hidden');
-  });
-  
-  // Mã JavaScript để điều khiển việc hiển thị popup và ẩn navbar
-  const commentPopup = document.getElementById('comment-popup');
-  const navbar = document.getElementById('navbar');
-  const closeButton = document.getElementById('close-popup');
-  
-  // Mở popup và ẩn navbar
-  function openPopup() {
-    commentPopup.classList.remove('hidden');  // Hiện popup
-    navbar.classList.add('hidden');           // Ẩn navbar
-  }
-  
-  // Đóng popup và hiện navbar
-  function closePopup() {
-    commentPopup.classList.add('hidden');    // Ẩn popup
-    navbar.classList.remove('hidden');       // Hiện lại navbar
-  }
-  
-  // Mở popup khi bấm vào phần tử comment-popup
-  commentPopup.addEventListener('click', openPopup);
-  
-  // Đóng popup khi bấm vào nút "Hủy"
-  closeButton.addEventListener('click', closePopup);
   
   
   //tăng số lượng sản phẩm 

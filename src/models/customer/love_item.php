@@ -4,18 +4,18 @@
     {
         require_once(__DIR__."./../connectdb.php");
         $query = "  SELECT 
-                        product_item.id AS product_item_id, 
+                        product_item.product_item_id AS product_item_id, 
                         product.name AS name, 
                         color.color_name AS color_name, 
                         product_item.price, 
                         product_item.product_image, 
                         product_item.quantity_in_stock,
-                        product.id AS product_id
+                        product.product_id AS product_id
                     FROM 
                         ((product 
-                        JOIN product_item ON product.id = product_item.product_id) 
-                        JOIN color ON product_item.color_id = color.id) 
-                        JOIN love_item ON product_item.id = love_item.product_id 
+                        JOIN product_item ON product.product_id = product_item.product_id) 
+                        JOIN color ON product_item.color_id = color.color_id) 
+                        JOIN love_item ON product_item.product_item_id = love_item.product_id 
                     WHERE 
                         love_item.user_id = $user_id";
         $product_info = mysqli_query($DBConnect, $query);
