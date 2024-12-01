@@ -225,12 +225,12 @@
                                 <li ><button class="w-6 h-6 bg-prd_color8 border border-gray-400"></button></li>
                              </ul>
                             <!-- Hàng 3 -->
-                            <ul class="flex space-x-3   ">
+                            <ul class="flex space-x-3">
                                 <li ><button class="w-6 h-6 bg-prd_color9 border border-gray-400"></button></li>
                                 <li ><button class="w-6 h-6 bg-prd_color10 border border-gray-400"></button></li>
                                 <li ><button class="w-6 h-6 bg-prd_color11 border border-gray-400"></button></li>
                                 <li ><button class="w-6 h-6 bg-prd_color12 border border-gray-400"></button></li>
-                             </ul>
+                            </ul>
                             
                         </div>
                     </col1> 
