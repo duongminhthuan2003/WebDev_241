@@ -7,6 +7,7 @@ module.exports = {
         BeVietnam: ['Be Vietnam Pro', 'sans-serif']
       },
       colors: {
+        back_admin: '#333333',
         Cam_Ananas: '#F15E2C',
         prd_color1: '#A59C8D',
         prd_color3: '#FDFBEF',

@@ -245,15 +245,19 @@
                     </col31>
                     <col32 class="w-full lg:w-4/6 items-center justify-center">
                         <row2 class="flex flex-row items-center justify-center space-x-3 my-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                            </svg>
-                            <img src="img/prd_list_icon_page1.png" alt="icon page 1">
-                            <img src="img/prd_list_icon_page2.png" alt="icon page 2">
-                            <img src="img/prd_list_icon_page3.png" alt="icon page 3">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </button>
+                            <button><img src="img/prd_list_icon_page1.png" alt="icon page 1"></button>
+                            <button><img src="img/prd_list_icon_page2.png" alt="icon page 2"></button>
+                            <button><img src="img/prd_list_icon_page3.png" alt="icon page 3"></button>
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                            </svg>
+                                </svg>
+                            </button>
                         </row2><!--end row2-->
                     </col32>
                 </row3>
