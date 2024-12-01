@@ -15,8 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Call the addToCart function
     try {
         addToCart($user_id, $product_item_id, $color_name, $size, $quantity);
-        echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-        header('Location: ../../views/customer/product_list.php');
+        echo '
+        <script>
+            if (alert("Thêm vào giỏ hàng thành công") == false) {
+                window.location.href = "../../views/customer/product_detail.php?product_item_id=' . $product_item_id . '";
+            }
+        </script>
+        ';
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
         

@@ -17,20 +17,28 @@ function list_products() {
         var read_products_html = ``;
         for (var i in data) {
             read_products_html += `
-                <div class="text-sm">
-                    <img src=` + data[i]["product_image"] +` alt="Product ` + i +` ">
-                    <span class="flex flex-row space-x-8 mt-3"> 
-                    <p class="font-bold">`+ data[i]["name"] +`</p>
-                    <img class="w-5 h-5 object-contain" src="img/prd_list_heart.png" alt="heart">
-                    </span>
-                    <p class="text-gray-600">`+ data[i]["color_name"] +`</p>
-                    <span class="flex flex-row space-x-10 items-center">
-                        <p class="font-medium justify-start">`+ data[i]["price"] +` VND</p>
-                        <button onclick="toDetail(`+data[i].product_item_id+`)" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Xem thêm</button>
-                    </span>
-                </div>
+                    <ul class="flex flex-col text-sm">
+                        <li><img src=` + data[i]["product_image"] +` alt="Product ` + i +` "></li>
+                        <li>
+                            <ul class="flex flex-row">
+                                <li><p class="font-bold h-16 mt-3">`+ data[i]["name"] +`</p></li>
+                                <li>
+                                    <button id="heartButton" class="w-5 h-5 mt-3" onclick="toggleHeart(this)">
+                                    <img src="img/prd_list_heart.png" alt="heart" class="heart-icon"/>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="text-gray-600">`+ data[i]["color_name"] +`</li>
+                        <li class="flex flex-row space-x-10 items-center">
+                            <p class="font-medium justify-start">`+ data[i]["price"] +` VND</p>
+                            <button onclick="toDetail(`+data[i].product_item_id+`)" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Xem thêm</button>
+                        </li>
+                    </ul>
             `        
         }
+
+
         
         $("#page-content-product").html(read_products_html);
     });

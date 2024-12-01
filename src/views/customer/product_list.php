@@ -40,17 +40,85 @@
 
                     <ul class="hidden lg:flex lg:gap-x-9">
                         <li class="">
-                            <img src="img/prd_list_icon_search.png" alt="search">
+                            <button><img src="img/prd_list_icon_search.png" alt="search"></button>
                         </li>
-                        <li class="">
-                            <img src="img/prd_list_icon_ava.png" alt="avatar">
+                        <li id="avatarButton">
+                            <button><img src="img/prd_list_icon_ava.png" alt="avatar"></button>
                         </li>
+                        <!-- popup menu -->
+                        <div id="popupMenu" class="absolute right-0 mt-8 w-64 rounded-lg bg-white shadow-lg hidden">
+                              <div class="py-4 px-6 ">
+                                <div class="flex items-center gap-3 border rounded-lg  shadow-md bg-white p-2">
+                                  <img src="img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
+                                  <div>
+                                    <p class="font-medium">HỌ VÀ TÊN</p>
+                                    <a href="#" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="p-4">
+                                <ul class="space-y-3 text-gray-700">
+                                  <li class="flex items-center gap-3">
+                                    <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_giohang.png" alt="giỏ hàng">
+                                    <a href="#">Giỏ hàng</a>
+                                  </li>
+                                  <li class="flex items-center gap-3">
+                                    <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_heart.png" alt="giỏ hàng">
+                                    <a href="#">Yêu thích</a>
+                                  </li>
+                                  <li class="flex items-center gap-3">
+                                    <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_box.png" alt="giỏ hàng">
+                                    <a href="#">Tra cứu đơn hàng</a>
+                                  </li>
+                                  <li class="flex items-center gap-3">
+                                    <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_map.png" alt="giỏ hàng">
+                                    <a href="#">Hệ thống cửa hàng</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                        <!--end popup menu-->
                     </ul>
 
                     <div class="lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-                        </svg>                          
+                        <button id="menuButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                            </svg> 
+                        </button>
+                        <!-- menu popup for tab -->
+                        <div id="popupMenufortablet" class="absolute right-0 mt-8 w-64 rounded-lg bg-white shadow-lg hidden">
+                                <div class="py-4 px-6 ">
+                                  <div class="flex items-center gap-3 border rounded-lg  shadow-md bg-white p-2">
+                                    <img src="img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
+                                    <div>
+                                      <p class="font-medium">HỌ VÀ TÊN</p>
+                                      <a href="#" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                                  </div>
+                                  </div>
+                                </div>
+                                <div class="p-4">
+                                  <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-center gap-3">
+                                      <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_giohang.png" alt="giỏ hàng">
+                                      <a href="#">Giỏ hàng</a>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                      <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_heart.png" alt="giỏ hàng">
+                                      <a href="#">Yêu thích</a>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                      <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_box.png" alt="giỏ hàng">
+                                      <a href="#">Tra cứu đơn hàng</a>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                      <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_map.png" alt="giỏ hàng">
+                                      <a href="#">Hệ thống cửa hàng</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            <!-- end menu popup for tab -->                            
                     </div>
                 </nav>
             </header><!-- end header -->
@@ -271,5 +339,6 @@
             </footer><!-- end footer -->
         </div><!-- end content -->
     </div><!-- end root -->
+    <script src="product_list.js"></script>
 </body>
 </html>
