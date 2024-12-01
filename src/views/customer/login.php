@@ -18,14 +18,14 @@
 <nav class="bg-white/30 flex flex-row items-center text-sm
                         shadow-navBar w-full border-white backdrop-blur z-50">
     <div class="md:w-1/5 w-1/2">
-        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        <a href="/"><img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/></a>
     </div>
 
     <div class="w-3/5 align-middle">
         <ul class="md:flex flex-row justify-center space-x-12 hidden">
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
+            <li><a href="/news" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
         </ul>
     </div>

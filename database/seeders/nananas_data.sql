@@ -1,16 +1,7 @@
 -- Thêm dữ liệu vào bảng colors
-INSERT INTO colors (color_name)
+INSERT INTO colors (color_name, color_code)
 VALUES 
-    ('Red'),
-    ('Green'),
-    ('Blue'),
-    ('Yellow'),
-    ('Black'),
-    ('White'),
-    ('Purple'),
-    ('Orange'),
-    ('Pink'),
-    ('Gray');
+    ('OffWhite/Gum', '#efece1');
 
 -- Thêm dữ liệu vào bảng sizes
 INSERT INTO sizes (size_value)
@@ -30,7 +21,8 @@ VALUES
     ('Track 6 OG', 'test'),
     ('Track 6 OG', 'test'),
     ('Track 6 OG', 'test'),
-    ('Track 6 OG', 'test');
+    ('Track 6 OG', 'test'),
+    ('Basas Bumper Gum NE', 'test');
 
 INSERT INTO product_items (product_id, color_id, size_id, promotion_id, SKU, quantity_in_stock, product_image, price)
 VALUES 
@@ -38,12 +30,19 @@ VALUES
     (2, 1, 1, NULL, 'SKU002', 0, '/assets/index/pro_track6_A6T001_1.jpg', 990000),
     (3, 1, 1, NULL, 'SKU003', 0, '/assets/index/pro_track6_A6T001_1.jpg', 990000),
     (4, 1, 1, NULL, 'SKU004', 0, '/assets/index/pro_track6_A6T001_1.jpg', 990000),
-    (5, 1, 1, NULL, 'SKU005', 0, '/assets/index/pro_track6_A6T001_1.jpg', 990000);
+    (5, 1, 1, NULL, 'SKU005', 0, '/assets/index/pro_track6_A6T001_1.jpg', 990000),
+    (6, 1, 1, NULL, 'SKU006', 0, '/assets/account/pro_AV00114_1.jpg', 650000),
+    (6, 1, 2, NULL, 'SKU007', 0, '/assets/account/pro_AV00114_1.jpg', 650000),
+    (6, 1, 3, NULL, 'SKU007', 0, '/assets/account/pro_AV00114_1.jpg', 650000),
+    (6, 1, 4, NULL, 'SKU008', 0, '/assets/account/pro_AV00114_1.jpg', 650000),
+    (6, 1, 5, NULL, 'SKU009', 0, '/assets/account/pro_AV00114_1.jpg', 650000),
+    (6, 1, 5, NULL, 'SKU0010', 0, '/assets/account/pro_AV00114_1.jpg', 650000);
 
 INSERT INTO categories (category_name, parent_category_id)
 VALUES 
     ('discovery', NULL),
-    ('Track 6', 1);
+    ('Track 6', 1),
+    ('High Top', NULL);
 
 INSERT INTO product_category (product_id, category_id)
 VALUES 
@@ -51,8 +50,23 @@ VALUES
     (2, 2),    
     (3, 2),   
     (4, 2),
-    (5, 2)   
+    (5, 2),
+    (6, 3),
+    (7, 3),
+    (8, 3),
+    (9, 3),
+    (10, 3),
+    (11, 3);
 
+INSERT INTO users (user_name, email_address, phone_number, password, gender, birth_date, avatar, role)
+VALUES
+    ('Admin User', 'admin@example.com', '0123456789', 'hashed_password_4', 'prefer not to say', '1990-01-01', NULL, 'admin');
+
+INSERT INTO payment_types (payment_type_name, description)
+VALUES
+    ('Credit Card', 'Payment via credit card'),
+    ('Cash on Delivery', 'Payment upon receiving the goods'),
+    ('Banking', 'Payment through Banking');
 
 INSERT INTO outstanding (os_name, os_tag_line, os_image)
 VALUES 
@@ -60,10 +74,6 @@ VALUES
     ('ANANAS x DORAEMON', 'Chong chóng tre nè Nobita!', '/assets/index/ananas_dora.jpg'),
     ('TRACK 6 I.S.E.E', "I.S.E.E that I'm icy", '/assets/index/isee.png'),
     ('TRACK 6 I.S.E.E', "I.S.E.E that I'm icy", '/assets/index/isee.png');
-
-INSERT INTO users (user_name, email_address, phone_number, password, gender, birth_date, avatar, role)
-VALUES 
-    ('Admin User', 'admin@example.com', '0123456789', 'hashed_password', 'prefer not to say', '1990-01-01', NULL, 'admin');
 
 INSERT INTO blogs (admin_id, blog_cate, blog_name, main_image, sub_image, main_content, summary, description, alias, status)
 VALUES 
@@ -158,4 +168,17 @@ VALUES
      'Lấy cảm hứng từ cụm từ "Inside Out", Ananas tạo ra 2 phiên bản thiết kế cổ thấp (có dây và quai dán) cho bộ sưu tập Urbas Love+ 24.', 
      'hieu-that-sau-moi-thu-ben-trong-moi-nguoi-voi-urbas-love-24', 'show');
 
+INSERT INTO orders (user_id, payment_type_id)
+VALUES
+    (2, 1),
+    (2, 2),
+    (2, 3);
 
+INSERT INTO order_items (order_id, product_item_id, quantity, price)
+VALUES
+    (1, 6, 1, 650000),
+    (2, 7, 1, 650000),
+    (2, 8, 1, 650000),
+    (3, 9, 1, 650000),
+    (3, 10, 1, 650000),
+    (3, 11, 1, 650000);

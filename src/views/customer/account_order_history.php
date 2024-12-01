@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+
+    <title>Title</title>
     <style>
         body {
             font-family: 'Be Vietnam Pro',sans-serif;
             font-weight: normal;
         }
     </style>
-    <title>Title</title>
 </head>
-<body>
+<body class="h-screen">
 <nav class="bg-white/30 flex flex-row items-center text-sm
                         shadow-navBar w-full border-white backdrop-blur z-50">
-    <div class="w-3/12">
+    <div class="md:w-1/5 w-1/2">
         <a href="/"><img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/></a>
     </div>
 
-    <div class="w-6/12 align-middle">
-        <ul class="md:flex flex-row justify-center lg:space-x-12 space-x-8 hidden">
-            <li class="hover:text-[#F15E2C] cursor-pointer transition-all" id="product" onclick="openOverlay()">SẢN PHẨM</li>
+    <div class="w-3/5 align-middle">
+        <ul class="md:flex flex-row justify-center space-x-12 hidden">
+            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
             <li><a href="/news" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
@@ -28,7 +30,6 @@
     </div>
 
     <?php
-        session_start();
         if (isset($_SESSION['user_id'])):
             if ($_SESSION['role'] == 'customer'):
                 echo("I'm customer");
@@ -52,55 +53,53 @@
 </nav>
 
 <div>
-    <div class="flex flex-col w-9/12 mx-auto mt-8">
-            <div class="text-2xl font-bold">TIN TỨC</div>
-    </div>
-    <?php 
-        $top2news = array_slice($data, 0, 2);
-        $othernews = array_slice($data, 2); 
-        foreach ($top2news as $index => $news): 
-    ?>
-        <div>
-            <?php if ($index == 0): ?>
-                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-row w-6/12 absolute left-24 z-30">
-                    <div class="flex flex-col justify-end items-end mr-6">
-                        <p class="text-right font-bold mb-2"><?= htmlspecialchars($news['blog_name']); ?></p>
-                        <p class="text-sm text-[#888888] text-right mb-2"><?= htmlspecialchars($news['summary']); ?></p>
-                        <p class="mb-4"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
-                    </div>
-                
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-80 h-80 object-cover rounded-xl hover:scale-105 duration-300">
-                </a>
-            <?php else: ?>
-                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-row w-5/12 absolute items-end right-[5vw] top-80 z-20">
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-60 h-60 object-cover rounded-xl hover:scale-105 duration-300">
+    <div class="flex flex-row w-9/12 mx-auto mt-8">
+        <div class="flex flex-col items-start w-3/12 mr-6">
+            <div class="text-3xl font-bold">TÀI KHOẢN</div>
 
-                    <div class="flex flex-col ml-6">
-                        <p class="font-bold mb-2"><?= htmlspecialchars($news['blog_name']); ?></p>
-                        <p class="text-sm text-[#888888] mb-2"><?= htmlspecialchars($news['summary']); ?></p>
-                        <p class="mb-4"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
-                    </div>
-                </a>
-            <?php endif; ?>
+            <a class="px-4 mt-8">Thông tin tài khoản</a>
+            <a class="px-4 mt-8">Phương thức thanh toán</a>
+            <a class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg" href="/orderhistory">Đơn hàng của tôi</a>
+            <a class="px-4 mt-8">Đổi mật khẩu</a>
+
+            <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
         </div>
-    <?php endforeach; ?>
-    <div class="flex flex-col w-9/12 mx-auto space-y-8 mt-[500px]">
-    <?php for ($i = 0; $i < ceil(count($othernews) / 3); $i++): ?>
-        <div class="flex flex-row space-x-8 h-[350px]">
-        <?php for ($j = 0; $j < 3; $j++): ?>
-            <?php
-                $index = $i * 3 + $j; // Tính chỉ số của mục trong mảng
-                if ($index >= count($othernews)) break; // Nếu vượt quá số phần tử thì thoát
+
+        <div class="w-9/12">
+            <?php 
+                $orders = $data['order'];
+                $order_items = $data['order_item'];
+                foreach ($orders as $index => $order):
             ?>
-                <a href="/news/detail/<?= htmlspecialchars($othernews[$index]['alias']); ?>" class="flex flex-col w-1/3 h-full border-2 rounded-lg hover:scale-105 duration-300">
-                    <img src="<?= htmlspecialchars($othernews[$index]['sub_image']); ?>" class="w-full h-3/4 object-cover rounded-t-lg">
-                    <p class="flex my-auto ml-6 font-bold"><?= htmlspecialchars($othernews[$index]['blog_name']); ?></p>
-                </a>
-        <?php endfor; ?>
+                <div class="border-2 rounded-2xl <?= $index != 0 ? 'mt-5' : ''; ?>">
+                    <?php
+                        $filtered_order_items = array_filter($order_items, function($order_item) use ($order) {
+                            return $order_item['order_id'] === $order['order_id'];
+                        });
+                        foreach ($filtered_order_items as $order_item):
+                    ?>
+                        <div class="flex flex-row mx-5 my-5 w-auto">
+                            <img src="<?= htmlspecialchars($order_item['product_image']); ?>" alt="NXT" class="h-28 w-auto rounded-lg">
+
+                            <div class="mx-5 flex flex-col w-auto">
+                                <p class="font-bold"><?= htmlspecialchars($order_item['name']); ?> - <?= htmlspecialchars($order_item['category_name']); ?> - <?= htmlspecialchars($order_item['color_name']); ?></p>
+                                <div class="flex flex-col justify-end h-full">
+                                    <p class="text-sm text-[#888888]">Kích cỡ: <?= htmlspecialchars($order_item['size_value']); ?></p>
+                                    <p class="text-sm mt-1 text-[#888888]">Số lượng: <?= htmlspecialchars($order_item['quantity']); ?></p>
+                                </div>
+                            </div>
+
+                            <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
+                                <p><?= htmlspecialchars(number_format($order_item['price'], 0, ',', '.')); ?> VNĐ</p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
-    <?php endfor; ?>
     </div>
 </div>
+
 
 <footer class="bottom-0 mb-0">
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
@@ -156,5 +155,6 @@
 
     <div class="h-10 w-full bg-[#F15E2C]"></div>
 </footer>
+
 </body>
 </html>

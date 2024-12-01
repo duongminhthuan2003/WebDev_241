@@ -28,14 +28,23 @@ class LoginController {
         $user = $this->loginModel->getUserByPhoneOrEmail($identifier)->fetch(PDO::FETCH_ASSOC);;
         if ($user && password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['user_name'] = $user['user_name'];
+            $_SESSION['role'] = $user['role'];
 
             header('Location: /');
         } else {
             $error = "Số điện thoại/email hoặc mật khẩu không đúng.";
             include_once __DIR__ . '../../../views/customer/login.php';
         }
+    }
+
+    public function logout() {
+        session_start();
+        session_unset();
+        session_destroy(); 
+        header('Location: /');
+        exit();
     }
 }
 ?>
