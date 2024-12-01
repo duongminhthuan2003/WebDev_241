@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        BeVietnam: ['Be Vietnam Pro', 'sans-serif']
+        BeVietnam: ['Be Vietnam Pro', 'sans-serif'],
+        Bayon: ['Bayon', 'sans-serif'],
+        AntonSC: ['Anton SC', 'sans-serif']
       },
       colors: {
         back_admin: '#333333',
