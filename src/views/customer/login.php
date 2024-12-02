@@ -56,7 +56,7 @@
             </form>
             <div class="flex flex-row w-full mt-8">
                 <p class="w-5/12"><a>Quên mật khẩu?</a></p>
-                <p class="flex w-7/12 justify-end mr-0 right-0">Chưa có tài khoản?<a class="ml-1"><strong>Đăng ký</strong></a></p>
+                <p class="flex w-7/12 justify-end mr-0 right-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
             </div>
         </div>
     </div>
