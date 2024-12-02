@@ -18,7 +18,7 @@ function list_products() {
         for (var i in data) {
             read_products_html += `
                     <ul class="flex flex-col text-sm">
-                        <li><img src=` + data[i]["product_image"] +` alt="Product ` + i +` "></li>
+                        <li><img src="../customer` + data[i]["product_image"] +`" alt="Product ` + i +` "></li>
                         <li>
                             <ul class="flex flex-row">
                                 <li><p class="font-bold h-16 mt-3">`+ data[i]["name"] +`</p></li>

@@ -5,8 +5,8 @@
         $query_category_id = "  SELECT 
                         id AS category_id
                     FROM 
-                        category
-                    WHERE category_name = 'sale_off'";
+                        categories
+                    WHERE category_name LIKE 'Sale Off'";
         $category_info = mysqli_query($DBConnect, $query_category_id);
         if (!$category_info) 
         {
@@ -16,18 +16,18 @@
         }
         $category_id = mysqli_fetch_assoc($category_info)['category_id'];
         $query = "  SELECT 
-                        product_item.product_item_id AS product_item_id, 
-                        product.name AS name, 
-                        color.color_name AS color_name, 
-                        product_item.price, 
-                        product_item.product_image, 
-                        product_item.quantity_in_stock,
-                        product.product_id  AS product_id 
+                        product_items.product_item_id AS product_item_id, 
+                        products.name AS name, 
+                        colors.color_name AS color_name, 
+                        product_items.price, 
+                        product_items.product_image, 
+                        product_items.quantity_in_stock,
+                        products.product_id  AS product_id 
                     FROM 
-                        ((product 
-                        JOIN product_item ON product.product_id = product_item.product_id) 
-                        JOIN color ON product_item.color_id = color.color_id)
-                        JOIN product_category ON product_item.product_item_id = product_category.product_id
+                        ((products 
+                        JOIN product_items ON products.product_id = product_items.product_id) 
+                        JOIN colors ON product_items.color_id = colors.color_id)
+                        JOIN product_category ON product_items.product_item_id = product_category.product_id
                     WHERE product_category.category_id = $category_id";
         $product_info = mysqli_query($DBConnect, $query);
         if (!$product_info) 

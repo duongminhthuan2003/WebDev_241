@@ -22,7 +22,7 @@ window.onload = function() {
                     return `
                             <li>
                                 <ul class="flex flex-row space-x-3">
-                                    <li><img class="w-28 h-28" src=${product.product_image} alt="item"></li>
+                                    <li><img class="w-28 h-28" src="../customer${product.product_image}" alt="item"></li>
                                     <li>
                                         <ul class="flex flex-col">
                                             <li class="">${product.name}</li>
@@ -130,7 +130,7 @@ window.onload = function() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred while submitting the payment details.');
+                alert('Error:', error);
             });
         });
 

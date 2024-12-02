@@ -23,7 +23,7 @@ window.onload = function() {
                             <!---item1-->
                             <li class="flex flex-row mt-5">
                                 <ul class="flex flex-row space-x-3">
-                                    <li class="flex w-1/6"><img class="w-18 h-18" src=${product.product_image} alt="item"></li>
+                                    <li class="flex w-1/6"><img class="w-18 h-18" src="../customer${product.product_image}" alt="item"></li>
                                     <li class="flex w-3/6">
                                         <ul>
                                             <Name_product class="font-bold">${product.name}</Name_product>

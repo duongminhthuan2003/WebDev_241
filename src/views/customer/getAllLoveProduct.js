@@ -11,7 +11,7 @@ function list_products() {
         for (var i in data) {
             read_products_html += `
                 <div class="text-sm">
-                    <img src=` + data[i]["product_image"] +` alt="Product ` + i +` ">
+                    <img src="../customer` + data[i]["product_image"] +`" alt="Product ` + i +` ">
                     <span class="flex flex-row space-x-8 mt-3"> 
                     <p class="font-bold">`+ data[i]["name"] +`</p>
                     <img class="w-5 h-5 object-contain" src="img/prd_list_heart.png" alt="heart">

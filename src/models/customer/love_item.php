@@ -4,18 +4,18 @@
     {
         require_once(__DIR__."./../connectdb.php");
         $query = "  SELECT 
-                        product_item.product_item_id AS product_item_id, 
-                        product.name AS name, 
-                        color.color_name AS color_name, 
-                        product_item.price, 
-                        product_item.product_image, 
-                        product_item.quantity_in_stock,
-                        product.product_id AS product_id
+                        product_items.product_item_id AS product_item_id, 
+                        products.name AS name, 
+                        colors.color_name AS color_name, 
+                        product_items.price, 
+                        product_items.product_image, 
+                        product_items.quantity_in_stock,
+                        products.product_id AS product_id
                     FROM 
-                        ((product 
-                        JOIN product_item ON product.product_id = product_item.product_id) 
-                        JOIN color ON product_item.color_id = color.color_id) 
-                        JOIN love_item ON product_item.product_item_id = love_item.product_id 
+                        ((products 
+                        JOIN product_items ON products.product_id = product_items.product_id) 
+                        JOIN colors ON product_items.color_id = colors.color_id) 
+                        JOIN love_items ON product_items.product_item_id = love_items.product_id 
                     WHERE 
                         love_item.user_id = $user_id";
         $product_info = mysqli_query($DBConnect, $query);
@@ -36,7 +36,7 @@
     function insertLoveProduct($user_id, $product_id)
     {
         require_once(__DIR__."./../connectdb.php");
-        $query = "INSERT INTO love_item (user_id, product_id) VALUES ($user_id, $product_id)";
+        $query = "INSERT INTO love_items (user_id, product_id) VALUES ($user_id, $product_id)";
         $result = mysqli_query($DBConnect, $query);
         if (!$result) 
         {
@@ -50,7 +50,7 @@
     function deleteLoveProduct($user_id, $product_id)
     {
         require_once(__DIR__."./../connectdb.php");
-        $query = "DELETE FROM love_item WHERE user_id = $user_id AND product_id = $product_id";
+        $query = "DELETE FROM love_items WHERE user_id = $user_id AND product_id = $product_id";
         $result = mysqli_query($DBConnect, $query);
         if (!$result) 
         {

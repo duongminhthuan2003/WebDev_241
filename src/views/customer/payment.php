@@ -18,6 +18,7 @@
                 <nav class="flex flex-row items-center justify-between">
                     <div class="logo">
                         <img src="img/prd_list_logo.png" alt="logo">
+                        
                     </div>
                     <ul class="hidden lg:flex lg:items-center lg:gap-16 uppercase text-sm">
                          <li class="cursor-pointer py-1 relative after:absolute after:bottom-0 after:left-0

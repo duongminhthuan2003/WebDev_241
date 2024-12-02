@@ -23,7 +23,7 @@ window.onload = function() {
                 const descriptionListItems = sentences.map(sentence => `<li>${sentence.trim()}.</li>`).join('');
 
                 document.getElementById("page-content-detail-image").innerHTML = `
-                    <col1><img src=${data.product_image} alt="product" style="height: 450px; width: 450px"></col1>
+                    <col1><img src="../customer${data.product_image}" alt="product" style="height: 450px; width: 450px"></col1>
                 `;
                 document.getElementById("page-content-detail").innerHTML = `
                     <ul>
