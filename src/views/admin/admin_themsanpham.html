@@ -62,54 +62,64 @@
                             </svg>                              
                         </div>
                         <div class="text-gray-500">Danh sách sản phẩm</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>                              
+                        </div>
+                        <div class="text-gray-500">Thêm sản phẩm</div>
                     </row2>
-                    <row3 class="bg-white p-4 flex flex-col text-black space-y-4">
-                        <div class="flex space-x-2">
-                            <select class="px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-black focus:outline-none focus:ring focus:ring-gray-300">
-                                <option value="" disabled selected>Lọc sản phẩm</option>
-                                <option value="all">1</option>
-                                <option value="waiting">2</option>
-                            </select>
-                
-                            <input type="text" placeholder="Tìm kiếm sản phẩm" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-300 text-black" />
-                    
-                            <button class="bg-black text-white border border-black w-auto text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
-                                Thêm sản phẩm
+                    <row3 class="flex flex-col px-4 space-y-4 text-black">
+                        <div class="">
+                            <label for="product-name" class="block text-sm font-medium text-gray-300 mb-1">
+                                Tên sản phẩm
+                            </label>
+                            <input 
+                                id="product-name" 
+                                type="text" 
+                                autocomplete="off"
+                                class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                            >
+                        </div>
+                        <div class="">
+                            <label for="product-name" class="block text-sm font-medium text-gray-300 mb-1">
+                                Link ảnh
+                            </label>
+                            <input 
+                                id="product-name" 
+                                type="text" 
+                                autocomplete="off"
+                                class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                            >
+                        </div>
+                        <div class="">
+                            <label for="product-description" class="block text-sm font-medium text-gray-300 mb-1">
+                                Mô tả sản phẩm
+                            </label>
+                            <textarea 
+                                id="product-description" 
+                                rows="3" 
+                                class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 resize-none"
+                            ></textarea>
+                        </div>
+                        <div class="">
+                            <label for="product-name" class="block text-sm font-medium text-gray-300 mb-1">
+                                Giá sản phẩm
+                            </label>
+                            <input 
+                                id="product-name" 
+                                type="text" 
+                                autocomplete="off"
+                                class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                            >
+                        </div>
+                        <div class="flex justify-end space-x-2">
+                            <button class="ML_button w-32">Lưu</button>
+                            <button class="bg-white text-black border border-black w-32 text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
+                                Hủy
                             </button>
                         </div>
-                        <div><hr class="border-t border-black sm:w-full"></div>
-                        <!-- table -->
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full border-collapse border border-gray-300 text-black">
-                                <thead>
-                                    <tr class="bg-gray-100">
-                                        <th class="border border-gray-300 px-4 py-2">
-                                            <input type="checkbox" />
-                                        </th>
-                                        <th class="border border-gray-300 px-4 py-2">Tên sản phẩm</th>
-                                        <th class="border border-gray-300 px-4 py-2">Màu sắc</th>
-                                        <th class="border border-gray-300 px-4 py-2">Size</th>
-                                        <th class="border border-gray-300 px-4 py-2">Số lượng đã bán</th>
-                                        <th class="border border-gray-300 px-4 py-2">Tùy chọn</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><!--hang1-->
-                                        <td class="border border-gray-300 px-4 py-2 text-center">
-                                            <input type="checkbox"/>
-                                        </td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">Vintas Monoguso</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">White</td><td class="border border-gray-300 px-4 py-2 text-center">40</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">2</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">
-                                            <button class="bg-yellow-400 p-2 w-14 rounded-md">Sửa</button>
-                                            <button class="bg-red-500 p-2 w-14 rounded-md">Xóa</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </row3><!--end row3-->
+                    </row3>
                 </col2><!--end col2-->
             </main>
         </div>
