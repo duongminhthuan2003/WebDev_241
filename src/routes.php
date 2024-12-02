@@ -11,5 +11,7 @@ $routes = [
     'register/submit' => ['controller' => 'RegisterController', 'action' => 'register'],
     'orderhistory' => ['controller' => 'OrderHistoryController', 'action' => 'order_history'],
     'logout' => ['controller' => 'LoginController', 'action' => 'logout'],
+    'info' => ['controller' => 'InfoController', 'action' => 'info'],
+    'info/submit' => ['controller' => 'InfoController', 'action' => 'updateinfo'],
 ];
 
