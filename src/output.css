@@ -1345,6 +1345,10 @@ video {
   cursor: pointer;
 }
 
+.resize-none{
+  resize: none;
+}
+
 .list-disc{
   list-style-type: disc;
 }
@@ -2003,6 +2007,30 @@ video {
 
 .pt-96{
   padding-top: 24rem;
+}
+
+.pl-10{
+  padding-left: 2.5rem;
+}
+
+.pl-20{
+  padding-left: 5rem;
+}
+
+.pl-12{
+  padding-left: 3rem;
+}
+
+.pl-24{
+  padding-left: 6rem;
+}
+
+.pb-4{
+  padding-bottom: 1rem;
+}
+
+.pt-1{
+  padding-top: 0.25rem;
 }
 
 .text-center{
