@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro',sans-serif;
+            font-weight: normal;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<nav class="bg-amber-100 flex flex-row items-center text-sm
+                        shadow-navBar w-full border-white backdrop-blur z-50">
+    <div class="w-3/12">
+        <a href="index.html">
+            <img src="../../../public/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        </a>
+    </div>
+
+    <div class="w-6/12 align-middle">
+        <ul class="md:flex flex-row justify-center lg:space-x-12 space-x-8 hidden">
+            <li class="hover:text-[#F15E2C] cursor-pointer transition-all" id="product" onclick="openOverlay()">SẢN PHẨM</li>
+            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
+            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
+            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
+        </ul>
+    </div>
+
+    <div class="w-3/12 flex justify-end">
+        <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="hidden md:block my-auto scale-75 mr-5">
+                <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+        </button>
+        <button  onclick="accOverlay()">
+            <img src="../../../public/assets/account/Sequoia-Sunrise.png" class="h-12 w-12 rounded-full mr-5">
+        </button>
+        <button class="mr-7 md:hidden block" onclick="mobileOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                <path d="M4 5L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<div id="myNav" class="absolute md:hidden flex-col bg-amber-400 w-full h-[35vh]">
+    <a class="absolute right-8 top-8 cursor-pointer" onclick="closeOverlay()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+            <path d="M19.0005 4.99988L5.00049 18.9999M5.00049 4.99988L19.0005 18.9999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </a>
+    <div class="flex my-auto mx-auto">
+        <div class="mx-8 flex flex-row space-x-[2vw]">
+            <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <div class="flex content-between py-4">CHO NAM</div>
+            </a>
+
+            <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <div class="flex content-between py-4">CHO NỮ</div>
+            </a>
+
+            <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <div class="flex content-between py-4">ÁO</div>
+            </a>
+
+            <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <div class="flex content-between py-4">PHỤ KIỆN</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="mobileNav" class="md:invisible hidden bg-amber-400 w-full h-[calc(100%-64px)] absolute">
+    <div class="flex flex-col my-16 space-y-9 w-9/12 mx-auto">
+        <a class="font-bold text-lg">SẢN PHẨM</a>
+        <a class="font-bold text-lg">SALE-OFF</a>
+        <a class="font-bold text-lg">TIN TỨC</a>
+        <a class="font-bold text-lg">GIỚI THIỆU</a>
+        <div class="flex space-x-5">
+            <button class="w-1/2 bg-white h-14 rounded-lg shadow-md">Đăng ký</button>
+            <button class="w-1/2 bg-[#F15E2C] h-14 rounded-lg shadow-md text-white">Đăng nhập</button>
+        </div>
+
+        <div class="flex flex-col justify-end h-full">
+            <div class="flex bg-white h-14 rounded-lg shadow-md w-full items-center px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="flex my-auto scale-75 mr-2">
+                    <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+                Tìm kiếm
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="accountNav" class="md:hidden absolute right-0 flex-col bg-amber-400 w-[400px] h-[450px] rounded-2xl">
+    <div class="flex bg-amber-100 w-11/12 h-[150px] mx-auto mt-4 rounded-xl">
+        <div class="flex flex-row ml-6 my-auto space-x-5">
+            <img src="../../../public/assets/account/Sequoia-Sunrise.png" class="h-24 w-24 rounded-full" alt="">
+            <div class="flex flex-col my-auto">
+                <p class="font-bold text-xl">HỌ VÀ TÊN</p>
+                <p class="text-sm text-[#888888]">Xem hồ sơ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col w-11/12 my-auto mx-auto space-y-9 px-4">
+        <a href="" class="flex w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mr-5">
+                <path d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <p>Giỏ hàng</p>
+        </a>
+
+        <a class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mr-5">
+                <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <p>Yêu thích</p>
+        </a>
+
+        <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mr-5">
+                <path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 12L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p>Tra cứu đơn hàng</p>
+        </div>
+
+        <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mr-5">
+                <path d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <p>Hệ thống cửa hàng</p>
+        </div>
+    </div>
+</div>
+<script>
+    var div = document.getElementById("myNav");
+    var mbOverlay = document.getElementById("mobileNav");
+    let accNav = document.getElementById("accountNav");
+
+    let flag = 0;
+    let accFlag = 0;
+
+    function openOverlay() {
+        div.style.display = "flex";
+    }
+
+    function closeOverlay() {
+        div.style.display = "none";
+    }
+
+    function mobileOverlay() {
+        if(flag === 0) {
+            mbOverlay.style.display = "flex";
+            flag = 1;
+        } else {
+            mbOverlay.style.display = "none";
+            flag = 0;
+        }
+    }
+
+    function accOverlay() {
+        if(accFlag === 0) {
+            accNav.style.display = "flex";
+            accFlag = 1;
+        } else {
+            accNav.style.display = "none";
+            accFlag = 0;
+        }
+    }
+</script>
+</body>
+</html>
