@@ -16,37 +16,35 @@
                             <li><img src="/img/ananas_logo.png" alt="logo" class="h-16 w-auto"></li>
                         </ul>
                     </div>
-                    <div class="pt-10 pl-8">
-                        <ul class="flex flex-col space-y-11">
-                            <li class="flex flex-row space-x-3">
-                                <img src="/img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Dashboard</p>
-                            </li>
-                            <li class="flex flex-row space-x-3">
-                                <img src="/img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Đơn hàng</p>
-                            </li>
-                            <li class="flex flex-row space-x-3">
-                                <img src="/img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Sản phẩm</p>
-                            </li>
-                            <li class="flex flex-row space-x-3 bg-green-600 rounded-md p-2">
-                                <img src="/img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Khách hàng</p>
-                            </li>
-                            <li class="flex flex-row space-x-3 ">
-                                <img src="/img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Khuyến mãi</p>
-                            </li>
-                            <li class="flex flex-row space-x-3 ">
-                                <img src="/img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Blog</p>
-                            </li> 
-                            <li class="flex flex-row space-x-3 pt-96">
-                                <img src="/img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-                                <p>Lịch sử</p>
-                            </li> 
-                        </ul>
+                    <div class="flex flex-col space-y-11 pt-10 pl-8">
+                        <a class="flex flex-row space-x-3" href="#">
+                            <img src="img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Dashboard</p>
+                        </a>
+                        <a href="order" class="flex flex-row space-x-3">
+                            <img src="img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Đơn hàng</p>
+                        </a>
+                        <a href="products" class="flex flex-row space-x-3">
+                            <img src="img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Sản phẩm</p>
+                        </a>
+                        <a href="customers" class="flex flex-row space-x-3 bg-green-600 rounded-md p-2 ">
+                            <img src="img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Khách hàng</p>
+                        </a>
+                        <a href="#" class="flex flex-row space-x-3 ">
+                            <img src="img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Khuyến mãi</p>
+                        </a>
+                        <a href="#" class="flex flex-row space-x-3 ">
+                            <img src="img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Blog</p>
+                        </a> 
+                        <a href="#" class="flex flex-row space-x-3 pt-96">
+                            <img src="img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Lịch sử</p>
+                        </a> 
                     </div>
                     </ul>
                 </col1><!--end col1-->
@@ -87,9 +85,15 @@
                                     </thead>
                                     <tbody>
                                         <?php 
+                                            $customers_all = $data;
                                             $order_per_page = 8;
                                             $start_index = 0;
-                                            $customers = array_slice($data, 0, 8);
+                                            $total_products = count($customers_all);
+                                            $total_pages = ceil($total_products / $order_per_page);
+                                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                                            $start = ($page - 1) * $order_per_page;
+                                            $customers= array_slice($customers_all, $start, $order_per_page);
+
                                             foreach ($customers as $customer): 
                                         ?>
                                             <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($customer['user_id']); ?></td>
@@ -106,24 +110,31 @@
                         
                             <!-- pagination -->
                             <div class="flex items-center justify-end mt-4 text-black space-x-2">
-                                <div class="text-sm">1 of 5</div>
+                                <div class="text-sm"><?php echo $page; ?> of <?php echo $total_pages; ?></div>
                                 <div>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                                        </svg> 
-                                    </button>                                     
+                                    <?php if ($page > 1): ?>
+                                        <a href="?page=<?php echo $page - 1; ?>">
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                                </svg> 
+                                            </button>
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                                 <div>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                        </svg> 
-                                    </button>                                     
+                                    <?php if ($page < $total_pages): ?>
+                                        <a href="?page=<?php echo $page + 1; ?>">
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg> 
+                                            </button>
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
-
                     </row3><!--end row3-->
                 </col2><!--end col2-->
             </main>
