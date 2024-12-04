@@ -48,7 +48,7 @@ class RegisterController {
         }
 
         $existingUser = $this->registerModel->getUserByPhoneOrEmail($phone_number, $email_address);
-        if ($existingUser) {
+        if ($existingUser && $existingUser->rowCount() > 0) {
             $error = "Số điện thoại hoặc email đã được sử dụng.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
