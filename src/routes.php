@@ -13,5 +13,10 @@ $routes = [
     'logout' => ['controller' => 'LoginController', 'action' => 'logout'],
     'info' => ['controller' => 'InfoController', 'action' => 'info'],
     'info/submit' => ['controller' => 'InfoController', 'action' => 'updateinfo'],
+    'payment' => ['controller' => 'PaymentController', 'action' => 'getall'],
+    'payment/updatedefaultcard' => ['controller' => 'PaymentController', 'action' => 'updatedefaultcard'],
+    'payment/updatedefaultbank' => ['controller' => 'PaymentController', 'action' => 'updatedefaultbank'],
+    'payment/deletecard' => ['controller' => 'PaymentController', 'action' => 'deleteCard'],
+    'payment/deletebank' => ['controller' => 'PaymentController', 'action' => 'deleteBank'],
 ];
 

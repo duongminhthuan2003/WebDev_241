@@ -27,7 +27,7 @@
             w-full border-white fixed backdrop-blur z-50">
     <div class="w-3/12">
         <a href="index.php">
-            <img src="../../../public/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+            <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
         </a>
     </div>
 
@@ -80,22 +80,22 @@
     <div class="flex my-auto mx-auto">
         <div class="mx-8 flex flex-row space-x-[2vw]">
             <a href="#" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NAM</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NỮ</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">ÁO</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">PHỤ KIỆN</div>
             </a>
         </div>
@@ -127,7 +127,7 @@
 </div>
 
 <div class="text-center lg:h-[90vh] md:h-[80vh] h-[90vh]">
-    <img src="../../../public/assets/index/IMG_7284.png" class="lg:h-[90vh] md:h-[80vh] w-full object-cover absolute z-0" alt="urbas 24">
+    <img src="/assets/index/IMG_7284.png" class="lg:h-[90vh] md:h-[80vh] w-full object-cover absolute z-0" alt="urbas 24">
     <h3 class="relative xl:top-36 lg:top-48 text-[#F15E2C] ">Mới ra mắt</h3>
     <h1 class="relative text-8xl xl:top-40 lg:top-52 font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
     <h3 class="relative lg:top-[44rem] md:top-[35rem] mb-10">Giao hàng từ 15.12.2024</h3>

@@ -17,7 +17,7 @@
 <nav class="bg-white/30 flex flex-row items-center text-sm
                         shadow-navBar w-full border-white backdrop-blur z-50">
     <div class="md:w-1/5 w-1/2">
-        <img src="../../../public/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
     </div>
 
     <div class="w-3/5 align-middle">
@@ -29,11 +29,27 @@
         </ul>
     </div>
 
-    <div class="w-1/5 flex justify-end">
-        <button type="button" class="text-[13px] mr-5 lg:block hidden">Đăng ký</button>
-        <button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
-                hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Đăng nhập</button>
-    </div>
+    <?php
+        if (isset($_SESSION['user_id'])):
+            if ($_SESSION['role'] == 'customer'):
+                echo("I'm customer");
+            else:
+                echo("I'm admin");
+            endif;
+        else:
+    ?>
+        <div class="w-1/5 flex justify-end">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="scale-75 mr-4 flex my-auto top-0 bottom-0">
+                <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            <a href="/register"><button type="button" class="text-[13px] mr-5 lg:block hidden">Đăng ký</button></a>
+            <a href="/login"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
+                    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">
+                    Đăng nhập
+            </button></a>
+        </div>
+    <?php endif; ?>
 </nav>
 
 <div class="flex-grow">
@@ -48,17 +64,24 @@
 
             <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
         </div>
-
+    
         <div class="w-9/12">
+            <?php 
+                $cards = $data['card'];
+                $banks = $data['bank'];
+            ?>
             <div class="flex flex-row w-full">
                 <p class="flex font-bold w-9/12">Thẻ tín dụng & thẻ ghi nợ</p>
                 <div class="flex justify-end ml-auto w-3/12"><button class="px-4 py-1 bg-[#F15E2C] text-white text-[13px] rounded-md">Thêm</button></div>
             </div>
+            <?php
+                foreach($cards as $card):
+            ?>
 
             <div class="flex flex-row justify-center mt-5">
                 <div class="flex w-3/12 my-auto">
-                    <img src="../../../public/assets/account/Visa.png" class="flex h-4 mr-3 object-cover my-auto">
-                    <p>Visa</p>
+                    <!--<img src="/assets/account/Visa.png" class="flex h-4 mr-3 object-cover my-auto">-->
+                    <p><?= htmlspecialchars($card['card_branch']); ?></p>
                 </div>
 
                 <div class="w-3/12"> <!--Để trống để đặt tên trong TKNH-->
@@ -66,64 +89,56 @@
                 </div>
 
                 <div class="flex w-3/12 my-auto">
-                    <p>**** 7091</p>
-                    <p class="ml-2 px-2 py-1 bg-[#35A16F] text-white text-[13px] rounded-md">Mặc định</p>
+                    <p>**** <?= htmlspecialchars($card['last_4_digits']); ?></p>
+                    <?php if($card['is_default']): ?>
+                        <p class="ml-2 px-2 py-1 bg-[#35A16F] text-white text-[13px] rounded-md">Mặc định</p>
+                    <?php  endif;?>
                 </div>
 
                 <div class="flex w-3/12 justify-end">
-                    <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
-                    <button class="text-sm underline">Làm mặc định</button>
+                    <a href="/payment/deletecard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                        <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
+                    </a>
+                    <a href="/payment/updatedefaultcard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                        <button class="text-sm underline">Làm mặc định</button>
+                    </a>
                 </div>
             </div>
-
-            <div class="flex flex-row justify-center mt-5">
-                <div class="flex w-3/12 my-auto">
-                    <img src="../../../public/assets/account/MC.png" class="flex h-4 mr-3 object-cover my-auto">
-                    <p>Mastercard</p>
-                </div>
-
-                <div class="w-3/12"> <!--Để trống để đặt tên trong TKNH-->
-
-                </div>
-
-                <div class="flex w-3/12 my-auto">
-                    <p>**** 7091</p>
-                </div>
-
-                <div class="flex w-3/12 justify-end">
-                    <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
-                    <button class="text-sm underline">Làm mặc định</button>
-                </div>
-            </div>
-
-
-
+            <?php endforeach; ?>
 
             <!--TKNH-->
             <div class="flex flex-row w-full mt-16">
                 <p class="flex font-bold w-9/12">Liên kết ngân hàng</p>
                 <div class="flex justify-end ml-auto w-3/12"><button class="px-4 py-1 bg-[#F15E2C] text-white text-[13px] rounded-md">Thêm</button></div>
             </div>
+            <?php foreach($banks as $bank): ?>
+                <div class="flex flex-row justify-center mt-5">
+                    <div class="flex w-3/12 my-auto">
+                        <!---<img src="/assets/account/Techcombank.png" class="flex h-4 mr-3 object-cover my-auto">--->
+                        <p><?= htmlspecialchars($bank['bank_name']); ?></p>
+                    </div>
 
-            <div class="flex flex-row justify-center mt-5">
-                <div class="flex w-3/12 my-auto">
-                    <img src="../../../public/assets/account/Techcombank.png" class="flex h-4 mr-3 object-cover my-auto">
-                    <p>Techcombank</p>
-                </div>
+                    <div class="w-3/12"> <!--Để trống để đặt tên trong TKNH-->
+                        <?= htmlspecialchars($bank['card_holder_name']); ?>
+                    </div>
 
-                <div class="w-3/12"> <!--Để trống để đặt tên trong TKNH-->
-                    MINH THUAN
-                </div>
+                    <div class="flex w-3/12 my-auto">
+                        <p>**** <?= htmlspecialchars($bank['last_4_digits']); ?></p>
+                        <?php if($bank['is_default']): ?>
+                            <p class="ml-2 px-2 py-1 bg-[#35A16F] text-white text-[13px] rounded-md">Mặc định</p>
+                        <?php  endif;?>
+                    </div>
 
-                <div class="flex w-3/12 my-auto">
-                    <p>**** 7091</p>
+                    <div class="flex w-3/12 justify-end">
+                    <a href="/payment/deletebank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                        <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
+                    </a>
+                    <a href="/payment/updatedefaultbank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                        <button class="text-sm underline">Làm mặc định</button>
+                    </a>
                 </div>
-
-                <div class="flex w-3/12 justify-end">
-                    <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
-                    <button class="text-sm underline">Làm mặc định</button>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
@@ -133,8 +148,8 @@
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
-                <img src="../../../public/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
-                <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
+                <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
+                <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
             <div class="flex flex-row w-9/12 mx-auto mt-5">
@@ -164,9 +179,9 @@
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
-                        <img src="../../../public/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
                     </div>
 
                     <div class="flex space-x-2 flex-row mt-7">
