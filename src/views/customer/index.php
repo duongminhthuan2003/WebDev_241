@@ -22,12 +22,13 @@
         }
     </style>
 </head>
-<body>
-<nav class="bg-white/30 flex flex-row items-center text-sm
-            w-full border-white fixed backdrop-blur z-50">
+<body class="overflow-x-clip">
+<!-- <<<<<<<<<<<<<<<<Navigation Bar starts>>>>>>>>>>>>>>>> -->
+<nav id="navBar" class="bg-white/30 flex flex-row items-center text-sm
+            w-full border-white fixed backdrop-blur z-30">
     <div class="w-3/12">
         <a href="index.php">
-            <img src="../../../public/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+            <img src="../../../public/assets/logo-black.png" alt="Logo" class="md:h-16 ml-7 h-14"/>
         </a>
     </div>
 
@@ -71,7 +72,7 @@
     <?php endif; ?>
 </nav>
 
-<div id="myNav" class="fixed md:hidden flex-col bg-white/30 backdrop-blur w-full h-[35vh] z-50 top-16">
+<div id="myNav" class="bg-white/30 fixed invisible md:visible md:hidden flex-col backdrop-blur w-full h-[35vh] z-50 top-16">
     <a class="absolute right-8 top-8 cursor-pointer" onclick="closeOverlay()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
             <path d="M19.0005 4.99988L5.00049 18.9999M5.00049 4.99988L19.0005 18.9999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -125,14 +126,16 @@
 
     </div>
 </div>
-
-<div class="text-center lg:h-[90vh] md:h-[80vh] h-[90vh]">
-    <img src="../../../public/assets/index/IMG_7284.png" class="lg:h-[90vh] md:h-[80vh] w-full object-cover absolute z-0" alt="urbas 24">
-    <h3 class="relative xl:top-36 lg:top-48 text-[#F15E2C] ">Mới ra mắt</h3>
-    <h1 class="relative text-8xl xl:top-40 lg:top-52 font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
-    <h3 class="relative lg:top-[44rem] md:top-[35rem] mb-10">Giao hàng từ 15.12.2024</h3>
+<!-- <<<<<<<<<<<<<<<<Navigation Bar ends>>>>>>>>>>>>>>>> -->
+<div class="text-center 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[80vh] h-[600px] w-screen">
+    <img src="../../../public/assets/index/IMG_7284.png" class="2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[80vh] h-[600px] hidden md:block w-full object-cover absolute z-0" alt="urbas 24">
+    <img src="../../../public/assets/index/IMG_7284_1.png" class="md:hidden block h-[600px] w-full object-cover absolute z-0" alt="urbas 24">
+    <h3 class="relative lg:top-[120px] md:top-[110px] top-[90px] text-[#F15E2C]">Mới ra mắt</h3>
+    <h1 class="relative lg:text-8xl md:text-7xl text-5xl xl:top-[140px] lg:top-[120px] md:top-[120px] top-[100px] font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
+    <h3 class="relative 2xl:top-[680px] xl:top-[580px] lg:top-[500px] md:top-[400px] top-[380px] text-sm md:text-md mb-10">Giao hàng từ 15.12.2024</h3>
     <button type="button" class="relative bg-gradient-to-r from-[#F15E2C]
-    from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-12 lg:top-[43rem] md:top-[34rem]">Đặt trước</button>
+    from-0% to-[#F15E2C] to-100% text-white rounded-md md:rounded-lg text-sm md:text-md
+    md:py-3 md:px-12 px-8 py-2 2xl:top-[650px] xl:top-[550px] lg:top-[470px] md:top-[380px] top-[350px]">Đặt trước</button>
 </div>
 
 <!--Nổi bật-->
@@ -280,6 +283,7 @@
 <script>
     let div = document.getElementById("myNav");
     let mbOverlay = document.getElementById("mobileNav");
+
     let flag = 0;
 
     function openOverlay() {
