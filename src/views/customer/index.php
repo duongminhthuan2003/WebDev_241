@@ -127,13 +127,14 @@
     </div>
 </div>
 <!-- <<<<<<<<<<<<<<<<Navigation Bar ends>>>>>>>>>>>>>>>> -->
-<div class="text-center 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[80vh] h-[600px] w-screen">
-    <img src="../../../public/assets/index/IMG_7284.png" class="2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[80vh] h-[600px] hidden md:block w-full object-cover absolute z-0" alt="urbas 24">
+<div class="text-center 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] w-screen">
+    <img src="../../../public/assets/index/IMG_7284.png" class="2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] hidden md:block w-full object-cover absolute z-0" alt="urbas 24">
     <img src="../../../public/assets/index/IMG_7284_1.png" class="md:hidden block h-[600px] w-full object-cover absolute z-0" alt="urbas 24">
     <h3 class="relative lg:top-[120px] md:top-[110px] top-[90px] text-[#F15E2C]">Mới ra mắt</h3>
     <h1 class="relative lg:text-8xl md:text-7xl text-5xl xl:top-[140px] lg:top-[120px] md:top-[120px] top-[100px] font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
     <h3 class="relative 2xl:top-[680px] xl:top-[580px] lg:top-[500px] md:top-[400px] top-[380px] text-sm md:text-md mb-10">Giao hàng từ 15.12.2024</h3>
     <button type="button" class="relative bg-gradient-to-r from-[#F15E2C]
+    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300
     from-0% to-[#F15E2C] to-100% text-white rounded-md md:rounded-lg text-sm md:text-md
     md:py-3 md:px-12 px-8 py-2 2xl:top-[650px] xl:top-[550px] lg:top-[470px] md:top-[380px] top-[350px]">Đặt trước</button>
 </div>
@@ -176,12 +177,12 @@
 </div>
 
 <!--Vintas Vivu-->
-<div class="w-full bg-[#BCA984] h-[80vh] mt-20 flex flex-row">
-    <div class="w-2/5 h-full">
-        <img src="/assets/index/vintas_vivu1.jpg" class="h-full w-full object-cover">
+<div class="w-full bg-[#BCA984] 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] mt-20 flex flex-row">
+    <div class="w-2/5 h-full hidden md:block">
+        <img src="/assets/index/vintas_vivu1.jpg" class="h-full w-full hidden md:block object-cover">
     </div>
     
-    <div class="w-3/5 h-full flex flex-col">
+    <div class="w-full md:w-3/5 h-full flex flex-col">
         <div class="w-full h-2/3">
             <img src="/assets/index/vintas_vivu2.jpeg" class="h-full w-full object-cover">
         </div>
@@ -190,7 +191,7 @@
             <div class="w-4/5 h-full flex">
                 <div class=" ml-10 my-auto">
                     <img src="/assets/logo-white.png" class="w-24 h-10 object-cover">
-                    <h1 class="font-[Bayon] text-white text-8xl">VINTAS VIVU</h1>
+                    <h1 class="font-[Bayon] text-white lg:text-8xl md:text-7xl text-6xl">VINTAS VIVU</h1>
                     <h3 class="text-white my-1">Giá chỉ từ 610.000 VNĐ</h3>
                     <button class="text-[14px] mt-2 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-6
                hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Mua ngay</button>
@@ -210,11 +211,11 @@
 </div>
 
 <!--Basas RAW-->
-<div class="w-full bg-[#ECE4D7] lg:h-[75vh] 2xl:h-[90vh] md:h-[60vh] flex flex-col">
-    <div class="w-auto h-auto flex flex-row mt-[2vw] mx-auto">
-        <img src="/assets/index/raw1.jpg" class="w-[30vw] h-[30vw]">
-        <img src="/assets/index/raw2.jpg" class="w-[30vw] h-[30vw] mx-[2vw]">
-        <img src="/assets/index/raw3.jpg" class="w-[30vw] h-[30vw]">
+<div class="w-full bg-[#ECE4D7] 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-fit flex md:flex-col flex-row">
+    <div class="w-auto h-auto flex md:flex-row flex-col mt-[2vw] mx-auto">
+        <img src="../../../public/assets/index/raw1.jpg" class="w-[30vw] h-[30vw]">
+        <img src="../../../public/assets/index/raw2.jpg" class="w-[30vw] h-[30vw] md:mx-[2vw] ">
+        <img src="../../../public/assets/index/raw3.jpg" class="w-[30vw] h-[30vw]">
     </div>
 
     <div class=" flex flex-col text-center h-full align-middle w-auto">
