@@ -28,7 +28,7 @@
             w-full border-white fixed backdrop-blur z-30">
     <div class="w-3/12">
         <a href="index.php">
-            <img src="../../../public/assets/logo-black.png" alt="Logo" class="md:h-16 ml-7 h-14"/>
+            <img src="/assets/logo-black.png" alt="Logo" class="md:h-16 ml-7 h-14"/>
         </a>
     </div>
 
@@ -81,22 +81,22 @@
     <div class="flex my-auto mx-auto">
         <div class="mx-8 flex flex-row space-x-[2vw]">
             <a href="#" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NAM</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NỮ</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">ÁO</div>
             </a>
 
             <a href="#" class="flex flex-col bg-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
-                <img src="../../../public/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
+                <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">PHỤ KIỆN</div>
             </a>
         </div>
