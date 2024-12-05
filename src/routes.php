@@ -18,5 +18,6 @@ $routes = [
     'payment/updatedefaultbank' => ['controller' => 'PaymentController', 'action' => 'updatedefaultbank'],
     'payment/deletecard' => ['controller' => 'PaymentController', 'action' => 'deleteCard'],
     'payment/deletebank' => ['controller' => 'PaymentController', 'action' => 'deleteBank'],
+    'dashboard' => ['controller' => 'DashBoardController', 'action' => 'getall']
 ];
 
