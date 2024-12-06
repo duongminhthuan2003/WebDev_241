@@ -28,7 +28,7 @@
             w-full border-white fixed backdrop-blur z-30">
     <div class="w-3/12">
         <a href="index.php">
-            <img src="/assets/logo-black.png" alt="Logo" class="md:h-16 ml-7 h-14"/>
+            <img src="../../../public/assets/logo-black.png" alt="Logo" class="md:h-16 md:ml-7 ml-4 h-12"/>
         </a>
     </div>
 
@@ -63,8 +63,8 @@
                 <a href="/register" class="flex my-auto"><button type="button" class="text-[13px] mr-5 lg:block hidden hover:text-[#F15E2C] duration-300">Đăng ký</button></a>
                 <a href="login.php"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
                 hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] hover:scale-105 duration-300">Đăng nhập</button></a>
-                <button class="mr-7 md:hidden block" onclick="mobileOverlay()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                <button class="mr-4 md:hidden block" onclick="mobileOverlay()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="scale-75">
                         <path d="M4 5L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -186,17 +186,18 @@
     
     <div class="w-full md:w-3/5 h-full flex flex-col">
         <div class="w-full h-2/3">
-            <img src="/assets/index/vintas_vivu2.jpeg" class="h-full w-full object-cover">
+            <img src="/assets/index/vintas_vivu2.jpeg" class="md:h-full h-[300px] w-full object-cover">
         </div>
 
-        <div class="w-full h-1/3 flex flex-row">
+        <div class="w-full md:h-1/3 h-full flex flex-row">
             <div class="w-4/5 h-full flex">
                 <div class=" ml-10 my-auto">
                     <img src="/assets/logo-white.png" class="w-24 h-10 object-cover">
                     <h1 class="font-[Bayon] text-white lg:text-8xl md:text-7xl text-6xl">VINTAS VIVU</h1>
                     <h3 class="text-white my-1">Giá chỉ từ 610.000 VNĐ</h3>
-                    <button class="text-[14px] mt-2 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-6
-               hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Mua ngay</button>
+                    <button class="text-[14px] mt-2 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white py-3
+                    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300
+                    rounded-md md:rounded-lg text-sm md:text-md md:py-3 md:px-12 px-6">Mua ngay</button>
                 </div>
             </div>
 
@@ -214,74 +215,77 @@
 
 <!--Basas RAW-->
 <div class="w-full bg-[#ECE4D7] 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-fit flex md:flex-col flex-row">
-    <div class="w-auto h-auto flex md:flex-row flex-col mt-[2vw] mx-auto">
-        <img src="../../../public/assets/index/raw1.jpg" class="w-[30vw] h-[30vw]">
-        <img src="../../../public/assets/index/raw2.jpg" class="w-[30vw] h-[30vw] md:mx-[2vw] ">
-        <img src="../../../public/assets/index/raw3.jpg" class="w-[30vw] h-[30vw]">
+    <div class="md:w-auto w-1/2 flex md:flex-row flex-col md:mt-[2vw] md:mx-auto m-3 md:space-y-0 space-y-3">
+        <img src="../../../public/assets/index/raw1.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
+        <img src="../../../public/assets/index/raw2.jpg" class="md:w-[30vw] md:h-[30vw] md:mx-[2vw] w-full">
+        <img src="../../../public/assets/index/raw3.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
     </div>
 
-    <div class=" flex flex-col text-center h-full align-middle w-auto">
+    <div class="sm:w-auto w-1/2 flex flex-col text-center align-middle my-auto mr-2 md:mr-0">
         <div class="my-auto top-0 bottom-0">
-            <h3 class="font-bold text-2xl">ANANAS BASAS RAW</h3>
-            <h1 class="raw_title text-6xl mt-8">NGUYÊN BẢN TRONG TỪNG BƯỚC CHÂN</h1>
-            <h3 class="text-xl mt-8">Giá chỉ từ 620.000 VNĐ</h3>
+            <h3 class="font-bold md:text-2xl text-sm">ANANAS BASAS RAW</h3>
+            <h1 class="raw_title md:text-6xl text-3xl mt-8">NGUYÊN BẢN TRONG TỪNG BƯỚC CHÂN</h1>
+            <h3 class="md:text-xl text-sm mt-8">Giá chỉ từ: 620.000 VNĐ</h3>
             <button class="text-[14px] mt-7 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-6
                hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">Mua ngay</button>
         </div>
     </div>
 </div>
 
-<footer class="flex w-full bg-white h-[400px]">
-    <div class="my-auto top-0 bottom-0 w-full">
-        <div class="flex flex-row w-9/12 mx-auto align-middle">
-            <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
-            <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
-        </div>
-
-        <div class="flex flex-row w-9/12 mx-auto mt-5">
-            <div class="w-1/5 space-y-3">
-                <p><strong>SẢN PHẨM</strong></p>
-                <p class="text-sm text-[#888888]">Giày nam</p>
-                <p class="text-sm text-[#888888]">Giày nữ</p>
-                <p class="text-sm text-[#888888]">Thời trang & phụ kiện</p>
-                <p class="text-sm text-[#888888]">Sale-off</p>
+<footer class="flex flex-col justify-end w-full">
+    <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
+        <div class="my-auto top-0 bottom-0 w-full">
+            <div class="flex flex-row w-9/12 mx-auto align-middle">
+                <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
+                <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
-            <div class="w-1/5 space-y-3">
-                <p><strong>VỀ ANANAS</strong></p>
-                <p class="text-sm text-[#888888]">Tuyển dụng</p>
-                <p class="text-sm text-[#888888]">Giới thiệu</p>
-            </div>
-
-            <div class="w-1/5 space-y-3">
-                <p><strong>HỖ TRỢ</strong></p>
-                <p class="text-sm text-[#888888]">FAQs</p>
-                <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
-                <p class="text-sm text-[#888888]">Chính sách chung</p>
-                <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
-            </div>
-
-            <div class="w-2/5">
-                <p><strong>LIÊN HỆ</strong></p>
-                <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
-                <div class="flex flex-row space-x-4 mt-3">
-                    <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
-                    <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
-                    <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+            <div class="flex flex-row w-9/12 mx-auto mt-5">
+                <div class="w-1/5 space-y-3">
+                    <p><strong>SẢN PHẨM</strong></p>
+                    <p class="text-sm text-[#888888]">Giày nam</p>
+                    <p class="text-sm text-[#888888]">Giày nữ</p>
+                    <p class="text-sm text-[#888888]">Thời trang & phụ kiện</p>
+                    <p class="text-sm text-[#888888]">Sale-off</p>
                 </div>
 
-                <div class="flex space-x-2 flex-row mt-7">
-                    <p><strong>HỆ THỐNG CỬA HÀNG</strong></p>
+                <div class="w-1/5 space-y-3">
+                    <p><strong>VỀ ANANAS</strong></p>
+                    <p class="text-sm text-[#888888]">Tuyển dụng</p>
+                    <p class="text-sm text-[#888888]">Giới thiệu</p>
+                </div>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none" class="flex my-auto top-0 bottom-0">
-                        <path d="M0.467209 12.0185C0.172957 12.3101 0.172957 12.7827 0.467209 13.0742C0.761461 13.3658 1.23854 13.3658 1.53279 13.0742L0.467209 12.0185ZM12.7535 1.64824C12.7535 1.23596 12.4161 0.901737 12 0.901736L5.21868 0.901736C4.80254 0.901736 4.4652 1.23596 4.4652 1.64824C4.4652 2.06052 4.80254 2.39474 5.21868 2.39474H11.2465V8.36677C11.2465 8.77905 11.5839 9.11328 12 9.11328C12.4161 9.11328 12.7535 8.77905 12.7535 8.36677L12.7535 1.64824ZM1.53279 13.0742L12.5328 2.1761L11.4672 1.12038L0.467209 12.0185L1.53279 13.0742Z" fill="#F15E2C"/>
-                    </svg>
+                <div class="w-1/5 space-y-3">
+                    <p><strong>HỖ TRỢ</strong></p>
+                    <p class="text-sm text-[#888888]">FAQs</p>
+                    <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
+                    <p class="text-sm text-[#888888]">Chính sách chung</p>
+                    <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
+                </div>
+
+                <div class="w-2/5">
+                    <p><strong>LIÊN HỆ</strong></p>
+                    <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
+                    <div class="flex flex-row space-x-4 mt-3">
+                        <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+                    </div>
+
+                    <div class="flex space-x-2 flex-row mt-7">
+                        <p><strong>HỆ THỐNG CỬA HÀNG</strong></p>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none" class="flex my-auto top-0 bottom-0">
+                            <path d="M0.467209 12.0185C0.172957 12.3101 0.172957 12.7827 0.467209 13.0742C0.761461 13.3658 1.23854 13.3658 1.53279 13.0742L0.467209 12.0185ZM12.7535 1.64824C12.7535 1.23596 12.4161 0.901737 12 0.901736L5.21868 0.901736C4.80254 0.901736 4.4652 1.23596 4.4652 1.64824C4.4652 2.06052 4.80254 2.39474 5.21868 2.39474H11.2465V8.36677C11.2465 8.77905 11.5839 9.11328 12 9.11328C12.4161 9.11328 12.7535 8.77905 12.7535 8.36677L12.7535 1.64824ZM1.53279 13.0742L12.5328 2.1761L11.4672 1.12038L0.467209 12.0185L1.53279 13.0742Z" fill="#F15E2C"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="h-10 w-full bg-[#F15E2C]"></div>
 </footer>
-<div class="h-10 w-full bg-[#F15E2C]"></div>
 
 <script>
     let div = document.getElementById("myNav");
