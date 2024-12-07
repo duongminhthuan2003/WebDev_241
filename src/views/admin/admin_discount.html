@@ -58,22 +58,28 @@
       <p>Ngày dd, tháng mm năm yyyy</p>
     </div>
 
-    <div class="w-11/12 flex mx-auto mt-8">
+    <div class="w-11/12 flex flex-col mx-auto mt-8">
+      <button class="px-5 py-2 bg-Cam_Ananas mb-2">Thêm</button>
+
       <table class="w-full border-collapse border border-gray-300 text-black bg-white">
         <tr class="border-2">
-          <th class="border border-gray-300">Mã khuyến mãi</th>
-          <th class="border border-gray-300">Số lượng</th>
-          <th class="border border-gray-300">Số lượt dùng còn lại</th>
-          <th class="border border-gray-300">Ngày hết hạn</th>
-          <th class="border border-gray-300"></th>
+          <th class="border border-gray-300 w-2/12">Mã khuyến mãi</th>
+          <th class="border border-gray-300 w-1/12">Số lượng</th>
+          <th class="border border-gray-300 w-1/12">Số lượt dùng còn lại</th>
+          <th class="border border-gray-300 w-2/12">Ngày hết hạn</th>
+          <th class="border border-gray-300 w-1/12">Giá trị (%)</th>
+          <th class="border border-gray-300 w-auto">Ghi chú</th>
+          <th class="border border-gray-300 w-2/12"></th>
         </tr>
 
-        <tr>
+        <tr class="border-2">
           <td class="border border-gray-300">ABCD1234</td>
           <td class="border border-gray-300">500</td>
           <td class="border border-gray-300">213</td>
           <td class="border border-gray-300 mx-auto">dd.mm.yyyy</td>
-          <td class="border border-gray-300 flex justify-center space-x-5"><button>Chỉnh sửa</button><button>Xóa</button></td>
+          <td class="border border-gray-300">10</td>
+          <td class="border border-gray-300">Mã giảm 10% dịp Giáng sinh</td>
+          <td class="flex space-x-5 my-auto "><button>Chỉnh sửa</button><button>Xóa</button></td>
         </tr>
       </table>
     </div>
