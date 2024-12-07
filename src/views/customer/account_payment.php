@@ -1,3 +1,13 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    // Kiểm tra quyền truy cập
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
+        header('Location: /');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,55 +24,32 @@
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-<nav class="bg-white/30 flex flex-row items-center text-sm
-                        shadow-navBar w-full border-white backdrop-blur z-50">
-    <div class="md:w-1/5 w-1/2">
-        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
-    </div>
-
-    <div class="w-3/5 align-middle">
-        <ul class="md:flex flex-row justify-center space-x-12 hidden">
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
-        </ul>
-    </div>
-
-    <?php
-        if (isset($_SESSION['user_id'])):
-            if ($_SESSION['role'] == 'customer'):
-                echo("I'm customer");
-            else:
-                echo("I'm admin");
-            endif;
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['user_id'])):
+        if ($_SESSION['role'] == 'customer'):
+           include 'header_da_dangnhap.php';
         else:
-    ?>
-        <div class="w-1/5 flex justify-end">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="scale-75 mr-4 flex my-auto top-0 bottom-0">
-                <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-            </svg>
-            <a href="/register"><button type="button" class="text-[13px] mr-5 lg:block hidden">Đăng ký</button></a>
-            <a href="/login"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
-                    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">
-                    Đăng nhập
-            </button></a>
-        </div>
-    <?php endif; ?>
-</nav>
+            header('Location: /dashboard');
+        endif;
+    else:
+        include 'header_chua_dangnhap.php';
+    endif;
+?>
 
 <div class="flex-grow">
     <div class="flex flex-row w-9/12 mx-auto mt-8">
         <div class="flex flex-col items-start w-3/12 mr-6">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin tài khoản</a>
+            <a class="px-4 mt-8" href="/info">Thông tin tài khoản</a>
             <a class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg">Phương thức thanh toán</a>
-            <a class="px-4 mt-8">Đơn hàng của tôi</a>
+            <a class="px-4 mt-8" href="/orderhistory">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
-            <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
+            <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
         </div>
     
         <div class="w-9/12">
@@ -96,10 +83,10 @@
                 </div>
 
                 <div class="flex w-3/12 justify-end">
-                    <a href="/payment/deletecard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                    <a href="/accountpayment/deletecard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
                         <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
                     </a>
-                    <a href="/payment/updatedefaultcard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                    <a href="/accountpayment/updatedefaultcard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
                         <button class="text-sm underline">Làm mặc định</button>
                     </a>
                 </div>
@@ -130,10 +117,10 @@
                     </div>
 
                     <div class="flex w-3/12 justify-end">
-                    <a href="/payment/deletebank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                    <a href="/accountpayment/deletebank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
                         <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
                     </a>
-                    <a href="/payment/updatedefaultbank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                    <a href="/accountpayment/updatedefaultbank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
                         <button class="text-sm underline">Làm mặc định</button>
                     </a>
                 </div>

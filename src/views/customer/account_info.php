@@ -1,3 +1,13 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    // Kiểm tra quyền truy cập
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
+        header('Location: /');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,43 +22,20 @@
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-<nav class="bg-white/30 flex flex-row items-center text-sm
-                        shadow-navBar w-full border-white backdrop-blur z-50">
-    <div class="md:w-1/5 w-1/2">
-        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
-    </div>
-
-    <div class="w-3/5 align-middle">
-        <ul class="md:flex flex-row justify-center space-x-12 hidden">
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
-        </ul>
-    </div>
-
-    <?php
-        if (isset($_SESSION['user_id'])):
-            if ($_SESSION['role'] == 'customer'):
-                echo("I'm customer");
-            else:
-                echo("I'm admin");
-            endif;
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['user_id'])):
+        if ($_SESSION['role'] == 'customer'):
+           include 'header_da_dangnhap.php';
         else:
-    ?>
-        <div class="w-1/5 flex justify-end">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="scale-75 mr-4 flex my-auto top-0 bottom-0">
-                <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-            </svg>
-            <a href="/register"><button type="button" class="text-[13px] mr-5 lg:block hidden">Đăng ký</button></a>
-            <a href="/login"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
-                    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">
-                    Đăng nhập
-            </button></a>
-        </div>
-    <?php endif; ?>
-</nav>
+            header('Location: /dashboard');
+        endif;
+    else:
+        include 'header_chua_dangnhap.php';
+    endif;
+?>
 
 <div class="flex-grow">
     <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-8">
@@ -56,8 +43,8 @@
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
             <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Thông tin tài khoản</a></div>
-            <a class="px-4 mt-8">Phương thức thanh toán</a>
-            <a class="px-4 mt-8">Đơn hàng của tôi</a>
+            <a class="px-4 mt-8" href="/accountpayment">Phương thức thanh toán</a>
+            <a class="px-4 mt-8" href="/orderhistory">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
             <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
@@ -84,7 +71,7 @@
         <!--End mobile account navigation-->
 
         <div class="flex lg:flex-row flex-col w-full">
-            <img src="../../../public/assets/account/Sequoia-Sunrise.png" alt="Account Image" class="lg:h-28 lg:w-28 lg:mr-6 my-auto aspect-square object-cover rounded-full
+            <img src="/assets/account/Sequoia-Sunrise.png" alt="Account Image" class="lg:h-28 lg:w-28 lg:mr-6 my-auto aspect-square object-cover rounded-full
             h-32 mx-auto w-32">
             <div class="w-5/12 mx-auto text-center mt-5 mb-5 md:my-auto md:text-left">
                 <p class="text-2xl font-semibold"><?= htmlspecialchars($data[0]['fullname']); ?></p>
@@ -119,8 +106,8 @@
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
-                <img src="../../../public/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
-                <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
+                <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
+                <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
             <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-5">
@@ -153,9 +140,9 @@
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
-                        <img src="../../../public/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
                     </div>
 
                     <div class="flex space-x-2 flex-row mt-7">
