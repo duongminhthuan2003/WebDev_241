@@ -1127,6 +1127,10 @@ video {
   min-height: 100vh;
 }
 
+.w-1\/12{
+  width: 8.333333%;
+}
+
 .w-1\/2{
   width: 50%;
 }
@@ -1169,6 +1173,10 @@ video {
 
 .w-2{
   width: 0.5rem;
+}
+
+.w-2\/12{
+  width: 16.666667%;
 }
 
 .w-2\/3{
@@ -1839,6 +1847,11 @@ video {
 .bg-yellow-400{
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50{
