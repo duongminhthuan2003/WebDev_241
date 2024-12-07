@@ -54,34 +54,48 @@
 
   <div class="w-4/5 bg-back_admin text-white">
     <div class="w-11/12 mx-auto mt-8">
-      <p class="font-bold text-3xl">MÃ KHUYẾN MÃI</p>
+      <p class="font-bold text-3xl">MÃ KHUYẾN MÃI > Thêm mã khuyến mãi</p>
       <p>Ngày dd, tháng mm năm yyyy</p>
     </div>
 
     <div class="w-11/12 flex flex-col mx-auto mt-8">
-      <a href="admin_discount_add.html" class="flex ml-auto mr-0 "><button class="px-5 py-2 bg-Cam_Ananas mb-2 rounded">Thêm</button></a>
+      <form class="space-y-3">
+        <!--Mã khuyến mãi và số lượng-->
+        <div class="flex w-full space-x-3">
+          <div class="w-1/2">
+            <label for="dis_code">Mã khuyến mãi:</label><br>
+            <input type="text" id="dis_code" name="discount" class="w-full text-black px-3 py-2 rounded"><br>
+          </div>
+          <div class="w-1/2">
+            <label for="dis_num">Số lượng:</label><br>
+            <input type="number" id="dis_num" name="discount" class="w-full text-black px-3 py-2 rounded"><br>
+          </div>
+        </div>
 
-      <table class="w-full border-collapse border border-gray-300 text-black bg-white">
-        <tr class="border-2">
-          <th class="border border-gray-300 w-2/12">Mã khuyến mãi</th>
-          <th class="border border-gray-300 w-1/12">Số lượng</th>
-          <th class="border border-gray-300 w-1/12">Số lượt dùng còn lại</th>
-          <th class="border border-gray-300 w-2/12">Ngày hết hạn</th>
-          <th class="border border-gray-300 w-1/12">Giá trị (%)</th>
-          <th class="border border-gray-300 w-auto">Ghi chú</th>
-          <th class="border border-gray-300 w-2/12"></th>
-        </tr>
+        <!--Ngày hết hạn và giá trị của mã-->
+        <div class="flex w-full space-x-3">
+          <div class="w-1/2 ">
+            <label for="dis_date">Ngày hết hạn:</label><br>
+            <input type="date" id="dis_date" name="discount" class="w-full text-black px-3 py-2 rounded"><br>
+          </div>
+          <div class="w-1/2">
+            <label for="dis_val">Giá trị:</label><br>
+            <input type="number" id="dis_val" name="discount" class="w-full text-black px-3 py-2 rounded"><br>
+          </div>
+        </div>
 
-        <tr class="border-2">
-          <td class="border border-gray-300">ABCD1234</td>
-          <td class="border border-gray-300">500</td>
-          <td class="border border-gray-300">213</td>
-          <td class="border border-gray-300 mx-auto">dd.mm.yyyy</td>
-          <td class="border border-gray-300">10</td>
-          <td class="border border-gray-300">Mã giảm 10% dịp Giáng sinh</td>
-          <td class="flex space-x-5 my-auto "><button>Chỉnh sửa</button><button>Xóa</button></td>
-        </tr>
-      </table>
+        <div>
+          <label for="dis_note">Ghi chú:</label><br>
+          <textarea type="text" id="dis_note" name="discount" class="w-full text-black px-3 py-2 rounded"></textarea>
+        </div>
+
+        <div class="flex mt-5 space-x-3">
+          <a href="admin_discount.html"><button type="button" class="py-2 px-5  bg-[#FF4141]  rounded">Hủy</button></a>
+          <div class="flex-grow"></div>
+          <button type="reset" class="py-2 px-5 rounded">Đặt lại</button>
+          <button type="submit" class="py-2 px-5 bg-green-600 rounded">Lưu</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
