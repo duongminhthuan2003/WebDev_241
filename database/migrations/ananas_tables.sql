@@ -44,13 +44,14 @@ CREATE TABLE IF NOT EXISTS blogs (
 CREATE TABLE IF NOT EXISTS user_cards (
   card_id SMALLINT NOT NULL AUTO_INCREMENT,
   user_id SMALLINT NOT NULL,
-  card_holder_name varchar(255) NOT NULL,
-  card_type varchar(255) NOT NULL,
-  card_branch varchar(255) NOT NULL,
-  last_4_digits char(4) NOT NULL,
-  encrypted_card_number varchar(255) NOT NULL,
-  expired_date date NOT NULL,
-  status ENUM('enable', 'disable') NOT NULL,
+  card_holder_name VARCHAR(255) NOT NULL,
+  card_type ENUM('Credit', 'Debit') NOT NULL,
+  card_branch ENUM('Visa', 'MasterCard') NOT NULL,
+  last_4_digits CHAR(4) NOT NULL,
+  encrypted_card_number VARCHAR(255) NOT NULL,
+  expired_date DATE NOT NULL,
+  status BOOLEAN DEFAULT FALSE,
+  is_default BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (card_id),
   CONSTRAINT fk_usercard_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
@@ -63,7 +64,8 @@ CREATE TABLE IF NOT EXISTS user_bank_accounts (
   bank_code int(10) NOT NULL,
   last_4_digits char(4) NOT NULL,
   encrypted_bank_account_number varchar(255) NOT NULL,
-  status ENUM('enable', 'disable') NOT NULL,
+  status BOOLEAN DEFAULT FALSE,
+  is_default BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (bank_id),
   CONSTRAINT fk_bankaccount_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
@@ -177,6 +179,7 @@ CREATE TABLE IF NOT EXISTS payment_types (
 CREATE TABLE IF NOT EXISTS orders (
   order_id SMALLINT NOT NULL AUTO_INCREMENT,
   user_id SMALLINT,
+  shipping_address_id SMALLINT DEFAULT NULL,
   payment_type_id SMALLINT,
   order_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (order_id),
@@ -219,7 +222,15 @@ CREATE TABLE IF NOT EXISTS user_reviews (
   ordered_item_id SMALLINT NOT NULL,
   rating ENUM('1', '2', '3', '4', '5') NOT NULL,
   content text NOT NULL,
+  created_at datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (user_review_id),
   CONSTRAINT fk_userreview_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
   CONSTRAINT fk_userreview_orderitem FOREIGN KEY (ordered_item_id) REFERENCES order_items(order_item_id) ON DELETE CASCADE
+);
+
+CREATE TABLE visits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    visit_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ip_address VARCHAR(45),
+    user_agent TEXT
 );
