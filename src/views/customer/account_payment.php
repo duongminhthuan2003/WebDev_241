@@ -17,14 +17,14 @@
 <nav class="bg-white/30 flex flex-row items-center text-sm
                         shadow-navBar w-full border-white backdrop-blur z-50">
     <div class="md:w-1/5 w-1/2">
-        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        <a href="/"><img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/></a>
     </div>
 
     <div class="w-3/5 align-middle">
         <ul class="md:flex flex-row justify-center space-x-12 hidden">
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
+            <li><a href="/news" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
         </ul>
     </div>
@@ -57,12 +57,12 @@
         <div class="flex flex-col items-start w-3/12 mr-6">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin tài khoản</a>
+            <a class="px-4 mt-8" href="/info">Thông tin tài khoản</a>
             <a class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg">Phương thức thanh toán</a>
-            <a class="px-4 mt-8">Đơn hàng của tôi</a>
+            <a class="px-4 mt-8" href="/orderhistory">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
-            <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
+            <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
         </div>
     
         <div class="w-9/12">

@@ -15,14 +15,14 @@
 <nav class="bg-white/30 flex flex-row items-center text-sm
                         shadow-navBar w-full border-white backdrop-blur z-50">
     <div class="md:w-1/5 w-1/2">
-        <img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/>
+        <a href="/"><img src="/assets/logo-black.png" alt="Logo" class="h-16 ml-7"/></a>
     </div>
 
     <div class="w-3/5 align-middle">
         <ul class="md:flex flex-row justify-center space-x-12 hidden">
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SẢN PHẨM</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
+            <li><a href="/news" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
         </ul>
     </div>
@@ -56,8 +56,8 @@
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
             <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Thông tin tài khoản</a></div>
-            <a class="px-4 mt-8">Phương thức thanh toán</a>
-            <a class="px-4 mt-8">Đơn hàng của tôi</a>
+            <a class="px-4 mt-8" href="/accountpayment">Phương thức thanh toán</a>
+            <a class="px-4 mt-8" href="/orderhistory">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
             <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
@@ -84,7 +84,7 @@
         <!--End mobile account navigation-->
 
         <div class="flex lg:flex-row flex-col w-full">
-            <img src="../../../public/assets/account/Sequoia-Sunrise.png" alt="Account Image" class="lg:h-28 lg:w-28 lg:mr-6 my-auto aspect-square object-cover rounded-full
+            <img src="/assets/account/Sequoia-Sunrise.png" alt="Account Image" class="lg:h-28 lg:w-28 lg:mr-6 my-auto aspect-square object-cover rounded-full
             h-32 mx-auto w-32">
             <div class="w-5/12 mx-auto text-center mt-5 mb-5 md:my-auto md:text-left">
                 <p class="text-2xl font-semibold"><?= htmlspecialchars($data[0]['fullname']); ?></p>
@@ -119,8 +119,8 @@
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
-                <img src="../../../public/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
-                <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
+                <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
+                <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
             <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-5">
@@ -153,9 +153,9 @@
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
-                        <img src="../../../public/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
                     </div>
 
                     <div class="flex space-x-2 flex-row mt-7">

@@ -57,8 +57,8 @@
         <div class="flex flex-col items-start w-3/12 mr-6">
             <div class="text-3xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin tài khoản</a>
-            <a class="px-4 mt-8">Phương thức thanh toán</a>
+            <a class="px-4 mt-8" href="/info">Thông tin tài khoản</a>
+            <a class="px-4 mt-8" href="/accountpayment">Phương thức thanh toán</a>
             <a class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg" href="/orderhistory">Đơn hàng của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 

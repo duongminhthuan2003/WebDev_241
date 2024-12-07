@@ -28,7 +28,7 @@
             w-full border-white fixed backdrop-blur z-30">
     <div class="w-3/12">
         <a href="index.php">
-            <img src="../../../public/assets/logo-black.png" alt="Logo" class="md:h-16 md:ml-7 ml-4 h-12"/>
+            <img src="/assets/logo-black.png" alt="Logo" class="md:h-16 md:ml-7 ml-4 h-12"/>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
         <ul class="md:flex flex-row justify-center lg:space-x-12 space-x-8 hidden">
             <li class="hover:text-[#F15E2C] cursor-pointer transition-all" id="product" onclick="openOverlay()">SẢN PHẨM</li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">SALE-OFF</a></li>
-            <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
+            <li><a href="/news" class="hover:text-[#F15E2C] cursor-pointer transition-all">TIN TỨC</a></li>
             <li><a href="" class="hover:text-[#F15E2C] cursor-pointer transition-all">GIỚI THIỆU</a></li>
         </ul>
     </div>
@@ -61,7 +61,7 @@
                     </svg>
                 </button>
                 <a href="/register" class="flex my-auto"><button type="button" class="text-[13px] mr-5 lg:block hidden hover:text-[#F15E2C] duration-300">Đăng ký</button></a>
-                <a href="login.php"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
+                <a href="/login"><button type="button" class="text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
                 hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] hover:scale-105 duration-300">Đăng nhập</button></a>
                 <button class="mr-4 md:hidden block" onclick="mobileOverlay()">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="scale-75">
@@ -109,11 +109,11 @@
     <div class="flex flex-col my-16 space-y-9 w-9/12 mx-auto">
         <a class="font-bold text-lg">SẢN PHẨM</a>
         <a class="font-bold text-lg">SALE-OFF</a>
-        <a class="font-bold text-lg">TIN TỨC</a>
+        <a href="/news" class="font-bold text-lg">TIN TỨC</a>
         <a class="font-bold text-lg">GIỚI THIỆU</a>
         <div class="flex space-x-5">
-            <button class="w-1/2 bg-white h-14 rounded-lg shadow-md">Đăng ký</button>
-            <button class="w-1/2 bg-[#F15E2C] h-14 rounded-lg shadow-md text-white">Đăng nhập</button>
+            <a href="/register"><button class="w-1/2 bg-white h-14 rounded-lg shadow-md">Đăng ký</button></a>
+            <a href="/login"><button class="w-1/2 bg-[#F15E2C] h-14 rounded-lg shadow-md text-white">Đăng nhập</button></a>
         </div>
 
         <div class="flex flex-col justify-end h-full">
@@ -130,8 +130,8 @@
 </div>
 <!-- <<<<<<<<<<<<<<<<Navigation Bar ends>>>>>>>>>>>>>>>> -->
 <div class="text-center 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] w-screen">
-    <img src="../../../public/assets/index/IMG_7284.png" class="2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] hidden md:block w-full object-cover absolute z-0" alt="urbas 24">
-    <img src="../../../public/assets/index/IMG_7284_1.png" class="md:hidden block h-[600px] w-full object-cover absolute z-0" alt="urbas 24">
+    <img src="/assets/index/IMG_7284.png" class="2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[600px] hidden md:block w-full object-cover absolute z-0" alt="urbas 24">
+    <img src="/assets/index/IMG_7284_1.png" class="md:hidden block h-[600px] w-full object-cover absolute z-0" alt="urbas 24">
     <h3 class="relative lg:top-[120px] md:top-[110px] top-[90px] text-[#F15E2C]">Mới ra mắt</h3>
     <h1 class="relative lg:text-8xl md:text-7xl text-5xl xl:top-[140px] lg:top-[120px] md:top-[120px] top-[100px] font-[Bayon]">URBAS LOVE+ 24</h1> <!-- -->
     <h3 class="relative 2xl:top-[680px] xl:top-[580px] lg:top-[500px] md:top-[400px] top-[380px] text-sm md:text-md mb-10">Giao hàng từ 15.12.2024</h3>
@@ -216,9 +216,9 @@
 <!--Basas RAW-->
 <div class="w-full bg-[#ECE4D7] 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-fit flex md:flex-col flex-row">
     <div class="md:w-auto w-1/2 flex md:flex-row flex-col md:mt-[2vw] md:mx-auto m-3 md:space-y-0 space-y-3">
-        <img src="../../../public/assets/index/raw1.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
-        <img src="../../../public/assets/index/raw2.jpg" class="md:w-[30vw] md:h-[30vw] md:mx-[2vw] w-full">
-        <img src="../../../public/assets/index/raw3.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
+        <img src="/assets/index/raw1.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
+        <img src="/assets/index/raw2.jpg" class="md:w-[30vw] md:h-[30vw] md:mx-[2vw] w-full">
+        <img src="/assets/index/raw3.jpg" class="md:w-[30vw] md:h-[30vw] w-full">
     </div>
 
     <div class="sm:w-auto w-1/2 flex flex-col text-center align-middle my-auto mr-2 md:mr-0">
@@ -237,8 +237,8 @@
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
-                <img src="../../../public/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
-                <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
+                <img src="/assets/Logo_Ananas.png" class="h-7 flex my-auto top-0 bottom-0 mr-2" alt="logo">
+                <img src="/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
             <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-5">
@@ -271,9 +271,9 @@
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
-                        <img src="../../../public/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
-                        <img src="../../../public/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/fb_icon.png" alt="Facebook Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/yt_icon.png" alt="Youtube Icon" class="h-5 w-5 opacity-55">
+                        <img src="/assets/index/ig_icon.png" alt="Instagram Icon" class="h-5 w-5 opacity-55">
                     </div>
 
                     <div class="flex space-x-2 flex-row mt-7">
