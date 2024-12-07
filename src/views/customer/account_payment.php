@@ -96,10 +96,10 @@
                 </div>
 
                 <div class="flex w-3/12 justify-end">
-                    <a href="/payment/deletecard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                    <a href="/accountpayment/deletecard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
                         <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
                     </a>
-                    <a href="/payment/updatedefaultcard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
+                    <a href="/accountpayment/updatedefaultcard?card_id=<?= htmlspecialchars($card['card_id']); ?>">
                         <button class="text-sm underline">Làm mặc định</button>
                     </a>
                 </div>
@@ -130,10 +130,10 @@
                     </div>
 
                     <div class="flex w-3/12 justify-end">
-                    <a href="/payment/deletebank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                    <a href="/accountpayment/deletebank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
                         <button class="text-sm mr-3 text-[#FF4141] underline">Xóa</button>
                     </a>
-                    <a href="/payment/updatedefaultbank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
+                    <a href="/accountpayment/updatedefaultbank?bank_id=<?= htmlspecialchars($bank['bank_id']); ?>">
                         <button class="text-sm underline">Làm mặc định</button>
                     </a>
                 </div>

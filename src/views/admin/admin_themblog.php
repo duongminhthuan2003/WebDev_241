@@ -202,8 +202,6 @@
                             </div>
                             <?php if (isset($error)): ?>
                                 <div style="color: red;"><?= htmlspecialchars($error); ?></div>
-                            <?php else: ?>
-                                <div style="color: white;">no error</div>
                             <?php endif; ?>
                             <div class="flex justify-end space-x-2">
                                 <button class="ML_button w-32"

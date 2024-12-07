@@ -36,7 +36,7 @@ class PaymentController {
         $card_id = $_GET['card_id'] ?? null;
 
         $this->paymentModel->updateDefaultCard($user_id, $card_id);
-        header('Location: /payment');
+        header('Location: /accountpayment');
     }
 
     public function updatedefaultbank() {
@@ -47,7 +47,7 @@ class PaymentController {
         $bank_id = $_GET['bank_id'] ?? null;
 
         $this->paymentModel->updateDefaultBank($user_id, $bank_id);
-        header('Location: /payment');
+        header('Location: /accountpayment');
     }
 
     public function deleteCard() {
@@ -58,7 +58,7 @@ class PaymentController {
         $card_id = $_GET['card_id'] ?? null;
 
         $this->paymentModel->deleteUserCard($user_id, $card_id);
-        header('Location: /payment');
+        header('Location: /accountpayment');
     }
 
     public function deleteBank() {
@@ -69,7 +69,7 @@ class PaymentController {
         $bank_id = $_GET['bank_id'] ?? null;
 
         $this->paymentModel->deleteUserBank($user_id, $bank_id);
-        header('Location: /payment');
+        header('Location: /accountpayment');
     } 
     
 }
