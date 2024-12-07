@@ -84,7 +84,27 @@ class CustomerProductController {
         $product_item_id = $_POST['product_item_id'] ?? '';
         $rating = $_POST['rating'] ?? '';
         $content = $_POST['content'] ?? '';
-        $result = $this->productModel->writeReview($user_id, $product_item_id, $rating, $content);
+        if (empty($product_item_id) || empty($rating) || empty($content)) {
+            $error = "Vui lòng nhập đầy đủ thông tin.";
+            include_once __DIR__ . '/../../views/customer/writereview.php';
+            return;
+        }
+        $this->productModel->writeReview($user_id, $product_item_id, $rating, $content);
+        header('Location: /product_list/writereview/'.$product_item_id.'?success=1');
+    }
 
+    public function getLoveItem() {
+        $user_id = $_SESSION['user_id'] ?? '';
+        if (empty($user_id)) {
+            header('Location: /login');
+            exit();
+        }
+        $data = $this->productModel->getAllLoveProduct($user_id)->fetchAll(PDO::FETCH_ASSOC);
+        include_once __DIR__ . '/../../views/customer/love_item.php';
+    }
+
+    public function getSaleProduct() {
+        $data = $this->productModel->getAllSaleProduct()->fetchAll(PDO::FETCH_ASSOC);
+        include_once __DIR__ . '/../../views/customer/sale_off.php';
     }
 }

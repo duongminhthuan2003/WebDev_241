@@ -128,133 +128,118 @@
                             Dòng sản phẩm
                         </div>
                         <ul class="space-y-5 pl-6">
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Basas</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Vintas</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Urbas</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Pattas</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Track 6</label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="font-BeVietnam font-bold ML_text_cam">
-                            Trạng thái
-                        </div>
-                        <ul class="space-y-5 pl-6">
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Limited Edition</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Sale off</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">Pre-oder</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">New Arrival</label>
-                                </div>
-                            </li>
+                            <form method="GET" action="">
+                                <li class="">
+                                    <button type="submit" name="name" value="Basas" class="bg-blue-500 text-white px-4 py-2 rounded">Basas</button>
+                                </li>
+                            </form>
+                            <form method="GET" action="">
+                                <li class="">
+                                    <button type="submit" name="name" value="Vintas" class="bg-blue-500 text-white px-4 py-2 rounded">Vintas</button>
+                                </li>
+                            </form>
+                            <form method="GET" action="">
+                                <li class="">
+                                    <button type="submit" name="name" value="Urbas" class="bg-blue-500 text-white px-4 py-2 rounded">Urbas</button>
+                                </li>
+                            </form>
+                            <form method="GET" action="">
+                                <li class="">
+                                    <button type="submit" name="name" value="Pattas" class="bg-blue-500 text-white px-4 py-2 rounded">Pattas</button>
+                                </li>
+                            </form>
+                            <form method="GET" action="">
+                                <li class="">
+                                    <button type="submit" name="name" value="Track 6" class="bg-blue-500 text-white px-4 py-2 rounded">Track 6</button>
+                                </li>
+                            </form>
+
                         </ul>
                         <div class="font-BeVietnam font-bold ML_text_cam">
                             Giá
                         </div>
-                        <ul class="space-y-5 pl-6">
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">> 600k</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">500k - 599k</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">400k - 499k</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">300k - 399k</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">200k - 299k</label>
-                                </div>
-                            </li>
-                            <li class="">
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="option1" class="form-checkbox h-5 w-5">
-                                    <label for="option1" class="font-BeVietnam">< 200k</label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="font-BeVietnam font-bold ML_text_cam">
+                            <ul class="space-y-5 pl-6">
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                                            <div class="flex items-center space-x-2">
+                                                <input type="hidden" name="price[]" value=">700k" class="form-checkbox h-5 w-5">
+                                                <label class="font-BeVietnam">> 700k</label>
+                                            </div>
+                                        </button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                                            <div class="flex items-center space-x-2">
+                                            <input type="hidden" name="price[]" value="500-699k" class="form-checkbox h-5 w-5">
+                                            <label class="font-BeVietnam">500k - 699k</label>
+                                            </div>
+                                        </button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit"  class="bg-blue-500 text-white px-4 py-2 rounded">
+                                            <div class="flex items-center space-x-2">
+                                            <input type="hidden" name="price[]" value="300-499k" class="form-checkbox h-5 w-5">
+                                            <label class="font-BeVietnam">300k - 499k</label>
+                                            </div>
+                                        </button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                                            <div class="flex items-center space-x-2">
+                                            <input type="hidden" name="price[]" value="<300k" class="form-checkbox h-5 w-5">
+                                            <label class="font-BeVietnam">< 300k</label>
+                                            </div>
+                                        </button>
+                                    </li>
+                                </form>
+                            </ul>
+                        <div class="font-BeVietnam font-bold ML_text_cam mt-1">
                             Màu sắc
                         </div>
                         <div class="flex flex-col space-y-3">
-                            <!-- Hàng 1 -->
-                            <ul class="flex space-x-3">
-                                <li ><button class="w-6 h-6 bg-prd_color1 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color2 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color3 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color4 border border-gray-400"></button></li>
+
+                            <ul class="space-y-5 pl-6">
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" name="color" value="#efece1" class="bg-blue-500 px-4 py-2 rounded" style="color: #efece1">Trắng</button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" name="color" value="#14130f" class="bg-blue-500 px-4 py-2 rounded" style="color: #14130f">Đen</button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" name="color" value="#00ffff" class="bg-blue-500 px-4 py-2 rounded" style="color: #00ffff">Xanh dương</button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" name="color" value="#f5f5dc" class="bg-blue-500 px-4 py-2 rounded" style="color: #f5f5dc">Be</button>
+                                    </li>
+                                </form>
+                                <form method="GET" action="">
+                                    <li class="">
+                                        <button type="submit" name="color" value="#d6ba73" class="bg-blue-500 px-4 py-2 rounded" style="color: #d6ba73">Nâu</button>
+                                    </li>
+                                </form>
                             </ul>
-                            <!-- Hàng 2 -->
-                            <ul class="flex space-x-3">
-                                <li ><button class="w-6 h-6 bg-prd_color5 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color6 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color7 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color8 border border-gray-400"></button></li>
+
+                             <ul class="flex space-x-3   ">
+                                <li class="">
+                                    <button type="button" onclick="location.href='/product_list'" class="bg-red-500 text-white px-4 py-2 rounded">
+                                        Loại bỏ bộ lọc
+                                    </button>
+                                </li>
                              </ul>
-                            <!-- Hàng 3 -->
-                            <ul class="flex space-x-3   ">
-                                <li ><button class="w-6 h-6 bg-prd_color9 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color10 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color11 border border-gray-400"></button></li>
-                                <li ><button class="w-6 h-6 bg-prd_color12 border border-gray-400"></button></li>
-                             </ul>
-                            
                         </div>
                     </col1>
                     <col2 class="w-full lg:w-4/6 grid grid-cols-2 sm:grid-cols-3 gap-7 px-16 items-center justify-center">
@@ -262,11 +247,49 @@
                         $products_all = $data;
                         $product_per_page = 12;
                         $start_index = 0;
-                        $total_products = count($products_all);
+
+
+                        $filtered_products = [];
+
+                        if (isset($_GET['price'])) {
+                            $price_ranges = $_GET['price'];
+                            foreach ($products_all as $product) {
+                                $price = $product['price'];
+                                foreach ($price_ranges as $range) {
+                                    if ($range == '>700k' && $price > 700000) {
+                                        $filtered_products[] = $product;
+                                    } elseif ($range == '500-699k' && $price >= 500000 && $price <= 699999) {
+                                        $filtered_products[] = $product;
+                                    } elseif ($range == '300-499k' && $price >= 300000 && $price <= 499999) {
+                                        $filtered_products[] = $product;
+                                    } elseif ($range == '<300k' && $price < 300000) {
+                                        $filtered_products[] = $product;
+                                    }                             
+                                }
+                            }
+                        } elseif (isset($_GET['name'])) {
+                            $name_filter = $_GET['name'];
+                            foreach ($products_all as $product) {
+                                if (stripos($product['name'], $name_filter) !== false) {
+                                    $filtered_products[] = $product;
+                                }
+                            }
+                        } elseif (isset($_GET['color'])) {
+                            $color_filter = $_GET['color'];
+                            foreach ($products_all as $product) {
+                                if ($product['color_code'] == $color_filter) {
+                                    $filtered_products[] = $product;
+                                }
+                            }
+                        } else {
+                            $filtered_products =  $products_all;
+                        }
+
+                        $total_products = count($filtered_products);
                         $total_pages = ceil($total_products / $product_per_page);
                         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                         $start = ($page - 1) * $product_per_page;
-                        $products= array_slice($products_all, $start, $product_per_page);
+                        $products= array_slice($filtered_products, $start, $product_per_page);
 
                         foreach ($products as $product):
                     ?>

@@ -6,12 +6,18 @@
   <link href="../../output.css" rel="stylesheet">
 </head>
 <body> <!--nhớ là responsive cho tablet và phone-->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('success')) {
+        alert('Bình luận thành công');
+      }
+    </script>
     <?php
       $product = $data['product']; 
     ?>
     <div class="root">
         <div class="content-wrapper font-BeVietnam max-w-screen-2xl text-base items-center justify-center mt-20">
-          <form action="" method="post">
+          <form action="/writereview/submit" method="POST">
             <input type="hidden" name="product_item_id" value="<?= htmlspecialchars($product['product_item_id']); ?>">
               <row1 class="flex flex-row px-16">
                   <ul class="flex flex-row items-center space-x-3">

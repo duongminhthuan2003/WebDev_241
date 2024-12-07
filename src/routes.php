@@ -16,6 +16,8 @@ $routes = [
     'detail/submit' => ['controller' => 'CustomerProductController', 'action' => 'addToCart'],
     'product_list/writereview' => ['controller' => 'CustomerProductController', 'action' => 'writeReviewshow'],
     'writereview/submit' => ['controller' => 'CustomerProductController', 'action' => 'writeReview'],
+    'love_item' => ['controller' => 'CustomerProductController', 'action' => 'getLoveItem'],
+    'sale_off' => ['controller' => 'CustomerProductController', 'action' => 'getSaleProduct'],
     'cart' => ['controller' => 'CartController', 'action' => 'showcart'],
     'deleteItem/submit' => ['controller' => 'CartController', 'action' => 'delete'],
     'promotionApply/submit' => ['controller' => 'CartController', 'action' => 'promotionApply'],

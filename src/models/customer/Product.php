@@ -12,6 +12,7 @@ class Product {
                         product_items.product_item_id, 
                         products.name, 
                         colors.color_name, 
+                        colors.color_code,
                         product_items.price, 
                         product_items.product_image 
                     FROM 
@@ -25,8 +26,44 @@ class Product {
         return $stmt;
     }
 
-    public function getCategory() {
-        $query = "SELECT * FROM categories";
+
+    public function getAllLoveProduct($user_id) {
+        $query = "  SELECT 
+                        product_items.product_item_id, 
+                        products.name, 
+                        colors.color_name, 
+                        product_items.price, 
+                        product_items.product_image 
+                    FROM 
+                        ((products 
+                        JOIN product_items ON products.product_id = product_items.product_id) 
+                        JOIN colors ON product_items.color_id = colors.color_id)
+                        JOIN love_items ON love_items.product_item_id = product_items.product_item_id
+                    WHERE love_items.user_id = :user_id
+                    GROUP BY colors.color_code, products.product_id
+                    ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute(['user_id' => $user_id]);
+        return $stmt;
+    }
+
+    public function getAllSaleProduct() {
+        $query = "  SELECT 
+                        product_items.product_item_id, 
+                        products.name, 
+                        colors.color_name, 
+                        product_items.price, 
+                        product_items.product_image,
+                        categories.category_name
+                    FROM 
+                        (((products 
+                        JOIN product_items ON products.product_id = product_items.product_id) 
+                        JOIN colors ON product_items.color_id = colors.color_id)
+                        JOIN product_category ON product_category.product_id = products.product_id)
+                        JOIN categories ON product_category.category_id = categories.category_id
+                    WHERE categories.category_name = 'Saleoff'
+                    GROUP BY colors.color_code, products.product_id
+                    ";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -42,9 +79,11 @@ class Product {
                         product_items.quantity_in_stock, 
                         products.product_id
                     FROM 
-                        (products 
+                        (((products 
                         JOIN product_items ON products.product_id = product_items.product_id) 
-                        JOIN colors ON product_items.color_id = colors.color_id
+                        JOIN colors ON product_items.color_id = colors.color_id)
+                        JOIN product_category ON product_category.product_id = products.product_id)
+                        JOIN categories ON product_category.category_id = categories.category_id
                     WHERE product_items.product_item_id = :product_item_id
                     ";
         $stmt = $this->db->prepare($query);
@@ -155,10 +194,9 @@ class Product {
                         ";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['user_id' => $user_id, 'product_item_id' => $product_item_id, 'rating' => $rating, 'content' => $content]);
-            return 1;
         }
         catch (Exception $e) {
-            return 0;
+            echo $e->getMessage();
         }
     }
 
