@@ -35,14 +35,13 @@
 </nav>
 
 <div class="flex-grow">
-    <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-8">
-        <div class="md:flex flex-col items-start mr-6 hidden lg:w-1/3 md:w-2/3">
+    <div class="flex md:flex-row flex-col w-10/12 lg:w-9/12 mx-auto mt-8">
+        <div class="md:flex flex-col items-start mr-6 hidden md:min-w-fit">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-
-            <a class="px-4 mt-8">Thông tin tài khoản</a>
-            <a class="px-4 mt-8">Phương thức thanh toán</a>
-            <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Đơn hàng của tôi</a></div>
+            <a class="px-4 mt-8">Thông tin <br class="hidden md:inline-block lg:hidden">tài khoản</a>
+            <a class="px-4 mt-8">Phương thức <br class="hidden md:inline-block lg:hidden">thanh toán</a>
+            <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Đơn hàng <br class="hidden md:inline-block lg:hidden">của tôi</a></div>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
             <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
@@ -54,12 +53,12 @@
                 <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <div>
-                <p class="font-bold text-2xl mb-2">THÔNG TIN TÀI KHOẢN</p>
+                <p class="font-bold text-xl mb-2">THÔNG TIN TÀI KHOẢN</p>
                 <p>Phương thức thanh toán</p>
             </div>
         </div>
 
-        <div id="account_nav" class="border-2 border-gray-300 rounded-xl hidden flex-col duration-300 md:invisible bg-white shadow-md py-5 space-y-2 text-center absolute w-9/12 top-44 z-20">
+        <div id="account_nav" class="border-2 border-gray-300 rounded-xl hidden flex-col duration-300 md:invisible bg-white shadow-md py-5 space-y-2 text-center absolute w-10/12 top-44 z-20">
             <a class="py-3" href="#">Thông tin cá nhân</a>
             <a class="py-3" href="#">Đơn hàng của tôi</a>
             <a class="py-3" href="#">Phương thức thanh toán</a>
@@ -68,114 +67,188 @@
         </div>
         <!--End mobile account navigation-->
 
-        <div class="md:w-9/12 w-full">
+        <div class="w-full lg:w-9/12 mx-auto space-y-5">
+            <!-- <<<<<<<<<<<< An order starts >>>>>>>>>>>>>> -->
             <div class="border-2 rounded-2xl">
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="md:h-28 w-auto h-20 rounded-lg">
+                <div class="m-5">Mã đơn hàng: ****</div>
+                <!-- <<<<<<<<<<<< A product starts >>>>>>>>>>>>>> -->
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
 
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
+                    </div>
+                </div>
+                <!-- <<<<<<<<<<<< A product ends >>>>>>>>>>>>>> -->
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
+
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
                     </div>
                 </div>
 
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-28 w-auto rounded-lg">
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
 
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
                     </div>
                 </div>
 
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-28 w-auto rounded-lg">
-
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
-                        </div>
-                    </div>
-
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
-                    </div>
+                <div class="mx-5 flex flex-row border-t-2 pt-4">
+                    <div class="flex-grow"></div>
+                    <p class="text-sm md:text-base">Tổng cộng:</p>
+                    <p class="font-bold ml-2 text-[#F15E2C] flex md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
                 </div>
-            </div>
-
-            <div class="border-2 rounded-2xl mt-5">
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-28 w-auto rounded-lg">
-
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
-                        </div>
-                    </div>
-
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-28 w-auto rounded-lg">
-
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
-                        </div>
-                    </div>
-
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
-                    </div>
+                <div class="m-5 flex flex-row">
+                    <div class="my-auto text-sm md:text-base">Trạng thái: Đã đặt</div>
+                    <div class="flex-grow"></div>
+                    <button type="button" class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base">Hủy đơn</button>
                 </div>
             </div>
+            <!-- <<<<<<<<<<<< An order ends >>>>>>>>>>>>>> -->
 
-            <div class="border-2 rounded-2xl mt-5">
-                <div class="flex flex-row mx-5 my-5 w-auto">
-                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-28 w-auto rounded-lg">
+            <!-- <<<<<<<<<<<< An order starts >>>>>>>>>>>>>> -->
+            <div class="border-2 rounded-2xl">
+                <div class="m-5">Mã đơn hàng: ****</div>
+                <!-- <<<<<<<<<<<< A product starts >>>>>>>>>>>>>> -->
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
 
-                    <div class="mx-5 flex flex-col w-auto">
-                        <p class="font-bold">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
-                        <div class="flex flex-col justify-end h-full">
-                            <p class="text-sm text-[#888888]">Kích cỡ: 42</p>
-                            <p class="text-sm mt-1 text-[#888888]">Số lượng: 1</p>
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="font-bold text-[#F15E2C] flex items-center ml-auto">
-                        <p>650.000 VNĐ</p>
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
                     </div>
                 </div>
+                <!-- <<<<<<<<<<<< A product ends >>>>>>>>>>>>>> -->
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
+
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
+                    </div>
+                </div>
+
+                <div class="mx-5 flex flex-row border-t-2 pt-4">
+                    <div class="flex-grow"></div>
+                    <p class="text-sm md:text-base">Tổng cộng:</p>
+                    <p class="font-bold ml-2 text-[#F15E2C] flex md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
+                </div>
+                <div class="m-5 flex flex-row">
+                    <div class="my-auto text-sm md:text-base">Trạng thái: Đã đặt</div>
+                    <div class="flex-grow"></div>
+                    <button type="button" class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base">Hủy đơn</button>
+                </div>
             </div>
+            <!-- <<<<<<<<<<<< An order ends >>>>>>>>>>>>>> -->
+
+            <!-- <<<<<<<<<<<< An order starts >>>>>>>>>>>>>> -->
+            <div class="border-2 rounded-2xl">
+                <div class="m-5">Mã đơn hàng: ****</div>
+                <!-- <<<<<<<<<<<< A product starts >>>>>>>>>>>>>> -->
+                <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
+                    <img src="../../../public/assets/account/pro_AV00114_1.jpg" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
+
+                    <div class="flex flex-col md:flex-row w-full">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-sm md:text-base">Basas Bumper Gum EXT NE - High Top - Offwhite/Gum</p>
+                            <div class="flex-grow"></div>
+                            <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
+                                <p class="text-[#888888] text-sm">Kích cỡ: 42</p>
+                                <p class="text-[#888888] text-sm">Số lượng: 1</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-grow">
+
+                        </div>
+
+                        <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
+                    </div>
+                </div>
+                <!-- <<<<<<<<<<<< A product ends >>>>>>>>>>>>>> -->
+
+                <div class="mx-5 flex flex-row border-t-2 pt-4">
+                    <div class="flex-grow"></div>
+                    <p class="text-sm md:text-base">Tổng cộng:</p>
+                    <p class="font-bold ml-2 text-[#F15E2C] flex md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
+                </div>
+                <div class="m-5 flex flex-row">
+                    <div class="my-auto text-sm md:text-base">Trạng thái: Đã đặt</div>
+                    <div class="flex-grow"></div>
+                    <button type="button" class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base">Hủy đơn</button>
+                </div>
+            </div>
+            <!-- <<<<<<<<<<<< An order ends >>>>>>>>>>>>>> -->
         </div>
     </div>
 </div>
-
-
-<footer class="bottom-0 mb-0">
+<footer class="flex flex-col justify-end w-full mt-8 md:mt-0">
     <div class="flex w-full bg-white h-[400px] mb-0 bottom-0">
         <div class="my-auto top-0 bottom-0 w-full">
             <div class="flex flex-row w-9/12 mx-auto align-middle">
@@ -183,30 +256,33 @@
                 <img src="../../../public/assets/logo-black.png" class="flex h-10 w-24 object-cover my-auto top-0 bottom-0" alt="logo">
             </div>
 
-            <div class="flex flex-row w-9/12 mx-auto mt-5">
-                <div class="w-1/5 space-y-3">
-                    <p><strong>SẢN PHẨM</strong></p>
-                    <p class="text-sm text-[#888888]">Giày nam</p>
-                    <p class="text-sm text-[#888888]">Giày nữ</p>
-                    <p class="text-sm text-[#888888]">Thời trang & phụ kiện</p>
-                    <p class="text-sm text-[#888888]">Sale-off</p>
+            <div class="flex md:flex-row flex-col w-9/12 mx-auto mt-5">
+                <div class="flex flex-row md:w-3/5 w-full">
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>SẢN PHẨM</strong></p>
+                        <p class="text-sm text-[#888888]">Giày nam</p>
+                        <p class="text-sm text-[#888888]">Giày nữ</p>
+                        <p class="text-sm text-[#888888]">Thời trang & phụ kiện</p>
+                        <p class="text-sm text-[#888888]">Sale-off</p>
+                    </div>
+
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>VỀ ANANAS</strong></p>
+                        <p class="text-sm text-[#888888]">Tuyển dụng</p>
+                        <p class="text-sm text-[#888888]">Giới thiệu</p>
+                    </div>
+
+                    <div class="w-1/3 space-y-3">
+                        <p><strong>HỖ TRỢ</strong></p>
+                        <p class="text-sm text-[#888888]">FAQs</p>
+                        <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
+                        <p class="text-sm text-[#888888]">Chính sách chung</p>
+                        <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
+                    </div>
                 </div>
 
-                <div class="w-1/5 space-y-3">
-                    <p><strong>VỀ ANANAS</strong></p>
-                    <p class="text-sm text-[#888888]">Tuyển dụng</p>
-                    <p class="text-sm text-[#888888]">Giới thiệu</p>
-                </div>
 
-                <div class="w-1/5 space-y-3">
-                    <p><strong>HỖ TRỢ</strong></p>
-                    <p class="text-sm text-[#888888]">FAQs</p>
-                    <p class="text-sm text-[#888888]">Bảo mật thông tin</p>
-                    <p class="text-sm text-[#888888]">Chính sách chung</p>
-                    <p class="text-sm text-[#888888]">Tra cứu đơn hàng</p>
-                </div>
-
-                <div class="w-2/5">
+                <div class="md:w-2/5 w-full mt-8 md:mt-0">
                     <p><strong>LIÊN HỆ</strong></p>
                     <input type="text" placeholder="Email" class="border-2 w-full text-sm h-10 rounded-md mt-2 pl-3">
                     <div class="flex flex-row space-x-4 mt-3">
@@ -227,8 +303,33 @@
         </div>
     </div>
 
-    <div class="h-10 w-full bg-[#F15E2C]"></div>
+    <div class="h-10 md:mt-0 mt-8 w-full bg-[#F15E2C]"></div>
 </footer>
 
+<script>
+    let accountNav = document.querySelector("#account_nav");
+    let account = document.querySelector("#account");
+    let arrow = document.querySelector("#arrow");
+    let x = document.getElementById("arrow");
+
+    account.addEventListener('click',accountNavToggle);
+
+    function accountNavToggle() {
+        if (accountNav.classList.contains('hidden')) {
+            accountNav.classList.remove('hidden');
+            accountNav.classList.add('flex');
+
+            arrow.classList.add('rotate-90');
+            arrow.classList.add('duration-300');
+        } else {
+            accountNav.classList.remove('flex');
+            accountNav.classList.add('hidden');
+
+            arrow.classList.remove('rotate-90');
+            arrow.classList.add('duration-300');
+
+        }
+    }
+</script>
 </body>
 </html>

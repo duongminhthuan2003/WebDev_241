@@ -700,6 +700,10 @@ video {
   z-index: 50;
 }
 
+.m-5{
+  margin: 1.25rem;
+}
+
 .mx-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -800,6 +804,10 @@ video {
 
 .ml-2{
   margin-left: 0.5rem;
+}
+
+.ml-5{
+  margin-left: 1.25rem;
 }
 
 .ml-6{
@@ -979,6 +987,10 @@ video {
   height: 5rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-28{
   height: 7rem;
 }
@@ -1033,6 +1045,10 @@ video {
 
 .h-\[120px\]{
   height: 120px;
+}
+
+.h-\[150px\]{
+  height: 150px;
 }
 
 .h-\[300px\]{
@@ -1111,6 +1127,10 @@ video {
   min-height: 100vh;
 }
 
+.w-1\/12{
+  width: 8.333333%;
+}
+
 .w-1\/2{
   width: 50%;
 }
@@ -1143,12 +1163,20 @@ video {
   width: 91.666667%;
 }
 
+.w-12{
+  width: 3rem;
+}
+
 .w-14{
   width: 3.5rem;
 }
 
 .w-2{
   width: 0.5rem;
+}
+
+.w-2\/12{
+  width: 16.666667%;
 }
 
 .w-2\/3{
@@ -1271,12 +1299,21 @@ video {
   width: 30vw;
 }
 
+.w-\[400px\]{
+  width: 400px;
+}
+
 .w-auto{
   width: auto;
 }
 
 .w-full{
   width: 100%;
+}
+
+.min-w-fit{
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .min-w-full{
@@ -1812,6 +1849,11 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -1908,6 +1950,11 @@ video {
 .px-6{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .px-8{
@@ -2560,6 +2607,10 @@ video {
     display: none;
   }
 
+  .sm\:h-28{
+    height: 7rem;
+  }
+
   .sm\:w-1\/2{
     width: 50%;
   }
@@ -2574,6 +2625,10 @@ video {
 
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row{
+    flex-direction: row;
   }
 
   .sm\:px-5{
@@ -2622,10 +2677,6 @@ video {
 
   .md\:h-16{
     height: 4rem;
-  }
-
-  .md\:h-28{
-    height: 7rem;
   }
 
   .md\:h-\[600px\]{
@@ -2681,6 +2732,11 @@ video {
   .md\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:text-8xl{
@@ -2775,6 +2831,10 @@ video {
 
   .lg\:w-6\/12{
     width: 50%;
+  }
+
+  .lg\:w-9\/12{
+    width: 75%;
   }
 
   .lg\:flex-row{
