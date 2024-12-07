@@ -1,3 +1,14 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Kiểm tra quyền truy cập
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+        header('Location: /'); // Chuyển hướng nếu không phải admin hoặc chưa đăng nhập
+        exit(); // Dừng thực thi mã sau chuyển hướng
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
