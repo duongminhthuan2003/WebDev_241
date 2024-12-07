@@ -38,10 +38,10 @@
 </nav>
 
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
-    <div class="flex items-center -mt-16 w-6/12">
+    <div class="flex items-center -mt-16 w-10/12 mx-auto md:w-6/12">
         <div class="flex-col flex w-2/3 mx-auto">
             <p class="font-bold text-3xl mb-5">ĐĂNG NHẬP</p>
-            <form method="POST" action="/login/submit">
+            <form method="POST" action="/login/submit" class="w-full">
                 <p>Email/Số điện thoại:</p>
                 <input type="text" placeholder="Email" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" name="identifier" required>
                 <p>Mật khẩu:</p>
@@ -61,8 +61,12 @@
         </div>
     </div>
 
-    <div class="w-6/12">
-        <img src="/assets/login_register/login.jpg" class="h-full object-cover">
+    <div class="flex-grow hidden md:block">
+
+    </div>
+
+    <div class="w-6/12 md:block hidden">
+        <img src="../../../public/assets/login_register/login.jpg" class="h-full object-cover">
     </div>
 </div>
 
