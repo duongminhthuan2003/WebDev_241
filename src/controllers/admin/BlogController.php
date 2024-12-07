@@ -204,7 +204,23 @@ class BlogController {
     }
 
     public function deleteblog() {
-        $blog_id = $_GET['blog_id'] ?? null; 
+        $blog_id = $_GET['blog_id'] ?? null;
+
+        $data = $this->blogModel->getBlogByID($blog_id)->fetch(PDO::FETCH_ASSOC);
+    
+        $uploadDir = __DIR__ . '/../../../public/assets/images/blogs/';
+    
+        
+        $absolute_main_image_path = $uploadDir . basename($data['main_image']);
+        if (!empty($data['main_image']) && file_exists($absolute_main_image_path)) {
+            unlink($absolute_main_image_path); // Xóa file cũ
+        }
+        
+        $absolute_sub_image_path = $uploadDir . basename($data['sub_image']);
+        if (!empty($data['sub_image']) && file_exists($absolute_sub_image_path)) {
+            unlink($absolute_sub_image_path); // Xóa file cũ
+        }
+
         $this->blogModel->deleteBlog($blog_id);
         header('Location: /blog');
     }
