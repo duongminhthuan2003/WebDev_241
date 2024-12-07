@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../output.css" rel="stylesheet">
+    <link href="assets/css/output.css" rel="stylesheet">
 </head>
 <body>
     <div class="root">
@@ -57,9 +57,9 @@
                     </row2><!--end row2-->
                     <row3 class="bg-white">
                         <div class="flex justify-end p-4">
-                            <button class="bg-black text-white border border-black w-auto text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
+                            <a href="/blog/add"><button class="bg-black text-white border border-black w-auto text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
                                 Thêm bài viết
-                            </button>
+                            </button></a>
                         </div>
                         <div class="p-4">
                             <!-- table -->
@@ -72,27 +72,31 @@
                                         </th>
                                         <th class="border border-gray-300 px-4 py-2">Số thứ tự</th>
                                         <th class="border border-gray-300 px-4 py-2">Ngày đăng</th>
+                                        <th class="border border-gray-300 px-4 py-2">Danh mục</th>
+                                        <th class="border border-gray-300 px-4 py-2">Trạng thái</th>
                                         <th class="border border-gray-300 px-4 py-2">Tiêu đề</th>
-                                        <th class="border border-gray-300 px-4 py-2">Nội dung</th>
                                         <th class="border border-gray-300 px-4 py-2">Tùy chọn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><!--hang1-->
+                                    <?php foreach($data as $index => $news): ?>
+                                    <tr>
                                         <td class="border border-gray-300 px-4 py-2 text-center">
                                             <input type="checkbox"/>
                                         </td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">1</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">01/12/2024</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">HIỂU THẬT SÂU MỌI THỨ BÊN TRONG MỖI NGƯỜI VỚI URBAS LOVE+ 24</td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">Lấy cảm hứng từ cụm từ "Inside Out", Ananas tạo ra 2 phiên bản thiết kế cổ thấp (có dây và quai dán) cho bộ sưu tập Urbas Love+ 24. Trải qua một năm tương đối khó khăn, chúng tôi vẫn cố gắng "giữ" nhịp độ ra mắt đều đặn mỗi năm cho bộ sưu tập Love+ kể từ năm 2020. Và sẽ thật tuyệt vời nếu bạn có thể theo dõi đầy đủ những điều chúng tôi muốn gửi gắm đến cộng đồng LGBT+ trong ngần ấy thời gian.</td>
+                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($index + 1); ?></td>
+                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></td>
+                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['blog_cate']); ?></td>
+                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['status']); ?></td>
+                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['blog_name']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center">
                                             <div class="space-x-2 space-y-2">
-                                                <button class="bg-yellow-400 p-2 w-14 rounded-md">Sửa</button>
-                                                <button class="bg-red-500 p-2 w-14 rounded-md">Xóa</button>
+                                                <a href="/blog/detail?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-yellow-400 p-2 w-14 rounded-md">Sửa</button></a>
+                                                <a href="/blog/delete?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-red-500 p-2 w-14 rounded-md">Xóa</button></a>
                                             </div>
                                         </td>
                                     </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

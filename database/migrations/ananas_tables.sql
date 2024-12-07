@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS sizes (
 
 CREATE TABLE IF NOT EXISTS promotions (
   promotion_id SMALLINT NOT NULL AUTO_INCREMENT,
-  promotion_name varchar(255) NOT NULL,
+  promotion_code varchar(255) NOT NULL,
   description text NOT NULL,
   discount_percent SMALLINT NOT NULL,
   start_date date NOT NULL,
@@ -105,7 +105,6 @@ CREATE TABLE IF NOT EXISTS product_items (
   product_id SMALLINT NOT NULL,
   color_id SMALLINT NOT NULL,
   size_id SMALLINT NOT NULL,
-  promotion_id SMALLINT,
   SKU varchar(255) NOT NULL,
   quantity_in_stock MEDIUMINT DEFAULT 0,
   product_image varchar(255) NOT NULL,
@@ -113,8 +112,7 @@ CREATE TABLE IF NOT EXISTS product_items (
   PRIMARY KEY (product_item_id),
   CONSTRAINT fk_productitem_product FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE,
   CONSTRAINT fk_productitem_color FOREIGN KEY (color_id) REFERENCES colors(color_id) ON DELETE RESTRICT,
-  CONSTRAINT fk_productitem_size FOREIGN KEY (size_id) REFERENCES sizes(size_id) ON DELETE RESTRICT,
-  CONSTRAINT fk_productitem_promotion FOREIGN KEY (promotion_id) REFERENCES promotions(promotion_id) ON DELETE SET NULL
+  CONSTRAINT fk_productitem_size FOREIGN KEY (size_id) REFERENCES sizes(size_id) ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS categories (
@@ -181,10 +179,12 @@ CREATE TABLE IF NOT EXISTS orders (
   user_id SMALLINT,
   shipping_address_id SMALLINT DEFAULT NULL,
   payment_type_id SMALLINT,
+  promotion_id SMALLINT,
   order_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (order_id),
   CONSTRAINT fk_order_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL,
-  CONSTRAINT fk_order_paymenttype FOREIGN KEY (payment_type_id) REFERENCES payment_types(pt_id) ON DELETE SET NULL
+  CONSTRAINT fk_order_paymenttype FOREIGN KEY (payment_type_id) REFERENCES payment_types(pt_id) ON DELETE SET NULL,
+  CONSTRAINT fk_productitem_promotion FOREIGN KEY (promotion_id) REFERENCES promotions(promotion_id) ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS order_items (

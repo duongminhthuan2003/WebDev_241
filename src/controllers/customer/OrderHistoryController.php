@@ -13,7 +13,9 @@ class OrderHistoryController {
     }
 
     public function order_history() {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $user_id = $_SESSION['user_id'] ?? null;
         $order = $this->orderHistoryModel->getUserOrder($user_id)->fetchAll(PDO::FETCH_ASSOC);
         $order_item = $this->orderHistoryModel->getUserOrderItem($user_id)->fetchAll(PDO::FETCH_ASSOC);

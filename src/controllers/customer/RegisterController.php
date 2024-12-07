@@ -18,7 +18,7 @@ class RegisterController {
 
     public function register() {
         // Lấy dữ liệu từ POST request
-        $user_name = $_POST['user_name'] ?? '';
+        $user_name = $_POST['fullname'] ?? '';
         $phone_number = $_POST['phone_number'] ?? '';
         $email_address = $_POST['email_address'] ?? '';
         $password = $_POST['password'] ?? '';

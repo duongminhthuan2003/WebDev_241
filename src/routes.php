@@ -18,6 +18,12 @@ $routes = [
     'payment/updatedefaultbank' => ['controller' => 'PaymentController', 'action' => 'updatedefaultbank'],
     'payment/deletecard' => ['controller' => 'PaymentController', 'action' => 'deleteCard'],
     'payment/deletebank' => ['controller' => 'PaymentController', 'action' => 'deleteBank'],
-    'dashboard' => ['controller' => 'DashBoardController', 'action' => 'getall']
+    'dashboard' => ['controller' => 'DashBoardController', 'action' => 'getall'],
+    'blog' => ['controller' => 'BlogController', 'action' => 'getall'],
+    'blog/detail' => ['controller' => 'BlogController', 'action' => 'getdetail'],
+    'blog/add' => ['controller' => 'BlogController', 'action' => 'viewaddblog'],
+    'blog/submitadd' => ['controller' => 'BlogController', 'action' => 'createblog'],
+    'blog/submitupdate' => ['controller' => 'BlogController', 'action' => 'updateblog'],
+    'blog/delete' => ['controller' => 'BlogController', 'action' => 'deleteblog'],
 ];
 

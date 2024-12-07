@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="../../output.css" rel="stylesheet">
+  <link href="/assets/css/output.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Title</title>
 </head>
@@ -10,7 +10,7 @@
 <div class="flex flex-row font-BeVietnam w-full h-screen">
   <div class="w-1/5 bg-Cam_Ananas">
     <div class="flex mx-auto">
-      <img src="../../../public/assets/logo-white.png" alt="Logo" class="h-20 flex mx-auto">
+      <img src="/assets/logo-white.png" alt="Logo" class="h-20 flex mx-auto">
     </div>
 
     <div class="flex flex-col">
@@ -81,122 +81,28 @@
 
   <div class="w-4/5 bg-back_admin text-white">
     <div class="w-11/12 mx-auto mt-8">
-      <p class="font-bold text-3xl">DASHBOARD</p>
+      <p class="font-bold text-3xl">MÃ KHUYẾN MÃI</p>
       <p>Ngày dd, tháng mm năm yyyy</p>
     </div>
 
-    <div class="w-11/12 mx-auto mt-8">
-      <p>Báo cáo ngày dd, tháng mm, năm yyyy</p>
-      <div class="flex flex-row space-x-5 my-5">
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng lượt truy cập</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
+    <div class="w-11/12 flex mx-auto mt-8">
+      <table class="w-full border-collapse border border-gray-300 text-black bg-white">
+        <tr class="border-2">
+          <th class="border border-gray-300">Mã khuyến mãi</th>
+          <th class="border border-gray-300">Số lượng</th>
+          <th class="border border-gray-300">Số lượt dùng còn lại</th>
+          <th class="border border-gray-300">Ngày hết hạn</th>
+          <th class="border border-gray-300"></th>
+        </tr>
 
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Doanh thu</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng số hàng bán ra</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Số bình luận</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex bg-white text-black w-1/3 rounded-lg px-5">
-          <div class="my-auto space-y-5">
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng thành công</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đang giao</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng hoàn trả</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đã hủy</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-11/12 mx-auto mt-8">
-      <p>Báo cáo tuần ww, năm yyyy</p>
-      <div class="flex flex-row space-x-5 my-5">
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng lượt truy cập</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Doanh thu</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng số hàng bán ra</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Số bình luận</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex bg-white text-black w-1/3 rounded-lg px-5">
-          <div class="my-auto space-y-5">
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng thành công</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đang giao</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng hoàn trả</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đã hủy</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-11/12 mx-auto mt-8">
-      <p>Báo cáo tháng dd, năm yyyy</p>
-      <div class="flex flex-row space-x-5 my-5">
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng lượt truy cập</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Doanh thu</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex-col flex w-1/3 space-y-5">
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Tổng số hàng bán ra</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-
-          <div class="bg-white text-black py-5 px-5 rounded-lg">
-            <p>Số bình luận</p>
-            <p class="text-3xl font-bold">1000</p>
-          </div>
-        </div>
-
-        <div class="flex bg-white text-black w-1/3 rounded-lg px-5">
-          <div class="my-auto space-y-5">
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng thành công</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đang giao</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng hoàn trả</p>
-            <p><span class="font-bold text-Cam_Ananas">1000</span> Đơn hàng đã hủy</p>
-          </div>
-        </div>
-      </div>
+        <tr>
+          <td class="border border-gray-300">ABCD1234</td>
+          <td class="border border-gray-300">500</td>
+          <td class="border border-gray-300">213</td>
+          <td class="border border-gray-300 mx-auto">dd.mm.yyyy</td>
+          <td class="border border-gray-300 flex justify-center space-x-5"><button>Chỉnh sửa</button><button>Xóa</button></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
