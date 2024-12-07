@@ -218,17 +218,14 @@
                           <button type="submit" class="ML_button ML_button:hover">
                             Thêm vào giỏ hàng
                           </button>
-                          <!-- <button class="w-10 h-10 border border-gray-300 rounded-md flex items-center justify-center hover:bg-gray-100">
-                            <img src="img/prd_list_heart.png" alt="heart">
-                          </button> -->
-                          <button type="button" id="heartButton" class="w-11 h-10 flex border border-gray-300 rounded-md items-center justify-center" onclick="toggleHeart(this)">
-                            <img src="/img/prd_list_heart.png" alt="heart" class="heart-icon"/>
-                          </button>
-                          <?php if (isset($error)): ?>
-                            <div class="error" style="color: white"><?= htmlspecialchars($error); ?></div>
-                          <?php endif; ?>
-                        </div>
                       </form>
+                          <form method="POST" action="/addloveitem/submit">
+                            <input type="hidden" id="product_item_id" name="product_item_id" value="<?= htmlspecialchars($product['product_item_id']); ?>">
+                            <button type="submit" id="heartButton" class="w-11 h-10 flex border border-gray-300 rounded-md items-center justify-center" onclick="toggleHeart(this)">
+                              <img src="/img/prd_list_heart.png" alt="heart" class="heart-icon"/>
+                            </button>
+                          </form>
+                        </div>
                     </div>
                   </col2>
                 </row1><!--end row1-->
@@ -280,45 +277,6 @@
                             </li>
                             <li class="font-bold underline"><a href="/product_list/writereview/<?= htmlspecialchars($product['product_item_id']); ?>" id="write-comment">VIẾT BÌNH LUẬN</a></li>
                             
-                            <!-- Popup -->
-                            <div id="comment-popup" class="fixed inset-0 bg-black bg-opacity-75 hidden">
-                              <div class="bg-white flex justify-center items-center w-800 h-580 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                <ul class="flex flex-col">
-                                  <li>
-                                    <ul class="flex flex-row items-center space-x-3">
-                                      <li><img class="w-32 h-32" src="img/prd_list_sp2.png" alt="sản phẩm"></li>
-                                      <li class="space-y-3">
-                                        <p class="font-bold">Basas Day Slide - Slip On</p>
-                                        <p class="text-Cam_Ananas">550.000 VND</p>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <div class="mt-4 items-center justify-center flex flex-row space-x-3">
-                                      <div id="stars-container" class="flex justify-center">
-                                        <!-- 5 ngôi sao -->
-                                         <span data-value="1" class="star text-gray-400 text-5xl hover:text-orange-500 cursor-pointer">★</span>
-                                         <span data-value="2" class="star text-gray-400 text-5xl hover:text-orange-500 cursor-pointer">★</span>
-                                         <span data-value="3" class="star text-gray-400 text-5xl hover:text-orange-500 cursor-pointer">★</span>
-                                         <span data-value="4" class="star text-gray-400 text-5xl hover:text-orange-500 cursor-pointer">★</span>
-                                         <span data-value="5" class="star text-gray-400 text-5xl hover:text-orange-500 cursor-pointer">★</span>
-                                      </div>
-                                      <p id="rating-text" class="mt-2 text-base font-BeVietnam text-gray-600">0 / 5</p>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <label for="content" class="block mt-4">Nội dung:</label>
-                                    <textarea id="content" class="w-full p-2 border border-gray-300 rounded mt-1 h-32"></textarea>
-                                  </li>
-                                  <li class=" flex flex-row justify-center mt-24 space-x-2">
-                                    <button id="close-popup" class="bg-white text-black border border-black w-32 text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
-                                      Hủy
-                                    </button>
-                                    <button class="ML_button w-32">Đăng</button>
-                                  </li><!--end li 4-->
-                                </ul>
-                              </div>
-                            </div>
 
                             <?php foreach ($review as $index => $r): ?>
                               <li class="<?= $index >= 3 ? 'hidden-review' : ''; ?>">

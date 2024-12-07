@@ -47,6 +47,19 @@ class Product {
         return $stmt;
     }
 
+    public function addLoveItem($user_id, $product_item_id) {
+        try {
+            $query = "  INSERT IF NOT EXISTS INTO love_items (user_id, product_item_id)
+                        VALUES (:user_id, :product_item_id)
+                        ";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute(['user_id' => $user_id, 'product_item_id' => $product_item_id]);
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function getAllSaleProduct() {
         $query = "  SELECT 
                         product_items.product_item_id, 

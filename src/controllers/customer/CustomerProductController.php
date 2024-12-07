@@ -103,6 +103,17 @@ class CustomerProductController {
         include_once __DIR__ . '/../../views/customer/love_item.php';
     }
 
+    public function addLoveItem() {
+        $user_id = $_SESSION['user_id'] ?? '';
+        if (empty($user_id)) {
+            header('Location: /login');
+            exit();
+        } 
+        $product_item_id = $_POST['product_item_id'] ?? '';
+        $this->productModel->addLoveItem($user_id, $product_item_id);
+        header('Location: /love_item');
+    }
+
     public function getSaleProduct() {
         $data = $this->productModel->getAllSaleProduct()->fetchAll(PDO::FETCH_ASSOC);
         include_once __DIR__ . '/../../views/customer/sale_off.php';

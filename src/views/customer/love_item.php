@@ -144,7 +144,9 @@
                                         <li><p class="font-bold h-16 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
                                     </ul>
                                 </li>
-                                <li class="text-gray-600"><?= htmlspecialchars($product['color_name']); ?></li>
+                                <li class="flex flex-row space-x-10 items-center text-gray-600">
+                                    <?= htmlspecialchars($product['color_name']); ?>
+                                </li>
                                 <li class="flex flex-row space-x-10 items-center">
                                     <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
                                     <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Mua ngay</button>
