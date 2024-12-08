@@ -1,3 +1,6 @@
+<head>
+    <link href="/assets/css/output.css" rel="stylesheet">
+</head>
 <!-- <<<<<<<<<<<<<<<<Navigation Bar starts>>>>>>>>>>>>>>>> -->
 <?php 
     if (session_status() === PHP_SESSION_NONE) {
