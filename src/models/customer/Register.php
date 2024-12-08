@@ -21,7 +21,7 @@ class Register {
     
             // Thêm người dùng mới vào cơ sở dữ liệu
             $insertQuery = "INSERT INTO users (fullname, phone_number, email_address, password, birth_date, gender) 
-                            VALUES (:user_name, :phone_number, :email_address, :password, :birth_day, :gender)";
+                            VALUES (:fullname, :phone_number, :email_address, :password, :birth_day, :gender)";
             $insertStmt = $this->db->prepare($insertQuery);
             $insertStmt->execute([
                 ':fullname' => $fullname,
