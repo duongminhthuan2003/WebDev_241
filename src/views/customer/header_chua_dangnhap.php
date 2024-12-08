@@ -13,7 +13,7 @@
     <div class="w-6/12 align-middle">
         <ul class="md:flex flex-row justify-center lg:space-x-12 space-x-8 hidden">
             <li class="ML_hover_header" id="product" onclick="openOverlay()">SẢN PHẨM</li>
-            <li><a href="" class="ML_hover_header">SALE-OFF</a></li>
+            <li><a href="/sale_off" class="ML_hover_header">SALE-OFF</a></li>
             <li><a href="/news" class="ML_hover_header">TIN TỨC</a></li>
             <li><a href="" class="ML_hover_header">GIỚI THIỆU</a></li>
         </ul>
@@ -48,22 +48,22 @@
     </a>
     <div class="flex my-auto mx-auto">
         <div class="mx-8 flex flex-row space-x-[2vw]">
-            <a href="#" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:text-white hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:text-white hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4 ">CHO NAM</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/forwomen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NỮ</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/shirt.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">ÁO</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/acc.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">PHỤ KIỆN</div>
             </a>
