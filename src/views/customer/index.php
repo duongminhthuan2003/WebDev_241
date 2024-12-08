@@ -200,31 +200,7 @@
 
     <div class="h-10 md:mt-0 mt-8 w-full bg-[#F15E2C]"></div>
 </footer>
-
-<script>
-    let div = document.getElementById("myNav");
-    let mbOverlay = document.getElementById("mobileNav");
-
-    let flag = 0;
-
-    function openOverlay() {
-        div.style.display = "flex";
-    }
-
-    function closeOverlay() {
-        div.style.display = "none";
-    }
-
-    function mobileOverlay() {
-        if(flag === 0) {
-            mbOverlay.style.display = "flex";
-            flag = 1;
-        } else {
-            mbOverlay.style.display = "none";
-            flag = 0;
-        }
-    }
-</script>
+<script src="/assets/js/header.js"></script>
 
 </body>
 </html>

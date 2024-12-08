@@ -88,7 +88,6 @@
         <img src="/assets/login_register/login.jpg" class="h-full object-cover">
     </div>
 </div>
-
-
+<script src="/assets/js/header.js"></script>
 </body>
 </html>

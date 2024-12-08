@@ -11,3 +11,13 @@
     @apply bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out;
 }
 
+.ML_hover_header {
+    @apply cursor-pointer relative after:absolute after:bottom-0 after:left-0
+    after:bg-slate-900 after:h-0.5 after:w-full after:origin-center after:scale-x-0 hover:after:scale-x-100 
+    after:transition-transform after:ease-out after:duration-500 font-BeVietnam text-sm
+}
+
+.MT_button_header {
+    @apply text-[13px] bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-2 px-4 mr-5 hidden md:block
+    hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] hover:scale-105 duration-300
+}

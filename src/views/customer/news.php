@@ -132,5 +132,6 @@
 
     <div class="h-10 w-full bg-[#F15E2C]"></div>
 </footer>
+<script src="/assets/js/header.js"></script>
 </body>
 </html>

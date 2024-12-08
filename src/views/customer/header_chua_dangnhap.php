@@ -1,3 +1,6 @@
+<head>
+    <link href="/assets/css/output.css" rel="stylesheet">
+</head>
 <!-- <<<<<<<<<<<<<<<<Navigation Bar starts>>>>>>>>>>>>>>>> -->
 <nav id="navBar" class="bg-white/30 flex flex-row items-center text-sm
             w-full border-white fixed backdrop-blur z-30">
