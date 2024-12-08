@@ -31,15 +31,15 @@
                             <img src="img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Dashboard</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3">
+                        <a href="/order" class="flex flex-row space-x-3">
                             <img src="img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Đơn hàng</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3">
+                        <a href="/products" class="flex flex-row space-x-3">
                             <img src="img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Sản phẩm</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3 ">
+                        <a href="/customers" class="flex flex-row space-x-3 ">
                             <img src="img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Khách hàng</p>
                         </a>
@@ -52,8 +52,6 @@
                             <p>Blog</p>
                         </a>
                         <a href="#" class="flex flex-row space-x-3 pt-96">
-                            <img src="img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-                            <p>Lịch sử</p>
                         </a>
                     </div>
                     </ul>

@@ -16,7 +16,7 @@
                         </ul>
                     </div>
                     <div class="flex flex-col space-y-11 pt-10 pl-8">
-                        <a class="flex flex-row space-x-3" href="#">
+                        <a class="flex flex-row space-x-3" href="/dashboard">
                             <img src="/img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Dashboard</p>
                         </a>
@@ -32,25 +32,22 @@
                             <img src="/img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Khách hàng</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3 ">
+                        <a href="/promotion" class="flex flex-row space-x-3 ">
                             <img src="/img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Khuyến mãi</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3 ">
+                        <a href="/blog" class="flex flex-row space-x-3 ">
                             <img src="/img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Blog</p>
                         </a> 
-                        <a href="#" class="flex flex-row space-x-3 pt-96">
-                            <img src="/img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-                            <p>Lịch sử</p>
+                        <a href="#" class="flex flex-row space-x-3 pt-40">
                         </a> 
                     </div>
                     </ul>
                 </col1><!--end col1-->
                 <col2 class="bg-back_admin text-white w-4/5 space-y-8 flex flex-col">
                     <row1 class="flex justify-end pr-4 pt-4 space-x-3">
-                        <button><img src="/img/donhang_notifi.png" alt="notification"></button>
-                        <button><img src="/img/donhang_ava.png" alt="avarta"></button>
+
                     </row1><!--end row1-->
                     <row2 class="flex items-center pl-4">
                         <div class="text-2xl">Sản phẩm</div>

@@ -9,7 +9,7 @@ class Customer {
 
     public function getAllCustomer() {
         $query = "  SELECT  users.user_id,
-                            users.user_name,
+                            users.fullname AS user_name,
                             users.phone_number,
                             users.email_address,
                             users.birth_date,

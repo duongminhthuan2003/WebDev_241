@@ -16,7 +16,7 @@
                         </ul>
                     </div>
                     <div class="flex flex-col space-y-11 pt-10 pl-8">
-                        <a class="flex flex-row space-x-3" href="#">
+                        <a class="flex flex-row space-x-3" href="/dashboard">
                             <img src="img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Dashboard</p>
                         </a>
@@ -32,25 +32,23 @@
                             <img src="img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Khách hàng</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3 ">
+                        <a href="/promotion" class="flex flex-row space-x-3 ">
                             <img src="img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Khuyến mãi</p>
                         </a>
-                        <a href="#" class="flex flex-row space-x-3 ">
+                        <a href="/blog" class="flex flex-row space-x-3 ">
                             <img src="img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
                             <p>Blog</p>
                         </a> 
                         <a href="#" class="flex flex-row space-x-3 pt-96">
-                            <img src="img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-                            <p>Lịch sử</p>
+                            <div hidden>Lịch sử truy cập</div>
                         </a> 
                     </div>
                     </ul>
                 </col1><!--end col1-->
                 <col2 class="bg-back_admin text-white w-4/5 space-y-8 flex flex-col">
                     <row1 class="flex justify-end pr-4 pt-4 space-x-3">
-                        <button><img src="/img/donhang_notifi.png" alt="notification"></button>
-                        <button><img src="/img/donhang_ava.png" alt="avarta"></button>
+
                     </row1><!--end row1-->
                     <row2 class="flex items-center pl-4">
                         <div class="text-2xl">Sản phẩm</div>
@@ -63,19 +61,18 @@
                     </row2>
                     <row3 class="bg-white p-4 flex flex-col text-black space-y-4">
                         <div class="flex space-x-2">
-                            <select class="px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-black focus:outline-none focus:ring focus:ring-gray-300">
-                                <option value="" disabled selected>Lọc sản phẩm</option>
-                                <option value="all">1</option>
-                                <option value="waiting">2</option>
-                            </select>
-                
-                            <input type="text" placeholder="Tìm kiếm sản phẩm" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-300 text-black" />
-                    
                             <button onclick="location.href='/addproduct'" class="bg-black text-white border border-black w-auto text-center font-medium px-2 py-2 rounded focus:outline-none transition-all duration-300 ease-in-out">
                                 Thêm sản phẩm
                             </button>
                         </div>
                         <div><hr class="border-t border-black sm:w-full"></div>
+                        <!-- Search form -->
+                        <div class="mb-4">
+                            <form method="GET" action="">
+                                <input type="text" name="name" autocomplete="off" placeholder="Tìm kiếm sản phẩm" class="border border-gray-300 px-4 py-2 rounded">
+                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                            </form>
+                        </div>
                         <!-- table -->
                         <div class="overflow-x-auto">
                             <table class="min-w-full border-collapse border border-gray-300 text-black">
@@ -93,15 +90,27 @@
                                 <tbody>
                                     <?php 
                                         $products_all = $data;
-                                        $order_per_page = 8;
+                                        $product_per_page = 10;
                                         $start_index = 0;
                                         $total_products = count($products_all);
-                                        $total_pages = ceil($total_products / $order_per_page);
+                                        $total_pages = ceil($total_products / $product_per_page);
                                         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-                                        $start = ($page - 1) * $order_per_page;
-                                        $products = array_slice($products_all, $start, $order_per_page);
+                                        $start = ($page - 1) * $product_per_page;
 
-                                        foreach ($products as $index => $product): 
+                                        // Filter products by name
+                                        if (isset($_GET['name'])) {
+                                            $name_filter = $_GET['name'];
+                                            $filtered_products = array_filter($products_all, function($product) use ($name_filter) {
+                                                return stripos($product['name'], $name_filter) !== false;
+                                            });
+                                            $products = array_slice($filtered_products, $start, $product_per_page);
+                                        }
+                                        else {
+                                            $products = array_slice($products_all, $start, $product_per_page);
+                                        }
+
+                                        foreach ($products as $index => $product):
+
                                     ?>
                                         <tr>
                                             <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($product['product_item_id']); ?></td>

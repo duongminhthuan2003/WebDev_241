@@ -58,8 +58,6 @@
 
     <div>
       <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Lịch sử</p>
       </a>
     </div>
   </col1><!--end col1-->

@@ -18,6 +18,7 @@ class Product {
                     JOIN product_items ON products.product_id = product_items.product_id)
                     JOIN colors ON product_items.color_id = colors.color_id)
                     JOIN sizes ON product_items.size_id = sizes.size_id
+                    ORDER BY product_items.product_item_id ASC
                 ";
         $stmt = $this->db->prepare($query);
         $stmt->execute();

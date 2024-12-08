@@ -61,13 +61,7 @@ class ProductController {
 
         $result = $this->productModel->addProduct($product_name, $product_image, $product_description, $product_price, $smallest_size, $biggest_size, $color_white, $color_black, $color_beige, $color_brown, $color_blue);
 
-        if ($result['success']) {
-            $success = $result['message'];
-            include_once __DIR__ . '/../../views/admin/addproduct.php';
-        } else {
-            $error = $result['message'];
-            include_once __DIR__ . '/../../views/admin/addproduct.php';
-        }
+        header('Location: /addproduct?success=true');
     }
 
     public function showupdate($product_item_id = null) {

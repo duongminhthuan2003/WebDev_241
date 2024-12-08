@@ -26,27 +26,27 @@
       </ul>
     </div>
     <div class="flex flex-col space-y-3">
-      <a href="#" class="flex flex-row space-x-3 px-7 py-4">
+      <a href="/dashboard" class="flex flex-row space-x-3 px-7 py-4">
         <img src="/img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Dashboard</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
+      <a href="/order" class="flex flex-row space-x-3 py-4 px-7">
         <img src="/img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Đơn hàng</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
+      <a href="/products" class="flex flex-row space-x-3 py-4 px-7">
         <img src="/img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Sản phẩm</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
+      <a href="/customers" class="flex flex-row space-x-3 py-4 px-7">
         <img src="/img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Khách hàng</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7 bg-green-600">
+      <a href="/promotion" class="flex flex-row space-x-3 py-4 px-7 bg-green-600">
         <img src="/img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Khuyến mãi</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
+      <a href="/blog" class="flex flex-row space-x-3 py-4 px-7">
         <img src="/img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Blog</p>
       </a>
@@ -57,8 +57,6 @@
 
     <div>
       <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_ls.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Lịch sử</p>
       </a>
     </div>
   </col1><!--end col1-->
