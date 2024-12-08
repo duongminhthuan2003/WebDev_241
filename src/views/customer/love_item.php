@@ -7,6 +7,15 @@
 </head>
 <body>
     <div class="root">
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert('Thêm sản phẩm yêu thích thành công');
+            }
+            if (urlParams.has('delete')) {
+                alert('Xóa sản phẩm yêu thích thành công');
+            }
+        </script>
         <div class="content-wrapper font-BeVietnam max-w-screen-2xl text-base">
             <header class="mx-5 sticky top-0 bg-white bg-opacity-50 backdrop-blur-md z-10">
                 <nav class="flex flex-row items-center justify-between">
@@ -17,16 +26,16 @@
                          <li class="cursor-pointer py-1 relative after:absolute after:bottom-0 after:left-0
                          after:bg-slate-900 after:h-0.5 after:w-full after:origin-center after:scale-x-0 hover:after:scale-x-100 
                          after:transition-transform after:ease-out after:duration-500 font-BeVietnam font-medium">
-                            <a href="#" class="">Sản phẩm</a>
+                            <a href="/product_list" class="">Sản phẩm</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Sale off</a>
+                            <a href="/sale_off" class="">Sale off</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Tin tức</a>
+                            <a href="/news" class="">Tin tức</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Giới thiệu</a>
+                            <a href="/" class="">Giới thiệu</a>
                         </li>
                     </ul>
 
@@ -44,7 +53,7 @@
                                 <img src="img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
                                 <div>
                                   <p class="font-medium">HỌ VÀ TÊN</p>
-                                  <a href="#" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                                  <a href="/info" class="text-xs text-gray-500 hover:text-gray-700">Xem hồ sơ</a>
                               </div>
                               </div>
                             </div>
@@ -52,11 +61,11 @@
                               <ul class="space-y-3 text-gray-700">
                                 <li class="flex items-center gap-3">
                                   <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_giohang.png" alt="giỏ hàng">
-                                  <a href="#">Giỏ hàng</a>
+                                  <a href="/cart">Giỏ hàng</a>
                                 </li>
                                 <li class="flex items-center gap-3">
                                   <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_heart.png" alt="giỏ hàng">
-                                  <a href="#">Yêu thích</a>
+                                  <a href="/love_item">Yêu thích</a>
                                 </li>
                                 <li class="flex items-center gap-3">
                                   <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_box.png" alt="giỏ hàng">
@@ -87,7 +96,7 @@
                                     <img src="img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
                                     <div>
                                       <p class="font-medium">HỌ VÀ TÊN</p>
-                                      <a href="#" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                                      <a href="/info" class="text-xs text-gray-500 hover:text-gray-700">Xem hồ sơ</a>
                                   </div>
                                   </div>
                                 </div>
@@ -95,11 +104,11 @@
                                   <ul class="space-y-3 text-gray-700">
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_giohang.png" alt="giỏ hàng">
-                                      <a href="#">Giỏ hàng</a>
+                                      <a href="/cart">Giỏ hàng</a>
                                     </li>
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_heart.png" alt="giỏ hàng">
-                                      <a href="#">Yêu thích</a>
+                                      <a href="/love_item">Yêu thích</a>
                                     </li>
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_box.png" alt="giỏ hàng">
@@ -149,8 +158,15 @@
                                 </li>
                                 <li class="flex flex-row space-x-10 items-center">
                                     <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
+                                    <form method="POST" action="/deleteloveitem/submit">
+                                        <input type="hidden" id="product_item_id" name="product_item_id" value="<?= htmlspecialchars($product['product_item_id']); ?>">
+                                        <button type="submit" id="heartButton" class="w-11 h-10 flex border border-gray-300 rounded-md items-center justify-center" onclick="toggleHeart(this)">
+                                            <img src="/img/prd_break_heart.jpg" alt="heart" class="heart-icon"/>
+                                        </button>
+                                    </form>
                                     <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Mua ngay</button>
                                 </li>
+
                             </ul>
                         <?php endforeach; ?>
                     </col2>

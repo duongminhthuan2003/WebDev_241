@@ -17,16 +17,16 @@
                          <li class="cursor-pointer py-1 relative after:absolute after:bottom-0 after:left-0
                          after:bg-slate-900 after:h-0.5 after:w-full after:origin-center after:scale-x-0 hover:after:scale-x-100 
                          after:transition-transform after:ease-out after:duration-500 font-BeVietnam font-medium">
-                            <a href="#" class="">Sản phẩm</a>
+                            <a href="/product_list" class="">Sản phẩm</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Sale off</a>
+                            <a href="/sale_off" class="">Sale off</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Tin tức</a>
+                            <a href="/news" class="">Tin tức</a>
                         </li>
                         <li class="font-BeVietnam font-medium">
-                            <a href="#" class="">Giới thiệu</a>
+                            <a href="/" class="">Giới thiệu</a>
                         </li>
                     </ul>
 
@@ -145,9 +145,9 @@
                                     </ul>
                                 </li>
                                 <li class="text-gray-600"><?= htmlspecialchars($product['color_name']); ?></li>
-                                <li class="text-gray-600"><p style="text-decoration: line-through;" class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p></li>
+                                <li class="text-gray-600"><p style="text-decoration: line-through;" class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price']/0.9, 0, ',', '.')); ?> VNĐ</p></li>
                                 <li class="flex flex-row space-x-10 items-center">
-                                    <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price']*0.9, 0, ',', '.')); ?> VNĐ</p>
+                                    <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
                                     
                                     <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Mua ngay</button>
                                 </li>

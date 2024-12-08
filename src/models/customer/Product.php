@@ -49,8 +49,22 @@ class Product {
 
     public function addLoveItem($user_id, $product_item_id) {
         try {
-            $query = "  INSERT IF NOT EXISTS INTO love_items (user_id, product_item_id)
+            $query = "  INSERT INTO love_items (user_id, product_item_id)
                         VALUES (:user_id, :product_item_id)
+                        ON DUPLICATE KEY UPDATE product_item_id = :product_item_id
+                        ";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute(['user_id' => $user_id, 'product_item_id' => $product_item_id]);
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function deleteLoveItem($user_id, $product_item_id) {
+        try {
+            $query = "  DELETE FROM love_items
+                        WHERE user_id = :user_id AND product_item_id = :product_item_id
                         ";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['user_id' => $user_id, 'product_item_id' => $product_item_id]);

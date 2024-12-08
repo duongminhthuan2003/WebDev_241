@@ -87,7 +87,7 @@
                                     <img src="img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
                                     <div>
                                       <p class="font-medium">HỌ VÀ TÊN</p>
-                                      <a href="#" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                                      <a href="#" class="text-xs text-gray-500 hover:text-gray-700">Xem hồ sơ</a>
                                   </div>
                                   </div>
                                 </div>
@@ -95,15 +95,15 @@
                                   <ul class="space-y-3 text-gray-700">
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_giohang.png" alt="giỏ hàng">
-                                      <a href="#">Giỏ hàng</a>
+                                      <a href="/cart">Giỏ hàng</a>
                                     </li>
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_heart.png" alt="giỏ hàng">
-                                      <a href="#">Yêu thích</a>
+                                      <a href="/love_item">Yêu thích</a>
                                     </li>
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_box.png" alt="giỏ hàng">
-                                      <a href="#">Tra cứu đơn hàng</a>
+                                      <a href="/orderhistory">Tra cứu đơn hàng</a>
                                     </li>
                                     <li class="flex items-center gap-3">
                                       <img class="w-auto h-auto max-w-full max-h-full object-contain" src="img/popup_map.png" alt="giỏ hàng">

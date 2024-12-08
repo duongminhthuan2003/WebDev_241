@@ -111,7 +111,18 @@ class CustomerProductController {
         } 
         $product_item_id = $_POST['product_item_id'] ?? '';
         $this->productModel->addLoveItem($user_id, $product_item_id);
-        header('Location: /love_item');
+        header('Location: /love_item?success=1');
+    }
+
+    public function deleteLoveItem() {
+        $user_id = $_SESSION['user_id'] ?? '';
+        if (empty($user_id)) {
+            header('Location: /login');
+            exit();
+        } 
+        $product_item_id = $_POST['product_item_id'] ?? '';
+        $this->productModel->deleteLoveItem($user_id, $product_item_id);
+        header('Location: /love_item?delete=1');
     }
 
     public function getSaleProduct() {

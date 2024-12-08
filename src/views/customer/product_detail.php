@@ -26,12 +26,6 @@
     + chỉnh kích thước popup viết bình luận
     + thêm popup avarta
   -->
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('success')) {
-        alert('Thêm vào giỏ hàng thành công');
-      }
-    </script>
     <div class="root">
         <div class="content-wrapper font-BeVietnam max-w-screen-2xl text-base">
             <header class="mx-5 sticky top-0 bg-white bg-opacity-50 backdrop-blur-md z-10">

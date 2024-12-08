@@ -15,8 +15,8 @@
     <div class="w-6/12 align-middle">
         <ul class="md:flex flex-row justify-center lg:space-x-12 space-x-8 hidden">
             <li class="ML_hover_header" id="product" onclick="openOverlay()">SẢN PHẨM</li>
-            <li><a href="" class="ML_hover_header">SALE-OFF</a></li>
-            <li><a href="" class="ML_hover_header">TIN TỨC</a></li>
+            <li><a href="/sale_off" class="ML_hover_header">SALE-OFF</a></li>
+            <li><a href="/news" class="ML_hover_header">TIN TỨC</a></li>
             <li><a href="" class="ML_hover_header">GIỚI THIỆU</a></li>
         </ul>
     </div>
@@ -38,19 +38,19 @@
                     <img src="/img/prd_list_ava_popup.png" alt="avatar" class="w-10 h-10 rounded-full">
                     <div>
                         <p class="font-medium"><?= htmlspecialchars($_SESSION['user_name']); ?></p>
-                        <a href="/info" class="text-xs text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                        <a href="/info" class="text-xs text-gray-500 hover:text-gray-700">Xem hồ sơ</a>
                     </div>
                 </div>
             </div>
             <div class="p-4">
                 <div class="space-y-3 text-gray-700">
-                    <a href="#" class="flex items-center gap-3 p-2 bg-white hover:bg-gray-200">
+                    <a href="/cart" class="flex items-center gap-3 p-2 bg-white hover:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                         </svg>
-                        <p href="#">Giỏ hàng</p>
+                        <p href="">Giỏ hàng</p>
                     </a>
-                    <a href="#" class="flex items-center gap-3 p-2 bg-white hover:bg-gray-200">
+                    <a href="/love_item" class="flex items-center gap-3 p-2 bg-white hover:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                         </svg>
@@ -92,22 +92,22 @@
     </a>
     <div class="flex my-auto mx-auto">
         <div class="mx-8 flex flex-row space-x-[2vw]">
-            <a href="#" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:text-white hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col rounded-lg w-auto h-auto items-center shadow-md bg-white hover:bg-Cam_Ananas hover:text-white hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/formen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4 ">CHO NAM</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/forwomen.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">CHO NỮ</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/shirt.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">ÁO</div>
             </a>
 
-            <a href="#" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
+            <a href="/product_list" class="flex flex-col bg-white hover:bg-Cam_Ananas hover:text-white rounded-lg w-auto h-auto items-center shadow-md hover:shadow-lg hover:scale-105 duration-300">
                 <img src="/assets/navbar/acc.jpg" class="w-52 aspect-square rounded-t-lg object-cover">
                 <div class="flex content-between py-4">PHỤ KIỆN</div>
             </a>
@@ -125,12 +125,12 @@
             <div><img src="img/prd_list_ava_popup.png" alt="avarta"></div>
             <div>
                 <p class="font-medium">HỌ VÀ TÊN</p>
-                <a href="#" class=" text-gray-500 hover:text-gray-700">xem hồ sơ</a>
+                <a href="#" class=" text-gray-500 hover:text-gray-700">Xem hồ sơ</a>
             </div>
         </div>
         <div class="flex flex-col space-y-3">
             <div class="flex space-x-3">
-                <a href="#" class="border rounded-md p-4 shadow-md flex w-1/2 bg-white hover:bg-Cam_Ananas hover:text-white">
+                <a href="/cart" class="border rounded-md p-4 shadow-md flex w-1/2 bg-white hover:bg-Cam_Ananas hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>
