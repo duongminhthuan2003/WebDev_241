@@ -18,7 +18,7 @@ class RegisterController {
 
     public function register() {
         // Lấy dữ liệu từ POST request
-        $user_name = $_POST['fullname'] ?? '';
+        $fullname = $_POST['fullname'] ?? '';
         $phone_number = $_POST['phone_number'] ?? '';
         $email_address = $_POST['email_address'] ?? '';
         $password = $_POST['password'] ?? '';
@@ -27,7 +27,7 @@ class RegisterController {
         $gender = $_POST['gender'] ?? '';
 
         // Kiểm tra các trường thông tin
-        if (empty($user_name) || empty($phone_number) || empty($email_address) || empty($password) || empty($confirm_password)) {
+        if (empty($fullname) || empty($phone_number) || empty($email_address) || empty($password) || empty($confirm_password)) {
             $error = "Vui lòng điền đầy đủ thông tin.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
@@ -62,7 +62,7 @@ class RegisterController {
         }
 
         // Gửi dữ liệu tới model
-        $result = $this->registerModel->postUser($user_name, $phone_number, $email_address, $password, $birth_day, $gender);
+        $result = $this->registerModel->postUser($fullname, $phone_number, $email_address, $password, $birth_day, $gender);
 
         // Xử lý phản hồi từ model
         if ($result['success']) {

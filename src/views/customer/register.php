@@ -33,7 +33,7 @@
             <p class="font-bold text-3xl mb-5">ĐĂNG KÝ</p>
             <form method="POST" action="/register/submit">
             <p>Họ và tên:</p>
-            <input type="text" placeholder="Họ và tên" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="user_name" name="fullname" required>
+            <input type="text" placeholder="Họ và tên" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="fullname" name="fullname" required>
 
             <div class="flex flex-row space-x-5">
                 <div class="w-4/12">
