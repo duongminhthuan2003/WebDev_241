@@ -668,6 +668,18 @@ video {
   top: 90px;
 }
 
+.top-96{
+  top: 24rem;
+}
+
+.top-\[150px\]{
+  top: 150px;
+}
+
+.top-40{
+  top: 10rem;
+}
+
 .z-0{
   z-index: 0;
 }
@@ -936,6 +948,30 @@ video {
 
 .mt-80{
   margin-top: 20rem;
+}
+
+.mt-\[600px\]{
+  margin-top: 600px;
+}
+
+.ml-16{
+  margin-left: 4rem;
+}
+
+.mr-16{
+  margin-right: 4rem;
+}
+
+.mr-20{
+  margin-right: 5rem;
+}
+
+.mr-32{
+  margin-right: 8rem;
+}
+
+.mt-\[800px\]{
+  margin-top: 800px;
 }
 
 .block{
@@ -1279,6 +1315,10 @@ video {
 
 .w-screen{
   width: 100vw;
+}
+
+.w-7\/12{
+  width: 58.333333%;
 }
 
 .min-w-fit{
@@ -1949,6 +1989,10 @@ video {
 
 .pt-96{
   padding-top: 24rem;
+}
+
+.text-left{
+  text-align: left;
 }
 
 .text-center{
@@ -2625,6 +2669,14 @@ video {
     top: 400px;
   }
 
+  .md\:top-96{
+    top: 24rem;
+  }
+
+  .md\:top-80{
+    top: 20rem;
+  }
+
   .md\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
@@ -2669,6 +2721,14 @@ video {
     margin-top: 15rem;
   }
 
+  .md\:mt-80{
+    margin-top: 20rem;
+  }
+
+  .md\:ml-6{
+    margin-left: 1.5rem;
+  }
+
   .md\:block{
     display: block;
   }
@@ -2703,6 +2763,10 @@ video {
 
   .md\:h-full{
     height: 100%;
+  }
+
+  .md\:h-80{
+    height: 20rem;
   }
 
   .md\:w-1\/5{
@@ -2743,6 +2807,14 @@ video {
 
   .md\:w-full{
     width: 100%;
+  }
+
+  .md\:w-5\/12{
+    width: 41.666667%;
+  }
+
+  .md\:w-80{
+    width: 20rem;
   }
 
   .md\:min-w-fit{
@@ -2876,6 +2948,14 @@ video {
     margin-top: 0px;
   }
 
+  .lg\:mt-3{
+    margin-top: 0.75rem;
+  }
+
+  .lg\:mt-\[600px\]{
+    margin-top: 600px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -2898,6 +2978,14 @@ video {
 
   .lg\:h-\[800px\]{
     height: 800px;
+  }
+
+  .lg\:h-60{
+    height: 15rem;
+  }
+
+  .lg\:h-80{
+    height: 20rem;
   }
 
   .lg\:w-1\/2{
@@ -2928,12 +3016,28 @@ video {
     width: auto;
   }
 
+  .lg\:w-60{
+    width: 15rem;
+  }
+
+  .lg\:w-80{
+    width: 20rem;
+  }
+
   .lg\:max-w-lg{
     max-width: 32rem;
   }
 
   .lg\:flex-row{
     flex-direction: row;
+  }
+
+  .lg\:items-start{
+    align-items: flex-start;
+  }
+
+  .lg\:items-end{
+    align-items: flex-end;
   }
 
   .lg\:items-center{
@@ -2978,6 +3082,14 @@ video {
 
   .lg\:pl-40{
     padding-left: 10rem;
+  }
+
+  .lg\:text-left{
+    text-align: left;
+  }
+
+  .lg\:text-right{
+    text-align: right;
   }
 
   .lg\:text-8xl{

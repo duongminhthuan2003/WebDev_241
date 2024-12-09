@@ -28,39 +28,39 @@
 ?>
 
 <div>
-    <div class="flex flex-col w-9/12 mx-auto mt-8">
-            <div class="text-2xl font-bold">TIN TỨC</div>
+    <div class="flex flex-col w-9/12 mx-auto">
+            <div class="text-2xl font-bold mt-16">TIN TỨC</div>
     </div>
     <?php 
         $top2news = array_slice($data, 0, 2);
         $othernews = array_slice($data, 2); 
         foreach ($top2news as $index => $news): 
     ?>
-        <div>
+        <div class="mt-16">
             <?php if ($index == 0): ?>
-                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-row w-6/12 absolute left-24 z-30">
-                    <div class="flex flex-col justify-end items-end mr-6">
-                        <p class="text-right font-bold mb-2"><?= htmlspecialchars($news['blog_name']); ?></p>
-                        <p class="text-sm text-[#888888] text-right mb-2"><?= htmlspecialchars($news['summary']); ?></p>
+                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-col ml-16 lg:ml-0 lg:flex-row items-start lg:items-end w-9/12 lg:w-6/12 absolute left-24 z-30">
+                    <div class="flex flex-col items-start lg:items-end mr-6">
+                        <p class="text-left lg:text-right font-bold mb-2"><?= htmlspecialchars($news['blog_name']); ?></p>
+                        <p class="text-sm text-[#888888] text-left lg:text-right mb-2"><?= htmlspecialchars($news['summary']); ?></p>
                         <p class="mb-4"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
                     </div>
                 
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-80 h-80 object-cover rounded-xl hover:scale-105 duration-300">
+                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-80 lg:w-80 h-80 lg:h-80 object-cover rounded-xl hover:scale-105 duration-300">
                 </a>
             <?php else: ?>
-                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-row w-5/12 absolute items-end right-[5vw] top-80 z-20">
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-60 h-60 object-cover rounded-xl hover:scale-105 duration-300">
+                <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-col items-end lg:items-start lg:flex-row w-8/12 lg:w-5/12 absolute right-[5vw] mr-20 lg:mr-0 mt-16 md:mt-60 z-20">
+                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="lg:w-60 lg:h-60 w-60 h-60 object-cover rounded-xl hover:scale-105 duration-300">
 
-                    <div class="flex flex-col ml-6">
-                        <p class="font-bold mb-2"><?= htmlspecialchars($news['blog_name']); ?></p>
-                        <p class="text-sm text-[#888888] mb-2"><?= htmlspecialchars($news['summary']); ?></p>
-                        <p class="mb-4"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
+                    <div class="flex flex-col lg:items-start items-end ml-0 md:ml-6">
+                        <p class="font-bold text-right lg:text-left mb-2 lg:mt-0 mt-3"><?= htmlspecialchars($news['blog_name']); ?></p>
+                        <p class="text-sm text-right lg:text-left text-[#888888] mb-2"><?= htmlspecialchars($news['summary']); ?></p>
+                        <p class="mb-4 text-right lg:text-left"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
                     </div>
                 </a>
             <?php endif; ?>
         </div>
     <?php endforeach; ?>
-    <div class="flex flex-col w-9/12 mx-auto space-y-8 mt-[500px]">
+    <div class="flex flex-col w-9/12 mx-auto space-y-8 mt-[800px] lg:mt-[600px]">
     <?php for ($i = 0; $i < ceil(count($othernews) / 3); $i++): ?>
         <div class="flex flex-row space-x-8 h-[350px]">
         <?php for ($j = 0; $j < 3; $j++): ?>
