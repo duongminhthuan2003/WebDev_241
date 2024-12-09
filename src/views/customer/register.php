@@ -10,6 +10,7 @@
             font-weight: normal;
         }
     </style>
+    <link href="/assets/css/output.css" rel="stylesheet">
 </head>
 <body class="h-screen">
 <?php
@@ -28,20 +29,20 @@
 ?>
 
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
-    <div class="flex items-center -mt-16 lg:w-6/12 w-full">
+    <div class="flex items-center mt-9 md:mt-16 lg:w-6/12 w-full">
         <div class="flex-col flex w-2/3 mx-auto">
-            <p class="font-bold text-3xl mb-5">ĐĂNG KÝ</p>
+            <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG KÝ</p>
             <form method="POST" action="/register/submit">
             <p>Họ và tên:</p>
             <input type="text" placeholder="Họ và tên" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="fullname" name="fullname" required>
 
-            <div class="flex flex-row space-x-5">
-                <div class="w-4/12">
+            <div class="flex flex-col md:flex-row space-x-0 md:space-x-5">
+                <div class="w-full md:w-4/12">
                     <p>Số điện thoại</p>
                     <input type="tel" placeholder="Số điện thoại" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="phone_number" name="phone_number" required>
                 </div>
 
-                <div class="w-8/12">
+                <div class="w-full md:w-8/12">
                     <p>Email</p>
                     <input type="email" placeholder="Email" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="email_address" name="email_address" required>
                 </div>
@@ -72,6 +73,19 @@
                 </div>
             </div>
 
+                <div>
+                    <p class="mt-8">Địa chỉ:</p>
+                    <div class="flex flex-row space-x-3">
+                        <input type="text" placeholder="Tỉnh/thành phố" class="border-2 w-1/3 mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="province" name="province" required>
+                        <input type="text" placeholder="Quận/huyện" class="border-2 w-1/3 mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="district" name="district" required>
+                        <input type="text" placeholder="Phường/xã" class="border-2 w-1/3 mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="ward" name="ward" required>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Địa chỉ chi tiết" class="border-2 w-full mb-5 text-sm h-14 mt-0 rounded-lg pl-4" id="detailed_address" name="detailed_address" required>
+                    </div>
+                </div>
+
+
             <?php if (isset($error)): ?>
                 <div style="color: red;"><?= htmlspecialchars($error); ?></div>
             <?php endif; ?>            
@@ -84,7 +98,7 @@
         </div>
     </div>
 
-    <div class="w-6/12 hidden lg:block">
+    <div class="w-6/12 hidden lg:block mt-16">
         <img src="/assets/login_register/login.jpg" class="h-full object-cover">
     </div>
 </div>
