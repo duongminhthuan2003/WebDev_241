@@ -29,7 +29,7 @@
 ?>
 
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
-    <div class="flex items-center mt-9 md:mt-16 lg:w-6/12 w-full">
+    <div class="flex items-center mt-80 md:mt-60 lg:w-6/12 w-full">
         <div class="flex-col flex w-2/3 mx-auto">
             <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG KÝ</p>
             <form method="POST" action="/register/submit">
