@@ -81,7 +81,7 @@
                         <input type="text" placeholder="Phường/xã" class="border-2 w-1/3 mb-5 text-sm h-14 rounded-lg mt-2 pl-4" id="ward" name="ward" required>
                     </div>
                     <div>
-                        <input type="text" placeholder="Địa chỉ chi tiết" class="border-2 w-full mb-5 text-sm h-14 mt-0 rounded-lg pl-4" id="detailed_address" name="detailed_address" required>
+                        <input type="text" placeholder="Địa chỉ chi tiết" class="border-2 w-full mb-5 text-sm h-14 mt-0 rounded-lg pl-4" id="detail" name="detail" required>
                     </div>
                 </div>
 

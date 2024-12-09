@@ -25,29 +25,34 @@ class RegisterController {
         $confirm_password = $_POST['confirm_password'] ?? '';
         $birth_day = $_POST['birth_day'] ?? '';
         $gender = $_POST['gender'] ?? '';
-
+    
+        $province = $_POST['province'] ?? '';
+        $district = $_POST['district'] ?? '';
+        $ward = $_POST['ward'] ?? '';
+        $detail = $_POST['detail'] ?? '';
+    
         // Kiểm tra các trường thông tin
-        if (empty($fullname) || empty($phone_number) || empty($email_address) || empty($password) || empty($confirm_password)) {
+        if (empty($fullname) || empty($phone_number) || empty($email_address) || empty($password) || empty($confirm_password) ||
+            empty($birth_day) || empty($gender) || empty($province) || empty($district) || empty($ward) || empty($detail)) {
             $error = "Vui lòng điền đầy đủ thông tin.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
-
+    
         // Kiểm tra định dạng email
         if (!filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
             $error = "Địa chỉ email không hợp lệ.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
-
+    
         // Kiểm tra số điện thoại (phải là số và có độ dài phù hợp)
         if (!preg_match('/^\d{10,11}$/', $phone_number)) {
-            $error = "Số điện thoại không hợp lệ";
+            $error = "Số điện thoại không hợp lệ.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
-
-
+    
         $existingUser = $this->registerModel->getUserByPhoneOrEmail($phone_number, $email_address);
         if ($existingUser && $existingUser->rowCount() > 0) {
             $error = "Số điện thoại hoặc email đã được sử dụng.";
@@ -55,30 +60,46 @@ class RegisterController {
             return;
         }
 
+        if (strlen($password) < 8) {
+            $error = "Mật khẩu phải có ít nhất 8 ký tự.";
+            include_once __DIR__ . '/../../views/customer/register.php';
+            return;
+        }
+    
         // Kiểm tra mật khẩu và xác nhận mật khẩu
         if ($password !== $confirm_password) {
             $error = "Mật khẩu và mật khẩu xác nhận không khớp.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
-
+    
         $user_name = generateUsername($fullname, $birth_day);
-
-        // Gửi dữ liệu tới model
+    
+        // Gửi dữ liệu tới model để tạo người dùng
         $result = $this->registerModel->postUser($fullname, $user_name, $phone_number, $email_address, $password, $birth_day, $gender);
-
+    
         // Xử lý phản hồi từ model
         if ($result['success']) {
-            // Chuyển hướng hoặc hiển thị thông báo thành công
-            $success = $result['message'];
-            include_once __DIR__ . '/../../views/customer/login.php';
+            // Lấy ID người dùng vừa được thêm
+            $userId = $this->db->lastInsertId();
+    
+            // Gửi dữ liệu địa chỉ tới model
+            $addressResult = $this->registerModel->postAddress($userId, $province, $district, $ward, $detail);
+    
+            if ($addressResult['success']) {
+                $success = $addressResult['message'];
+                include_once __DIR__ . '/../../views/customer/login.php';
+            } else {
+                $error = $addressResult['message'];
+                include_once __DIR__ . '/../../views/customer/register.php';
+            }
         } else {
             // Hiển thị lỗi từ model
             $error = $result['message'];
             include_once __DIR__ . '/../../views/customer/register.php';
         }
     }
-}
+}    
 
 function generateUsername($fullname, $birth_day) {
     // Chuyển fullname sang không dấu
