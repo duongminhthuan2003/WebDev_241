@@ -40,7 +40,7 @@
 ?>
 
 <div class="flex-grow">
-    <div class="flex flex-row w-9/12 mx-auto mt-8">
+    <div class="flex flex-row w-9/12 mx-auto mt-16">
         <div class="flex flex-col items-start w-3/12 mr-6">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 

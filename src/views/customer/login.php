@@ -13,6 +13,7 @@
             color: red;
         }
     </style>
+
 </head>
 <body class="h-screen">
 <?php
@@ -47,14 +48,14 @@
                     ĐĂNG NHẬP
                 </button>
             </form>
-            <div class="md:flex lg:flex-row flex-col hidden w-full mt-8 content-between">
-                <p class="lg:w-5/12 mr-auto ml-auto lg:ml-0 lg:mr-0"><a>Quên mật khẩu?</a></p>
+            <div class="lg:flex lg:flex-row flex-col hidden w-full mt-8 content-between">
+                <p class="lg:w-5/12"><a>Quên mật khẩu?</a></p>
                 <p class="flex md:min-w-fit justify-end mx-auto lg:ml-auto lg:mr-0 mt-2 lg:mt-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
             </div>
 
-            <div class="md:hidden flex-col flex w-full mt-8 content-between">
-                <p class="mx-auto"><a>Quên mật khẩu?</a></p>
-                <p class="mx-auto mt-1">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
+            <div class="lg:hidden flex-col flex w-full mt-8 content-between">
+                <p class="lg:w-5/12 mr-auto ml-auto lg:ml-0 lg:mr-0"><a>Quên mật khẩu?</a></p>
+                <p class="flex md:min-w-fit justify-end mx-auto lg:ml-auto lg:mr-0 mt-2 lg:mt-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
             </div>
         </div>
     </div>
