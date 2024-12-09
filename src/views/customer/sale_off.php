@@ -48,39 +48,19 @@
                                 <li><img src="<?= htmlspecialchars($product['product_image']); ?>" alt="sản phẩm 1"></li>
                                 <li>
                                     <ul class="flex flex-row">
-                                        <li><p class="font-bold h-16 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
+                                        <li><p class="font-bold h-12 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
                                     </ul>
                                 </li>
                                 <li class="text-gray-600"><?= htmlspecialchars($product['color_name']); ?></li>
                                 <li class="text-gray-600"><p style="text-decoration: line-through;" class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price']/0.9, 0, ',', '.')); ?> VNĐ</p></li>
-                                <li class="flex flex-row space-x-10 items-center">
-                                    <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
-                                    
-                                    <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Mua ngay</button>
+                                <li class="flex flex-row items-center justify-between w-full">
+                                    <p class="font-medium"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
+                                    <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class="ML_button pr-0">Mua ngay</button>
                                 </li>
                             </ul>
                         <?php endforeach; ?>
                     </col2>
                 </row2><!--end row2-->
-                <row3 class="flex flex-row items-center justify-center">
-                    <col32 class="">
-                        <row2 class="flex flex-row items-center justify-center space-x-3 my-20">
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                                </svg>
-                            </button>
-                            <button><img src="img/prd_list_icon_page1.png" alt="icon page 1"></button>
-                            <button><img src="img/prd_list_icon_page2.png" alt="icon page 2"></button>
-                            <button><img src="img/prd_list_icon_page3.png" alt="icon page 3"></button>
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </button>
-                        </row2><!--end row2-->
-                    </col32>
-                </row3>
             </main><!-- end main -->
 
             <?php

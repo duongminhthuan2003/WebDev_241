@@ -206,13 +206,13 @@
                             <li><img src="<?= htmlspecialchars($product['product_image']); ?>" alt="sản phẩm 1"></li>
                             <li>
                                 <ul class="flex flex-row">
-                                    <li><p class="font-bold h-16 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
+                                    <li><p class="font-bold h-12 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
                                 </ul>
                             </li>
                             <li class="text-gray-600"><?= htmlspecialchars($product['color_name']); ?></li>
-                            <li class="flex flex-row space-x-10 items-center">
-                                <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
-                                <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class="ML_button">Mua ngay</button>
+                            <li class="flex flex-row items-center justify-between w-full">
+                                <p class="font-medium"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
+                                <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class="ML_button pr-0">Mua ngay</button>
                             </li>
                         </ul>
                     <?php endforeach; ?>

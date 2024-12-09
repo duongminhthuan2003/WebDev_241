@@ -5,7 +5,7 @@
 <nav id="navBar" class="bg-white/30 flex flex-row items-center text-sm
             w-full border-white fixed backdrop-blur z-30">
     <div class="w-3/12">
-        <a href="index.php">
+        <a href="/">
             <img src="/assets/logo-black.png" alt="Logo" class="md:h-16 md:ml-7 ml-4 h-12"/>
         </a>
     </div>
