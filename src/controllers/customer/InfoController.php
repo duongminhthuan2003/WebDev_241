@@ -18,12 +18,6 @@ class InfoController {
         }
         $user_id = $_SESSION['user_id'] ?? null;
     
-        // Nếu người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
-        if (!$user_id) {
-            header('Location: /login');
-            exit();
-        }
-    
         // Lấy thông tin người dùng từ model
         $data = $this->infoModel->getUserInfo($user_id)->fetchAll(PDO::FETCH_ASSOC);
     
