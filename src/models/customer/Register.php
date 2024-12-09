@@ -14,17 +14,18 @@ class Register {
         return $stmt;
     }
 
-    public function postUser($fullname, $phone_number, $email_address, $password, $birth_day, $gender) {
+    public function postUser($fullname, $user_name, $phone_number, $email_address, $password, $birth_day, $gender) {
         try { 
             // Mã hóa mật khẩu
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Thêm người dùng mới vào cơ sở dữ liệu
-            $insertQuery = "INSERT INTO users (fullname, phone_number, email_address, password, birth_date, gender) 
-                            VALUES (:fullname, :phone_number, :email_address, :password, :birth_day, :gender)";
+            $insertQuery = "INSERT INTO users (fullname, user_name, phone_number, email_address, password, birth_date, gender) 
+                            VALUES (:fullname, :user_name, :phone_number, :email_address, :password, :birth_day, :gender)";
             $insertStmt = $this->db->prepare($insertQuery);
             $insertStmt->execute([
                 ':fullname' => $fullname,
+                ':user_name' => $user_name,
                 ':phone_number' => $phone_number,
                 ':email_address' => $email_address,
                 ':password' => $hashedPassword,
