@@ -13,6 +13,7 @@
             color: red;
         }
     </style>
+
 </head>
 <body class="h-screen">
 <?php
@@ -33,7 +34,7 @@
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
     <div class="flex items-center -mt-16 w-10/12 mx-auto md:w-6/12">
         <div class="flex-col flex w-2/3 mx-auto">
-            <p class="font-bold text-3xl mb-5">ĐĂNG NHẬP</p>
+            <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG NHẬP</p>
             <form method="POST" action="/login/submit" class="w-full">
                 <p>Email/Số điện thoại:</p>
                 <input type="text" placeholder="Email" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" name="identifier" required>
@@ -47,9 +48,14 @@
                     ĐĂNG NHẬP
                 </button>
             </form>
-            <div class="flex flex-row w-full mt-8">
-                <p class="w-5/12"><a>Quên mật khẩu?</a></p>
-                <p class="flex w-7/12 justify-end mr-0 right-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
+            <div class="lg:flex lg:flex-row flex-col hidden w-full mt-8 content-between">
+                <p class="lg:w-5/12"><a>Quên mật khẩu?</a></p>
+                <p class="flex md:min-w-fit justify-end mx-auto lg:ml-auto lg:mr-0 mt-2 lg:mt-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
+            </div>
+
+            <div class="lg:hidden flex-col flex w-full mt-8 content-between">
+                <p class="lg:w-5/12 mr-auto ml-auto lg:ml-0 lg:mr-0"><a>Quên mật khẩu?</a></p>
+                <p class="flex md:min-w-fit justify-end mx-auto lg:ml-auto lg:mr-0 mt-2 lg:mt-0">Chưa có tài khoản?<a class="ml-1" href="/register"><strong>Đăng ký</strong></a></p>
             </div>
         </div>
     </div>
@@ -58,7 +64,7 @@
 
     </div>
 
-    <div class="w-6/12 md:block hidden">
+    <div class="relative w-6/12 md:block hidden top-[64px]">
         <img src="/assets/login_register/login.jpg" class="h-full object-cover">
     </div>
 </div>

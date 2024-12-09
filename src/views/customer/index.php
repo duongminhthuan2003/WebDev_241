@@ -52,20 +52,20 @@
 </div>
 
 <!--Nổi bật-->
-<div class="w-9/12 mx-auto mt-16 text-2xl font-bold"><p>Nổi bật</p></div>
-<div class="flex flex-row w-9/12 2xl:w-[10/12] h-[600px] left-0 right-0 mx-auto mt-5">
+<div class="w-10/12 xl:w-9/12 mx-auto mt-16 text-2xl font-bold"><p>Nổi bật</p></div>
+<div class="flex lg:flex-row flex-col w-10/12 xl:w-9/12 h-[200px] md:h-[300px] lg:h-[600px] min-h-fit left-0 right-0 mx-auto mt-5 space-y-5 lg:space-y-0">
     <?php
         $isLastItem = false;
         $outstanding = $data['outstanding'];
         foreach ($outstanding as $index => $product):
         $isLastItem = $index === count($outstanding) - 1;
     ?>
-        <div class="w-1/3 pl-4 <?= $isLastItem ? 'hidden 2xl:block' : ''; ?>">
-            <img src="<?= htmlspecialchars($product['os_image']); ?>" class="h-[600px] w-full object-cover" alt="<?= htmlspecialchars($product['os_name']); ?>">
-            <img src="/assets/index/ftr_back.png" class="w-full h-[300px] relative bottom-[300px] z-20" alt="Featured_Background">
-            <h4 class="text-white z-30 relative bottom-[450px] ml-7"><?= htmlspecialchars($product['os_tag_line']); ?></h4>
-            <h3 class="text-lg text-white relative bottom-[440px] font-bold z-30 ml-7"><?= htmlspecialchars($product['os_name']); ?></h3>
-            <button class="text-[14px] relative bottom-[430px] ml-7 z-30 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg py-3 px-6
+        <div class="lg:w-1/3 w-full lg:pl-4 pl-0 h-[200px] md:h-[300px] lg:h-[600px] <?= $isLastItem ? 'hidden 2xl:block' : ''; ?>">
+            <img src="<?= htmlspecialchars($product['os_image']); ?>" class="h-[200px] md:h-[300px] lg:h-[600px] w-full object-cover" alt="<?= htmlspecialchars($product['os_name']); ?>">
+            <img src="/assets/index/ftr_back.png" class="w-full h-[200px] md:h-[300px] relative bottom-[200px] md:bottom-[300px] z-20" alt="Featured_Background">
+            <h4 class="text-white z-20 relative bottom-[330px] md:bottom-[450px] lg:ml-7 ml-4"><?= htmlspecialchars($product['os_tag_line']); ?></h4>
+            <h3 class="text-lg text-white relative bottom-[320px] md:bottom-[440px] font-bold z-20 lg:ml-7 ml-4"><?= htmlspecialchars($product['os_name']); ?></h3>
+            <button class="md:text-[14px] text-[13px] relative bottom-[310px] md:bottom-[430px] lg:ml-7 ml-4 z-20 bg-gradient-to-r from-[#F15E2C] from-0% to-[#F15E2C] to-100% text-white rounded-lg md:py-3 md:px-6 py-2 px-5
                 hover:bg-gradient-to-r hover:from-[#fca144] hover:from-5% hover:to-[#FF6530] hover:to-30% hover:shadow-md hover:shadow-[rgba(241,94,44,0.5)] duration-300">
                 Mua ngay
             </button>
