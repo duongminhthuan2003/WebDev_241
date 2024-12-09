@@ -57,23 +57,24 @@
                                 <li><img src="<?= htmlspecialchars($product['product_image']); ?>" alt="sản phẩm"></li>
                                 <li>
                                     <ul class="flex flex-row">
-                                        <li><p class="font-bold h-16 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
+                                        <li><p class="font-bold h-10 mt-3"><?= htmlspecialchars($product['name']); ?></p></li>
                                     </ul>
                                 </li>
                                 <li class="flex flex-row space-x-10 items-center text-gray-600">
                                     <?= htmlspecialchars($product['color_name']); ?>
                                 </li>
-                                <li class="flex flex-row space-x-10 items-center">
-                                    <p class="font-medium justify-start"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
+                                <li class="flex flex-row space-x-2 items-center">
+                                    <p class="font-medium justify-start pb-2"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</p>
+                                </li>
+                                <li class="flex space-x-2 items-center">
                                     <form method="POST" action="/deleteloveitem/submit">
                                         <input type="hidden" id="product_item_id" name="product_item_id" value="<?= htmlspecialchars($product['product_item_id']); ?>">
-                                        <button type="submit" id="heartButton" class="w-11 h-10 flex border border-gray-300 rounded-md items-center justify-center" onclick="toggleHeart(this)">
-                                            <img src="/img/prd_break_heart.jpg" alt="heart" class="heart-icon"/>
+                                        <button type="submit" id="heartButton" class="w-11 h-10 flex border bg-black border-gray-300 rounded-md items-center justify-center hover:scale-105" onclick="toggleHeart(this)">
+                                            <img src="/img/gio_hang_bin.png" alt="heart" class="heart-icon"/>
                                         </button>
                                     </form>
-                                    <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class=" bg-Cam_Ananas text-white font-medium px-2 py-2 rounded hover:bg-gradient-to-r hover:from-[#FFAE5C] hover:via-[#F15E2C] hover:to-[#F15E2C] focus:outline-none transition-all duration-300 ease-in-out">Mua ngay</button>
+                                    <button type="button" onclick="location.href='/product_list/detail/<?= htmlspecialchars($product['product_item_id']); ?>'" class="ML_button">Mua ngay</button>
                                 </li>
-
                             </ul>
                         <?php endforeach; ?>
                     </col2>
