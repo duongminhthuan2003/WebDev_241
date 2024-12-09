@@ -18,12 +18,6 @@
   <link href="/assets/css/output.css" rel="stylesheet">
 </head>
 <body>
-
-  <!-- 
-    + chỉnh hình ảnh sản phẩm
-    + bổ sung responsive
-    + hình ava popup trong mobile k hiện  
-  -->
     <div class="root">
         <div class="content-wrapper font-BeVietnam text-base">
             <!--header-->
@@ -52,12 +46,12 @@
             ?>
             
             <main class="flex flex-col mx-64 pt-20">
-                <row1 class="flex flex-row space-x-2">
-                  <col1>
-                    <img src="<?= htmlspecialchars($product['product_image']); ?>" style="height: 450px; width: 600px" alt="product">
+                <row1 class="flex flex-wrap lg:flex-row space-x-2 lg:space-x-4">
+                  <col1 class="w-full lg:w-auto flex items-center justify-center">
+                    <img src="<?= htmlspecialchars($product['product_image']); ?>" class="w-full h-auto max-w-xs sm:max-w-sm lg:max-w-lg" alt="product">
                   </col1>
-                  <col2>
-                    <div class="" style="padding: 3rem;">
+                  <col2 class="w-full lg:w-auto mt-4 lg:mt-0">
+                    <div class="pt-6">
                       <form method="POST" action="/detail/submit">
                         <!-- Màu sắc -->
                         <input type="hidden" id="user_id" name="user_id" value="<?= htmlspecialchars($user_id); ?>">
@@ -135,9 +129,9 @@
                         <li class="font-bold text-Cam_Ananas text-2xl mt-3"><?= htmlspecialchars(number_format($product['price'], 0, ',', '.')); ?> VNĐ</li>
                     </ul>
                 </row2><!--end row2-->
-                <row3 class="flex flex-row mt-20 space-x-8">
-                    <col1 class="w-1/2">
-                        <ul class="space-y-3">
+                <row3 class="flex flex-row mt-20 space-x-8 flex-wrap lg:flex-row lg:space-x-4">
+                    <col1 class="w-full lg:w-auto">
+                        <ul class="space-y-3 pt-6">
                             <li class="font-bold">MÔ TẢ SẢN PHẨM</li>
                             <li>  
                                 <ul class="space-y-2 list-disc pl-5">
@@ -147,11 +141,10 @@
                                   <?php endforeach; ?>
                                 </ul>
                             </li>
-                            <li class="font-bold">BẢNG CHỌN SIZE</li>
                         </ul>
                     </col1><!--end col1-->
-                    <col2 class="w-1/2">
-                        <ul class="flex flex-col space-y-5">
+                    <col2 class="w-full lg:w-auto mt-4 lg:mt-0">
+                        <ul class="flex flex-col space-y-5 pt-6">
                             <li class="font-bold">ĐÁNH GIÁ</li>
                             <li class="flex flex-row items-center space-x-4">
                                 <div id="stars-container" class="flex justify-center">
