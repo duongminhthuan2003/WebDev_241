@@ -1,15 +1,3 @@
-<?php
-  // session_start();
-  // if (!isset($_SESSION['customer'])) {
-  //   header('Location: /login');
-  // }
-  $user_id = $_SESSION['user_id'] ?? '';
-  if (empty($user_id)) {
-      header('Location: /login');
-      exit();
-  }
-?>
-
 <!doctype html>
 <html lang="vi">
 <head>

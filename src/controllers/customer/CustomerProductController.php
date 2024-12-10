@@ -38,6 +38,12 @@ class CustomerProductController {
     }
 
     public function addToCart() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
         $user_id = $_POST['user_id'] ?? '';
         $product_id = $_POST['product_id'] ?? '';
         $color_id = $_POST['color_id'] ?? '';
@@ -68,6 +74,12 @@ class CustomerProductController {
     }
 
     public function writeReviewshow($product_item_id) {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
         $product = $this->productModel->getDetail($product_item_id)->fetch(PDO::FETCH_ASSOC);
         $data = [
             'product' => $product
@@ -76,6 +88,9 @@ class CustomerProductController {
     }
 
     public function writeReview() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $user_id = $_SESSION['user_id'] ?? '';
         if (empty($user_id)) {
             header('Location: /login');
@@ -94,6 +109,9 @@ class CustomerProductController {
     }
 
     public function getLoveItem() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $user_id = $_SESSION['user_id'] ?? '';
         if (empty($user_id)) {
             header('Location: /login');
@@ -104,6 +122,9 @@ class CustomerProductController {
     }
 
     public function addLoveItem() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $user_id = $_SESSION['user_id'] ?? '';
         if (empty($user_id)) {
             header('Location: /login');
@@ -115,6 +136,9 @@ class CustomerProductController {
     }
 
     public function deleteLoveItem() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $user_id = $_SESSION['user_id'] ?? '';
         if (empty($user_id)) {
             header('Location: /login');
