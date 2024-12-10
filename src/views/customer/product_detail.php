@@ -186,7 +186,7 @@
                                     </div>
                                   </li>
                                 </ul>
-                                <p class="text-sm text-gray-500"><?= htmlspecialchars((new DateTime($r['creat_at']))->format('d/m/Y')); ?></p>
+                                <p class="text-sm text-gray-500"><?= htmlspecialchars((new DateTime($r['created_at']))->format('d/m/Y')); ?></p>
                                 <p><?= htmlspecialchars($r['content']); ?></p>
                               </li>
                             <?php endforeach; ?>

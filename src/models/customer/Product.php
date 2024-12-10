@@ -184,7 +184,7 @@ class Product {
                         users.user_name, 
                         user_reviews.rating, 
                         user_reviews.content, 
-                        user_reviews.creat_at
+                        user_reviews.created_at
                     FROM 
                         (users 
                         JOIN user_reviews ON users.user_id = user_reviews.user_id)
