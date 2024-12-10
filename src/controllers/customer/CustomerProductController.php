@@ -44,7 +44,7 @@ class CustomerProductController {
         if (!isset($_SESSION['user_id'])):
             header('Location: /login');
         endif;
-        $user_id = $_POST['user_id'] ?? '';
+        $user_id = $_SESSION['user_id'] ?? '';
         $product_id = $_POST['product_id'] ?? '';
         $color_id = $_POST['color_id'] ?? '';
         $size_id = $_POST['size_id'] ?? '';

@@ -7,6 +7,12 @@
   <link href="/assets/css/output.css" rel="stylesheet">
 </head>
 <body>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('success')) {
+    alert('Thêm hàng hóa vào giỏ hàng thành công');
+  }
+</script>
     <div class="root">
         <div class="content-wrapper font-BeVietnam text-base">
             <!--header-->
