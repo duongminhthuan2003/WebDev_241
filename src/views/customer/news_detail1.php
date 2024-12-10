@@ -29,11 +29,11 @@
 
 <div class="w-9/12 mx-auto space-y-6">
     <a href="/news" class="flex flex-row">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mt-16">
             <path d="M3.99982 11.9998L19.9998 11.9998" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M8.99963 17C8.99963 17 3.99968 13.3176 3.99966 12C3.99965 10.6824 8.99966 7 8.99966 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <p class="ml-1">Trở về</p>
+        <p class="ml-1 mt-16">Trở về</p>
     </a>
     <img src="<?= htmlspecialchars($data[0]['main_image']); ?>" alt="Urbas Love+ 24" class="w-full h-[500px] object-cover rounded-lg">
     <p class="text-[#888888] text-sm"><?= htmlspecialchars($data[0]['blog_cate']); ?></p>
