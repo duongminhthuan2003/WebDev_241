@@ -20,7 +20,7 @@
 <body>
     <div class="root">
         <div class="content-wrapper font-BeVietnam max-w-screen-2xl text-base">
-            <main class="flex flex-row">
+            <main class="flex flex-row bg-black">
                 <col1 class="bg-Cam_Ananas text-white w-ful sm:w-1/4 md:w-1/5 flex flex-col pb-10">
                     <div class="px-8 py-4">
                         <ul class="flex flex-row items-center space-x-2">
@@ -227,7 +227,7 @@
                             <?php if (isset($error)): ?>
                                 <div style="color: red;"><?= htmlspecialchars($error); ?></div>
                             <?php endif; ?>
-                            <div class="flex justify-end space-x-2">
+                            <div class="flex justify-end space-x-2 pt-4">
                                 <button type="submit" id="save-button" class="ML_button w-32 cursor-not-allowed" disabled>
                                     Lưu
                                 </button>
