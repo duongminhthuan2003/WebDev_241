@@ -32,7 +32,7 @@
 ?>
 
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
-    <div class="flex items-center -mt-16 w-10/12 mx-auto md:w-6/12">
+    <div class="flex items-center my-auto w-10/12 mx-auto md:w-6/12">
         <div class="flex-col flex w-2/3 mx-auto">
             <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG NHẬP</p>
             <form method="POST" action="/login/submit" class="w-full">
@@ -60,12 +60,9 @@
         </div>
     </div>
 
-    <div class="flex-grow hidden md:block">
-
-    </div>
 
     <div class="relative w-6/12 md:block hidden top-[64px]">
-        <img src="/assets/login_register/login.jpg" class="h-full object-cover">
+        <img src="/assets/login_register/login.jpg" class="w-full h-auto object-cover">
     </div>
 </div>
 </body>
