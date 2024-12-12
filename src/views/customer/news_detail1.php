@@ -2,6 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="<?= htmlspecialchars($data[0]['description']); ?>">
+    <meta name="keywords" content="<?= htmlspecialchars($data[0]['keyword_1']); ?>,
+                                <?= htmlspecialchars($data[0]['keyword_2']); ?>,
+                                <?= htmlspecialchars($data[0]['keyword_3']); ?>,
+                                <?= htmlspecialchars($data[0]['keyword_4']); ?>,
+                                <?= htmlspecialchars($data[0]['keyword_5']); ?>">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -9,7 +15,7 @@
             font-weight: normal;
         }
     </style>
-    <title>Title</title>
+    <title><?= htmlspecialchars($data[0]['blog_name']); ?></title>
 </head>
 <body>
 <?php
@@ -35,7 +41,7 @@
         </svg>
         <p class="ml-1 mt-16">Trở về</p>
     </a>
-    <img src="<?= htmlspecialchars($data[0]['main_image']); ?>" alt="Urbas Love+ 24" class="w-full h-[500px] object-cover rounded-lg">
+    <img src="<?= htmlspecialchars($data[0]['main_image']); ?>" alt="<?= htmlspecialchars($data[0]['alt_main_img']); ?>" class="w-full h-[500px] object-cover rounded-lg">
     <p class="text-[#888888] text-sm"><?= htmlspecialchars($data[0]['blog_cate']); ?></p>
     <div class="flex w-full">
         <p class="font-bold text-xl"><?= htmlspecialchars($data[0]['blog_name']); ?></p>

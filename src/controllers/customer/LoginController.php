@@ -17,6 +17,12 @@ class LoginController {
     }
 
     public function login() {
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("CSRF token không hợp lệ.");
+        }
+        // Giới hạn tỉ lệ đăng nhập
+        $this->throttleCheck();
+
         $identifier = $_POST['identifier'] ?? '';
         $password = $_POST['password'] ?? '';
 
@@ -48,5 +54,41 @@ class LoginController {
         header('Location: /');
         exit();
     }
-}
+
+    private function throttleCheck() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+        // Khởi tạo session nếu chưa tồn tại
+        if (!isset($_SESSION['login_attempts'])) {
+            $_SESSION['login_attempts'] = 0;
+            $_SESSION['last_login_attempt'] = time();
+        }
+    
+        $maxAttempts = 5; // Số lần thử tối đa
+        $waitTime = 60; // Thời gian chờ (giây)
+    
+        // Kiểm tra nếu đã đạt giới hạn
+        if ($_SESSION['login_attempts'] >= $maxAttempts) {
+            $timeSinceLastAttempt = time() - $_SESSION['last_login_attempt'];
+    
+            if ($timeSinceLastAttempt < $waitTime) {
+                $remainingTime = $waitTime - $timeSinceLastAttempt;
+    
+                // Không tăng số lần thử, chỉ cảnh báo
+                $error = "Quá nhiều lần thử. Vui lòng thử lại sau $remainingTime giây.";
+                include_once __DIR__ . '../../../views/customer/login.php';
+                exit; // Dừng xử lý tại đây
+            } else {
+                // Reset số lần thử sau khi hết thời gian chờ
+                $_SESSION['login_attempts'] = 0;
+            }
+        }
+    
+        // Tăng số lần thử và cập nhật thời gian
+        $_SESSION['login_attempts']++;
+        $_SESSION['last_login_attempt'] = time();
+    }
+}    
 ?>

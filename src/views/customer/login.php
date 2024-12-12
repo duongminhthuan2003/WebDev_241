@@ -29,6 +29,11 @@
     else:
         include 'header_chua_dangnhap.php';
     endif;
+
+    // Khởi tạo CSRF token nếu chưa có
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
 ?>
 
 <div class="flex flex-row w-full h-[calc(100vh-4rem)]">
@@ -36,6 +41,7 @@
         <div class="flex-col flex w-2/3 mx-auto">
             <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG NHẬP</p>
             <form method="POST" action="/login/submit" class="w-full">
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
                 <p>Email/Số điện thoại:</p>
                 <input type="text" placeholder="Email" class="border-2 w-full mb-5 text-sm h-14 rounded-lg mt-2 pl-4" name="identifier" required>
                 <p>Mật khẩu:</p>

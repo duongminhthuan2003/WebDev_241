@@ -139,34 +139,34 @@
                                 </div>
                                 </div>
                                 <!--hai alt cho ảnh-->
-                                <div class="flex space-x-4">
                                     <div class="">
-                                        <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                        <label for="alt_main_img" class="block text-sm font-medium text-gray-300 mb-1">
                                             Alt cho hình 1
                                         </label>
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="alt_main_img" 
+                                            name="alt_main_img"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['alt_main_img']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                     </div>
                                     <div class="">
-                                        <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                        <label for="alt_sub_img" class="block text-sm font-medium text-gray-300 mb-1">
                                             Alt cho hình 2
                                         </label>
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="alt_sub_img" 
+                                            name="alt_sub_img"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['alt_sub_img']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                     </div>
-                                </div>
                                 <!-- Khung hiển thị ảnh -->
                                 <div class="flex mt-4 space-x-4 border border-gray-300 p-4 rounded-md">
                                     <img 
@@ -255,49 +255,54 @@
                             <!--nhập keyword-->
                             <div class="flex space-x-4">
                                 <div class="">
-                                    <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                    <label for="keyword_1" class="block text-sm font-medium text-gray-300 mb-1">
                                         Keyword
                                     </label>
                                     <div class="flex space-x-2">
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="keyword_1" 
+                                            name="keyword_1"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['keyword_1']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="keyword_2" 
+                                            name="keyword_2"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['keyword_2']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="keyword_3" 
+                                            name="keyword_3"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['keyword_3']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="keyword_4" 
+                                            name="keyword_4"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['keyword_4']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                         <input 
-                                            id="blog_name" 
-                                            name="blog_name"
+                                            id="keyword_5" 
+                                            name="keyword_5"
                                             type="text" 
                                             autocomplete="off"
+                                            value="<?= htmlspecialchars($data['keyword_5']); ?>"
                                             required
-                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 input-field"
                                         >
                                     </div>
                                 </div>
