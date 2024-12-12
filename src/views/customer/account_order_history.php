@@ -24,7 +24,7 @@
     </style>
     <link href="/assets/css/output.css" rel="stylesheet">
 </head>
-<body class="h-screen">
+<body class="flex flex-col min-h-screen">
 <?php
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -41,7 +41,7 @@
 ?>
 
 
-<div class="flex flex-col">
+<div class="flex flex-col flex-grow min-h-full">
     <div class="flex md:flex-row flex-col w-10/12 lg:w-9/12 mx-auto">
         <div class="mt-16">
 
@@ -130,10 +130,9 @@
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="flex-grow"> </div>
-    <?php include 'footer.php'; ?>
 </div>
-
+<div class="flex-grow"></div>
+<?php include 'footer.php'; ?>
 <script>
     let accountNav = document.querySelector("#account_nav");
     let account = document.querySelector("#account");
