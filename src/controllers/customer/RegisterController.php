@@ -13,23 +13,41 @@ class RegisterController {
     }
 
     public function show() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         include_once __DIR__ . '../../../views/customer/register.php';
     }
 
     public function register() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: /register');
+            exit;
+        }
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
+            $error = "Invalid CSRF token.";
+            include_once __DIR__ . '/../../views/customer/register.php';
+            return;
+        }
+
         // Lấy dữ liệu từ POST request
-        $fullname = $_POST['fullname'] ?? '';
-        $phone_number = $_POST['phone_number'] ?? '';
-        $email_address = $_POST['email_address'] ?? '';
+        $fullname = trim(htmlspecialchars($_POST['fullname'] ?? ''));
+        $phone_number = trim(htmlspecialchars($_POST['phone_number'] ?? ''));
+        $email_address = trim(htmlspecialchars($_POST['email_address'] ?? ''));
         $password = $_POST['password'] ?? '';
         $confirm_password = $_POST['confirm_password'] ?? '';
         $birth_day = $_POST['birth_day'] ?? '';
-        $gender = $_POST['gender'] ?? '';
-    
-        $province = $_POST['province'] ?? '';
-        $district = $_POST['district'] ?? '';
-        $ward = $_POST['ward'] ?? '';
-        $detail = $_POST['detail'] ?? '';
+        $gender = htmlspecialchars($_POST['gender'] ?? '');
+        $province = trim(htmlspecialchars($_POST['province'] ?? ''));
+        $district = trim(htmlspecialchars($_POST['district'] ?? ''));
+        $ward = trim(htmlspecialchars($_POST['ward'] ?? ''));
+        $detail = trim(htmlspecialchars($_POST['detail'] ?? ''));
     
         // Kiểm tra các trường thông tin
         if (empty($fullname) || empty($phone_number) || empty($email_address) || empty($password) || empty($confirm_password) ||
@@ -53,15 +71,15 @@ class RegisterController {
             return;
         }
     
-        $existingUser = $this->registerModel->getUserByPhoneOrEmail($phone_number, $email_address);
+        $existingUser = $this->registerModel->getUserByPhoneOrEmail($email_address, $phone_number);
         if ($existingUser && $existingUser->rowCount() > 0) {
             $error = "Số điện thoại hoặc email đã được sử dụng.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
 
-        if (strlen($password) < 8) {
-            $error = "Mật khẩu phải có ít nhất 8 ký tự.";
+        if (strlen($password) < 8 || !preg_match('/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#@$!%*?&])/', $password)) {
+            $error = "Mật khẩu phải chứa ít nhất 8 ký tự bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.";
             include_once __DIR__ . '/../../views/customer/register.php';
             return;
         }
