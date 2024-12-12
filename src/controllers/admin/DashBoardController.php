@@ -28,7 +28,7 @@ class DashBoardController {
         $orderstatusbyweektemp= $this->dashboardModel->getOderStatusByWeek()->fetchAll(PDO::FETCH_ASSOC);
         $orderstatusbymonthtemp= $this->dashboardModel->getOderStatusByMonth()->fetchAll(PDO::FETCH_ASSOC);
 
-        $fixedStatuses = ['chờ xác nhận', 'đang giao hàng', 'đã giao', 'đã hủy'];
+        $fixedStatuses = ['Chờ xác nhận', 'Đang giao', 'Đã giao', 'Đã hủy'];
 
         $orderstatusbydate = array_fill_keys($fixedStatuses, 0);
         $orderstatusbyweek = array_fill_keys($fixedStatuses, 0);

@@ -68,7 +68,7 @@ class DashBoard {
     public function getIncomeByDate() {
         $query = "SELECT SUM(total_price) AS income, DAY(CURDATE()) AS day, MONTH(CURDATE()) AS month, YEAR(CURDATE()) AS year
                 FROM orders o JOIN payment_status ps ON o.order_id = ps.order_id
-                WHERE DATE(o.order_at) = CURDATE() AND ps.status = 'đã thanh toán'";
+                WHERE DATE(o.order_at) = CURDATE() AND ps.status = 'Đã thanh toán'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -77,7 +77,7 @@ class DashBoard {
     public function getIncomeByWeek() {
         $query = "SELECT SUM(total_price) AS income, WEEK(CURDATE(), 1) AS week, YEAR(CURDATE()) AS year 
                 FROM orders o JOIN payment_status ps ON o.order_id = ps.order_id
-                WHERE YEARWEEK(o.order_at, 1) = YEARWEEK(CURDATE(), 1) AND ps.status = 'đã thanh toán'";
+                WHERE YEARWEEK(o.order_at, 1) = YEARWEEK(CURDATE(), 1) AND ps.status = 'Đã thanh toán'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -86,7 +86,7 @@ class DashBoard {
     public function getIncomeByMonth() {
         $query = "SELECT SUM(total_price) AS income, MONTH(CURDATE()) AS month, YEAR(CURDATE()) AS year 
                 FROM orders o JOIN payment_status ps ON o.order_id = ps.order_id
-                WHERE YEAR(o.order_at) = YEAR(CURDATE()) AND MONTH(o.order_at) = MONTH(CURDATE()) AND ps.status = 'đã thanh toán'";
+                WHERE YEAR(o.order_at) = YEAR(CURDATE()) AND MONTH(o.order_at) = MONTH(CURDATE()) AND ps.status = 'Đã thanh toán'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt;
