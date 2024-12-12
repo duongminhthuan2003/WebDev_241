@@ -58,12 +58,6 @@
                             <!-- search and filter -->
                             <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center space-x-2">
-                                    <select class="px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-black focus:outline-none focus:ring focus:ring-gray-300">
-                                        <option value="" disabled selected>Lọc đơn hàng</option>
-                                        <option value="all">1</option>
-                                        <option value="waiting">2</option>
-                                    </select>
-                        
                                     <input type="text" placeholder="Tìm kiếm đơn hàng" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-300 text-black" />
                                 </div>
                             </div>

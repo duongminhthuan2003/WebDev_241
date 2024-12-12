@@ -137,7 +137,35 @@
                                     onchange="previewImage(event, 'sub-image-preview')">
                                 </div>
                                 </div>
-                            
+                                <!--hai alt cho ảnh-->
+                                <div class="flex space-x-4">
+                                    <div class="">
+                                        <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                            Alt cho hình 1
+                                        </label>
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                    </div>
+                                    <div class="">
+                                        <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                            Alt cho hình 2
+                                        </label>
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                    </div>
+                                </div>
                                 <!-- Khung hiển thị ảnh -->
                                 <div class="flex mt-4 space-x-4 border border-gray-300 p-4 rounded-md">
                                 <img id="main-image-preview" src="" alt="Xem trước ảnh chính" class="w-48 h-48 object-cover rounded-md hidden">
@@ -209,6 +237,56 @@
                                     required
                                     class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
                                 >
+                            </div>
+                            <!--nhập keyword-->
+                            <div class="flex space-x-4">
+                                <div class="">
+                                    <label for="blog_name" class="block text-sm font-medium text-gray-300 mb-1">
+                                        Keyword
+                                    </label>
+                                    <div class="flex space-x-2">
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                        <input 
+                                            id="blog_name" 
+                                            name="blog_name"
+                                            type="text" 
+                                            autocomplete="off"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+                                        >
+                                    </div>
+                                </div>
                             </div>
                             <?php if (isset($error)): ?>
                                 <div style="color: red;"><?= htmlspecialchars($error); ?></div>
