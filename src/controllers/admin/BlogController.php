@@ -43,6 +43,13 @@ class BlogController {
         $description = $_POST['description'] ?? '';
         $alias = $_POST['alias'] ?? '';
         $status = $_POST['status'] ?? '';
+        $alt_main_img = $_POST['alt_main_img'] ?? '';
+        $alt_sub_img = $_POST['alt_sub_img'] ?? '';
+        $keyword_1 = $_POST['keyword_1'] ?? '';
+        $keyword_2 = $_POST['keyword_2'] ?? '';
+        $keyword_3 = $_POST['keyword_3'] ?? '';
+        $keyword_4 = $_POST['keyword_4'] ?? '';
+        $keyword_5 = $_POST['keyword_5'] ?? '';
     
         // Kiểm tra dữ liệu đầu vào
         if (empty($blog_cate) || empty($blog_name) || empty($main_content) || empty($alias) || empty($status)) {
@@ -96,11 +103,18 @@ class BlogController {
             $blog_cate,
             $blog_name,
             $main_image_path,
+            $alt_main_img,
             $sub_image_path,
+            $alt_sub_img,
             $main_content,
             $summary,
             $description,
             $alias,
+            $keyword_1,
+            $keyword_2,
+            $keyword_3,
+            $keyword_4,
+            $keyword_5,
             $status
         );
     
@@ -131,9 +145,17 @@ class BlogController {
         $description = $_POST['description'] ?? '';
         $alias = $_POST['alias'] ?? '';
         $status = $_POST['status'] ?? '';
+        $alt_main_img = $_POST['alt_main_img'] ?? '';
+        $alt_sub_img = $_POST['alt_sub_img'] ?? '';
+        $keyword_1 = $_POST['keyword_1'] ?? '';
+        $keyword_2 = $_POST['keyword_2'] ?? '';
+        $keyword_3 = $_POST['keyword_3'] ?? '';
+        $keyword_4 = $_POST['keyword_4'] ?? '';
+        $keyword_5 = $_POST['keyword_5'] ?? '';
     
         // Kiểm tra dữ liệu đầu vào
-        if (empty($blog_cate) || empty($blog_name) || empty($main_content) || empty($alias) || empty($status)) {
+        if (empty($blog_cate) || empty($blog_name) || empty($main_content) || empty($alias) || empty($status) || empty($alt_main_img) || 
+            empty($alt_sub_img) || empty($keyword_1) || empty($keyword_2) || empty($keyword_3) || empty($keyword_4) || empty($keyword_5)) {
             $error = "Vui lòng điền đầy đủ thông tin bắt buộc.";
             include_once __DIR__ . '../../../views/admin/admin_edit_blog.php';
             return;
@@ -185,11 +207,18 @@ class BlogController {
             $blog_cate,
             $blog_name,
             $main_image_path,
+            $alt_main_img,
             $sub_image_path,
+            $alt_sub_img,
             $main_content,
             $summary,
             $description,
             $alias,
+            $keyword_1,
+            $keyword_2,
+            $keyword_3,
+            $keyword_4,
+            $keyword_5,
             $status
         );
     
