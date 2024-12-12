@@ -9,7 +9,7 @@
             font-weight: normal;
         }
     </style>
-    <title>Title</title>
+    <title>Bản Tin</title>
 </head>
 <body>
 <?php
@@ -45,11 +45,11 @@
                         <p class="mb-4"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></p>
                     </div>
                 
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="w-80 lg:w-80 h-80 lg:h-80 object-cover rounded-xl hover:scale-105 duration-300">
+                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" alt="<?= htmlspecialchars($news['alt_sub_img']); ?>" class="w-80 lg:w-80 h-80 lg:h-80 object-cover rounded-xl hover:scale-105 duration-300">
                 </a>
             <?php else: ?>
                 <a href="/news/detail/<?= htmlspecialchars($news['alias']); ?>" class="flex flex-col items-end lg:items-start lg:flex-row w-8/12 lg:w-5/12 absolute right-[5vw] mr-20 lg:mr-0 mt-16 md:mt-60 z-20">
-                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" class="lg:w-60 lg:h-60 w-60 h-60 object-cover rounded-xl hover:scale-105 duration-300">
+                    <img src="<?= htmlspecialchars($news['sub_image']); ?>" alt="<?= htmlspecialchars($news['alt_sub_img']); ?>" class="lg:w-60 lg:h-60 w-60 h-60 object-cover rounded-xl hover:scale-105 duration-300">
 
                     <div class="flex flex-col lg:items-start items-end ml-0 md:ml-6">
                         <p class="font-bold text-right lg:text-left mb-2 lg:mt-0 mt-3"><?= htmlspecialchars($news['blog_name']); ?></p>
@@ -69,7 +69,7 @@
                 if ($index >= count($othernews)) break; // Nếu vượt quá số phần tử thì thoát
             ?>
                 <a href="/news/detail/<?= htmlspecialchars($othernews[$index]['alias']); ?>" class="flex flex-col w-1/3 h-full border-2 rounded-lg hover:scale-105 duration-300">
-                    <img src="<?= htmlspecialchars($othernews[$index]['sub_image']); ?>" class="w-full h-3/4 object-cover rounded-t-lg">
+                    <img src="<?= htmlspecialchars($othernews[$index]['sub_image']); ?>" alt="<?= htmlspecialchars($othernews[$index]['alt_sub_img']); ?>"  class="w-full h-3/4 object-cover rounded-t-lg">
                     <p class="flex my-auto ml-6 font-bold"><?= htmlspecialchars($othernews[$index]['blog_name']); ?></p>
                 </a>
         <?php endfor; ?>
