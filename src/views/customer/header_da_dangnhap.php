@@ -20,7 +20,7 @@
             <li class="ML_hover_header" id="product" onclick="openOverlay()">SẢN PHẨM</li>
             <li><a href="/sale_off" class="ML_hover_header">SALE-OFF</a></li>
             <li><a href="/news" class="ML_hover_header">TIN TỨC</a></li>
-            <li><a href="" class="ML_hover_header">GIỚI THIỆU</a></li>
+            <li><a href="/introduce" class="ML_hover_header">GIỚI THIỆU</a></li>
         </ul>
     </div>
 
@@ -121,9 +121,9 @@
 <div id="mobileNav" class="md:invisible hidden w-full h-[calc(100%-48px)] fixed z-30 top-12 bg-white/30 backdrop-blur">
     <div class="flex flex-col my-16 space-y-9 w-9/12 mx-auto">
         <a href="#" class="font-bold text-lg">SẢN PHẨM</a>
-        <a href="#" class="font-bold text-lg">SALE-OFF</a>
-        <a href="#" class="font-bold text-lg">TIN TỨC</a>
-        <a href="#" class="font-bold text-lg">GIỚI THIỆU</a>
+        <a href="/sale_off" class="font-bold text-lg">SALE-OFF</a>
+        <a href="/news" class="font-bold text-lg">TIN TỨC</a>
+        <a href="/introduce" class="font-bold text-lg">GIỚI THIỆU</a>
         <div class="border rounded-md p-4 shadow-md flex space-x-4 bg-white">
             <div><img src="img/prd_list_ava_popup.png" alt="avarta"></div>
             <div>

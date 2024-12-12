@@ -5,6 +5,7 @@ $routes = [
     '' => ['controller' => 'HomeController', 'action' => 'index'],
     'news' => ['controller' => 'NewsController', 'action' => 'news'],
     'news/detail' => ['controller' => 'NewsController', 'action' => 'detail'],
+    'introduce' => ['controller' => 'HomeController', 'action' => 'showIntroduce'],
     'login' => ['controller' => 'LoginController', 'action' => 'show'],
     'login/submit' => ['controller' => 'LoginController', 'action' => 'login'],
     'register' => ['controller' => 'RegisterController', 'action' => 'show'],
