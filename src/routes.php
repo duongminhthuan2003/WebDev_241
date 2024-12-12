@@ -11,6 +11,8 @@ $routes = [
     'register/submit' => ['controller' => 'RegisterController', 'action' => 'register'],
     'orderhistory' => ['controller' => 'OrderHistoryController', 'action' => 'order_history'],
     'logout' => ['controller' => 'LoginController', 'action' => 'logout'],
+    'search' => ['controller' => 'SearchController', 'action' => 'showsearch'],
+    'search/submit' => ['controller' => 'SearchController', 'action' => 'search'],
     'product_list' => ['controller' => 'CustomerProductController', 'action' => 'products'],
     'product_list/detail' => ['controller' => 'CustomerProductController', 'action' => 'detail'],
     'detail/submit' => ['controller' => 'CustomerProductController', 'action' => 'addToCart'],

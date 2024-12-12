@@ -84,7 +84,7 @@ class Cart {
     public function applyPromotion($user_id, $promotion_code) {
         try {
             // Validate the promotion_code
-            $query = "SELECT discount_percent FROM promotions WHERE promotion_code = :promotion_code AND NOW() BETWEEN `start_date` AND end_date";
+            $query = "SELECT discount_percent FROM promotions WHERE promotion_code = :promotion_code AND remain_quantity > 0 AND NOW() BETWEEN `start_date` AND end_date";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['promotion_code' => $promotion_code]);
             $discount_percent = $stmt->fetch(PDO::FETCH_ASSOC)['discount_percent'];
@@ -117,7 +117,7 @@ class Cart {
             $discount_price = round($sum_price * $discount_percent / 100, -3);
             // Update the total_price in orders
             $query = "  UPDATE orders
-                        SET total_price = total_price - :discount_price
+                        SET total_price = $sum_price - :discount_price
                         WHERE order_id = :order_id";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['discount_price' => $discount_price, 'order_id' => $order_id]); 
@@ -125,6 +125,10 @@ class Cart {
             $query = "UPDATE orders SET promotion_id = :promotion_id WHERE order_id = :order_id";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['promotion_id' => $promotion_id, 'order_id' => $order_id]);
+            // Decrease the remain_quantity of the promotion
+            $query = "UPDATE promotions SET remain_quantity = remain_quantity - 1 WHERE promotion_id = :promotion_id";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute(['promotion_id' => $promotion_id]);
         }
         catch (Exception $e) {
             echo $e->getMessage();

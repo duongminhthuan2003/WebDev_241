@@ -12,11 +12,14 @@ class CartController {
     }
 
     public function showcart() {
-        $user_id = $_SESSION['user_id'] ?? '';
-        if (empty($user_id)) {
-            header('Location: /login');
-            exit();
+        error_reporting(0);
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
+        $user_id = $_SESSION['user_id'] ?? '';
         $products = $this->cartModel->getCart($user_id)->fetchAll(PDO::FETCH_ASSOC);
         $sum_price = $this->cartModel->getSumPrice($user_id);
         $total_price = $this->cartModel->getOrderPrice($user_id);
@@ -34,11 +37,13 @@ class CartController {
             header('Location: /cart?delete-fail=1');
             exit();
         }
-        $user_id = $_SESSION['user_id'] ?? '';
-        if (empty($user_id)) {
-            header('Location: /login');
-            exit();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
+        $user_id = $_SESSION['user_id'] ?? '';
         $this->cartModel->deleteItem($user_id, $product_item_id);
         header('Location: /cart?delete-success=1');
     }
@@ -49,11 +54,13 @@ class CartController {
             header('Location: /cart?promotion-apply-fail=1');
             exit();
         }
-        $user_id = $_SESSION['user_id'] ?? '';
-        if (empty($user_id)) {
-            header('Location: /login');
-            exit();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
+        $user_id = $_SESSION['user_id'] ?? '';
         $this->cartModel->applyPromotion($user_id, $promotion_code);
         header('Location: /cart?promotion-apply-success=1');
     }
