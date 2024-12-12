@@ -99,8 +99,8 @@
     </div>
 
     <div class="flex-grow"> </div>
-    <div class="w-6/12 md:block hidden top-[64px] fixed right-0">
-        <img src="/assets/login_register/register.jpg" class="h-full object-cover">
+    <div class="w-6/12 lg:block hidden top-[64px] fixed right-0">
+        <img src="/assets/login_register/register.jpg" class="w-full object-cover">
     </div>
 </div>
 <script src="/assets/js/header.js"></script>
