@@ -20,7 +20,7 @@
     </div>
 
     <div class="w-3/12 flex justify-end">
-        <a href="search.php" class="flex justify-center">
+        <a href="/search" class="flex justify-center">
             <button type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="hidden md:block my-auto scale-75 mr-5">
                     <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
