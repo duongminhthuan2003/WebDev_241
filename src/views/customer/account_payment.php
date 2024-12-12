@@ -47,13 +47,13 @@
         <div class="md:flex flex-col items-start mr-6 hidden md:min-w-fit mt-20">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin <br class="hidden md:inline-block lg:hidden">tài khoản</a>
+            <a href="/info" class="px-4 mt-8">Thông tin <br class="hidden md:inline-block lg:hidden">tài khoản</a>
 
             <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Phương thức <br class="hidden md:inline-block lg:hidden">thanh toán</a></div>
-            <a class="px-4 mt-8">Đơn hàng <br class="hidden md:inline-block lg:hidden">của tôi</a>
+            <a href="/orderhistory" class="px-4 mt-8">Đơn hàng <br class="hidden md:inline-block lg:hidden">của tôi</a>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
-            <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
+            <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
         </div>
 
         <!--Mobile Account navigation-->

@@ -27,6 +27,12 @@ class OrderHistoryController {
     
         // Gửi dữ liệu đến view
         include_once __DIR__ . '../../../views/customer/account_order_history.php';
-    }  
+    }
+    
+    public function cancel_order() {
+        $order_id = $_GET['order_id'] ?? null;
+        $this->orderHistoryModel->cancelUserOrder($order_id);
+        header('Location: /orderhistory');
+    }
 }
 ?>

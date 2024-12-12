@@ -49,12 +49,12 @@
         <div class="md:flex flex-col items-start mr-6 hidden md:min-w-fit mt-20">
             <div class="text-2xl font-bold">TÀI KHOẢN</div>
 
-            <a class="px-4 mt-8">Thông tin <br class="hidden md:inline-block lg:hidden">tài khoản</a>
-            <a class="px-4 mt-8">Phương thức <br class="hidden md:inline-block lg:hidden">thanh toán</a>
+            <a href="/info" class="px-4 mt-8">Thông tin <br class="hidden md:inline-block lg:hidden">tài khoản</a>
+            <a href="/accountpayment" class="px-4 mt-8">Phương thức <br class="hidden md:inline-block lg:hidden">thanh toán</a>
             <div class="mt-8 bg-[#F15E2C] text-white font-semibold py-2 px-4 rounded-lg"><a>Đơn hàng <br class="hidden md:inline-block lg:hidden">của tôi</a></div>
             <a class="px-4 mt-8">Đổi mật khẩu</a>
 
-            <button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button>
+            <a href="/logout"><button type="button" class="mt-32 bg-[#FF4141] text-white font-semibold py-2 px-4 rounded-lg">Đăng xuất</button></a>
         </div>
 
         <!--Mobile Account navigation-->
@@ -86,45 +86,63 @@
                 foreach ($orders as $index => $order):
             ?>
                 <div class="border-2 rounded-2xl <?= $index != 0 ? 'mt-5' : ''; ?>">
-                    <div class="m-5">Mã đơn hàng: ****</div>
+                    <div class="m-5">Mã đơn hàng: <?= htmlspecialchars($order['order_id']); ?></div>
+                    <!-- <<<<<<<<<<<< A product starts >>>>>>>>>>>>>> -->
                     <?php
                         $filtered_order_items = array_filter($order_items, function($order_item) use ($order) {
                             return $order_item['order_id'] === $order['order_id'];
                         });
                         foreach ($filtered_order_items as $order_item):
                     ?>
-
                         <div class="flex flex-row mx-5 my-5 w-auto space-x-5">
-                            <img src="<?= htmlspecialchars($order_item['product_image']); ?>" alt="NXT" class="h-24 sm:h-28 w-auto rounded-lg">
+                            <img src="<?= htmlspecialchars($order_item['product_image']); ?>" alt="<?= htmlspecialchars($order_item['name']); ?>" class="h-24 sm:h-28 w-auto rounded-lg">
 
                             <div class="flex flex-col md:flex-row w-full">
                                 <div class="flex flex-col">
                                     <p class="font-bold text-sm md:text-base"><?= htmlspecialchars($order_item['name']); ?> - <?= htmlspecialchars($order_item['category_name']); ?> - <?= htmlspecialchars($order_item['color_name']); ?></p>
                                     <div class="flex-grow"></div>
                                     <div class="flex flex-col sm:flex-row md:flex-col sm:space-x-3 mt-1 md:mt-0 space-x-0 md:space-x-0">
-                                        <p class="text-sm text-[#888888]">Kích cỡ: <?= htmlspecialchars($order_item['size_value']); ?></p>
-                                        <p class="text-sm mt-1 text-[#888888]">Số lượng: <?= htmlspecialchars($order_item['quantity']); ?></p>
+                                        <p class="text-[#888888] text-sm">Kích cỡ: <?= htmlspecialchars($order_item['size_value']); ?></p>
+                                        <p class="text-[#888888] text-sm">Số lượng: <?= htmlspecialchars($order_item['quantity']); ?></p>
                                     </div>
                                 </div>
 
                                 <div class="flex-grow">
 
-                            </div>
+                                </div>
 
-                            <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5
-                            min-w-fit text-sm md:text-base"><?= htmlspecialchars(number_format($order_item['price'], 0, ',', '.')); ?> VNĐ</p>
+                                <p class="font-bold mt-1 md:mt-0 text-[#F15E2C] flex items-center ml-0 md:ml-5 min-w-fit text-sm md:text-base"><?= htmlspecialchars(number_format($order_item['price'], 0, ',', '.')); ?> VNĐ</p>
+                            </div>
+                            <!-- end foreach -->
                         </div>
+                        <!-- <<<<<<<<<<<< A product ends >>>>>>>>>>>>>> -->
                     <?php endforeach; ?>
-                            <div class="mx-5 flex flex-row border-t-2 pt-4">
-                                <div class="flex-grow"></div>
-                                <p class="text-sm md:text-base">Tổng cộng:</p>
-                                <p class="font-bold ml-2 text-[#F15E2C] flex md:ml-5 min-w-fit text-sm md:text-base">650.000 VNĐ</p>
-                            </div>
-                            <div class="m-5 flex flex-row">
-                                <div class="my-auto text-sm md:text-base">Trạng thái: Đã đặt</div>
-                                <div class="flex-grow"></div>
-                                <button type="button" class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base">Hủy đơn</button>
-                            </div>
+                        <div class="mx-5 flex flex-row border-t-2 pt-4">
+                            <div class="flex-grow"></div>
+                            <p class="text-sm md:text-base">Tổng cộng:</p>
+                            <p class="font-bold ml-2 text-[#F15E2C] flex md:ml-5 min-w-fit text-sm md:text-base"><?= htmlspecialchars(number_format($order['total_price'], 0, ',', '.')); ?> VNĐ</p>
+                        </div>
+                        <div class="m-5 flex flex-row">
+                            <div class="my-auto text-sm md:text-base">Trạng thái: <?= htmlspecialchars($order['status']); ?></div>
+                            <div class="flex-grow"></div>
+                            <?php if ($order['status'] === 'Chờ xác nhận'): ?>
+                                <a href="/orderhistory/cancel?order_id=<?= htmlspecialchars($order['order_id']); ?>">
+                                    <button 
+                                        type="button" 
+                                        class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base"
+                                    >
+                                        Hủy đơn
+                                    </button>
+                                </a>
+                            <?php else: ?>
+                                <button 
+                                    type="button" 
+                                    class="bg-[#FF4141] px-4 py-2 rounded-lg text-white text-sm md:text-base cursor-not-allowed opacity-50" 
+                                    disabled
+                                >
+                                    Hủy đơn
+                                </button>
+                            <?php endif; ?>
                         </div>
                 </div>
             <?php endforeach; ?>
