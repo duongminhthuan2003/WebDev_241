@@ -24,6 +24,9 @@ class HomeController {
         // Gửi dữ liệu đến view
         include_once __DIR__ . '../../../views/customer/index.php';
     }
+    public function showIntroduce() {
     
+        include_once __DIR__ . '../../../views/customer/introduce.php';
+    } 
 }
 ?>
