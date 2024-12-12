@@ -33,10 +33,10 @@
     }
 ?>
 
-<div class="flex flex-row w-full h-[calc(100vh-4rem)]">
-    <div class="flex items-center mt-80 md:mt-60 lg:w-6/12 w-full">
+<div class="flex flex-row w-full overflow-y-scroll">
+    <div class="flex items-center bottom-0 lg:w-6/12 w-full ">
         <div class="flex-col flex w-2/3 mx-auto">
-            <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG KÝ</p>
+            <p class="font-bold text-2xl md:text-3xl mt-32 mb-5">ĐĂNG KÝ</p>
             <form method="POST" action="/register/submit">
                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
                 <p>Họ và tên:</p>
@@ -100,12 +100,13 @@
                     ĐĂNG KÝ
                 </button>
             </form>
-            <p class="mt-8">Đã có tài khoản?<a class="ml-1" href="/login"><strong>Đăng nhập</strong></a></p>
+            <p class="mt-8 mb-16">Đã có tài khoản?<a class="ml-1" href="/login"><strong>Đăng nhập</strong></a></p>
         </div>
     </div>
 
-    <div class="w-6/12 hidden lg:block mt-16">
-        <img src="/assets/login_register/login.jpg" class="h-full object-cover">
+    <div class="flex-grow"> </div>
+    <div class="w-6/12 md:block hidden top-[64px] fixed right-0">
+        <img src="/assets/login_register/register.jpg" class="h-full object-cover">
     </div>
 </div>
 <script src="/assets/js/header.js"></script>

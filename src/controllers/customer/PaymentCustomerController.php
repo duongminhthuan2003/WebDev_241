@@ -12,11 +12,17 @@ class PaymentCustomerController {
     }
 
     public function showPayment() {
-        $user_id = $_SESSION['user_id'] ?? '';
-        if (empty($user_id)) {
-            header('Location: /login');
-            exit();
+        error_reporting(0);
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
+        
+        $user_id = $_SESSION['user_id'] ?? '';
+
         $payments = $this->paymentModel->getPayment($user_id)->fetchAll(PDO::FETCH_ASSOC);
         $sum_price = $this->paymentModel->getSumPrice($user_id);
         $total_price = $this->paymentModel->getOrderPrice($user_id);
@@ -33,17 +39,21 @@ class PaymentCustomerController {
         $district = $_POST['district'] ?? '';
         $ward = $_POST['ward'] ?? '';
         $detail = $_POST['detail'] ?? '';
+        
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!isset($_SESSION['user_id'])):
+            header('Location: /login');
+        endif;
 
         if (empty($province) || empty($district) || empty($ward) || empty($detail)) {
-            header('Location: /payment?payment-fail-lost-info=1');
+            header('Location: /payment_customer?payment-fail-lost-info=1');
             exit();
         }
+
         $user_id = $_SESSION['user_id'] ?? '';
-        if (empty($customer_id)) {
-            header('Location: /login');
-            exit();
-        }
         $this->paymentModel->executePayment($user_id, $province, $district, $ward, $detail);
-        header('Location: /payment?success=1');
+        header('Location: /payment_customer?success=1');
     }
 }
