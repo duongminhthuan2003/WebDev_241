@@ -91,7 +91,7 @@
     </div>
   </div>
 
-  <div class="w-4/5 bg-back_admin text-white">
+  <div class="w-4/5 bg-[#333333] text-white">
     <?php 
       $visitbydate= $data['visitbydate'];
       $visitbyweek= $data['visitbyweek'];

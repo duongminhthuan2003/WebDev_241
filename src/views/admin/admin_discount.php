@@ -62,7 +62,7 @@
     </div>
   </col1><!--end col1-->
 
-  <div class="w-4/5 bg-back_admin text-white">
+  <div class="w-4/5 bg-[#333333] text-white">
     <div class="w-11/12 mx-auto mt-8">
       <p class="font-bold text-3xl">MÃ KHUYẾN MÃI</p>
     </div>

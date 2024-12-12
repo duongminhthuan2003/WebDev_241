@@ -67,8 +67,8 @@
     </div>
 
 
-    <div class="relative w-6/12 md:block hidden top-[64px]">
-        <img src="/assets/login_register/login.jpg" class="w-full h-auto object-cover">
+    <div class="relative w-6/12 md:block hidden mt-[64px]">
+        <img src="/assets/login_register/login.jpg" class="w-full h-full object-cover">
     </div>
 </div>
 </body>

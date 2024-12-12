@@ -8,6 +8,13 @@
 </head>
 <body class="font-BeVietnam">
 
+    <button onclick="history.back()" class="flex flex-row w-9/12 mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" class="mt-16">
+            <path d="M3.99982 11.9998L19.9998 11.9998" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M8.99963 17C8.99963 17 3.99968 13.3176 3.99966 12C3.99965 10.6824 8.99966 7 8.99966 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="ml-1 mt-16">Trở về trang chủ</p>
+    </button>
     <form action="search/submit" method="POST">
         <div class="flex w-9/12 mx-auto my-9 shadow-lg">
             <div class="my-auto w-16 h-14 border-y-2 border-l-2 rounded-l-lg flex">

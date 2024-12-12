@@ -12,7 +12,7 @@
     </style>
     <link href="/assets/css/output.css" rel="stylesheet">
 </head>
-<body class="h-screen">
+<body class="min-h-screen">
 <?php
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -33,10 +33,10 @@
     }
 ?>
 
-<div class="flex flex-row w-full overflow-y-scroll">
+<div class="flex flex-row w-full min-h-screen">
     <div class="flex items-center bottom-0 lg:w-6/12 w-full ">
         <div class="flex-col flex w-2/3 mx-auto">
-            <p class="font-bold text-2xl md:text-3xl mt-32 mb-5">ĐĂNG KÝ</p>
+            <p class="font-bold text-2xl md:text-3xl mt-20 mb-5">ĐĂNG KÝ</p>
             <form method="POST" action="/register/submit">
                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
                 <p>Họ và tên:</p>
@@ -104,9 +104,8 @@
         </div>
     </div>
 
-    <div class="flex-grow"> </div>
-    <div class="w-6/12 lg:block hidden top-[64px] fixed right-0">
-        <img src="/assets/login_register/register.jpg" class="w-full object-cover">
+    <div class="relative w-6/12 lg:block hidden mt-[64px]">
+        <img src="/assets/login_register/register_1.jpg" class="w-full h-full object-cover">
     </div>
 </div>
 <script src="/assets/js/header.js"></script>
