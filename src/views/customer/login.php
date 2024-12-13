@@ -36,7 +36,7 @@
     }
 ?>
 
-<div class="flex flex-row w-full h-[calc(100vh-4rem)]">
+<div class="flex flex-row w-full min-h-full">
     <div class="flex items-center my-auto w-10/12 mx-auto md:w-6/12">
         <div class="flex-col flex w-2/3 mx-auto">
             <p class="font-bold text-2xl md:text-3xl mb-5">ĐĂNG NHẬP</p>
@@ -67,7 +67,7 @@
     </div>
 
 
-    <div class="relative w-6/12 md:block hidden mt-[64px]">
+    <div class="relative w-6/12 lg:block hidden mt-[64px]">
         <img src="/assets/login_register/login.jpg" class="w-full h-full object-cover">
     </div>
 </div>
