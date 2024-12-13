@@ -121,6 +121,6 @@
             ?>
         </div><!-- end content -->
     </div><!-- end root -->
-    <script src="/assets/js/header.php"></script>
+    <script src="/assets/js/header.js"></script>
 </body>
 </html>
