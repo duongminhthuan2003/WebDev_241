@@ -120,7 +120,7 @@
 
 <div id="mobileNav" class="md:invisible hidden w-full h-[calc(100%-48px)] fixed z-30 top-12 bg-white/30 backdrop-blur">
     <div class="flex flex-col my-16 space-y-9 w-9/12 mx-auto">
-        <a href="#" class="font-bold text-lg">SẢN PHẨM</a>
+        <a href="/product_list" class="font-bold text-lg">SẢN PHẨM</a>
         <a href="/sale_off" class="font-bold text-lg">SALE-OFF</a>
         <a href="/news" class="font-bold text-lg">TIN TỨC</a>
         <a href="/introduce" class="font-bold text-lg">GIỚI THIỆU</a>
