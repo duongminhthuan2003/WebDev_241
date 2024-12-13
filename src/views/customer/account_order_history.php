@@ -64,14 +64,14 @@
             </svg>
             <div>
                 <p class="font-bold text-xl mb-2">THÔNG TIN TÀI KHOẢN</p>
-                <p>Phương thức thanh toán</p>
+                <p>Đơn hàng của tôi</p>
             </div>
         </div>
 
         <div id="account_nav" class="border-2 border-gray-300 rounded-xl hidden flex-col duration-300 md:invisible bg-white shadow-md py-5 space-y-2 text-center absolute w-10/12 top-44 z-20">
-            <a class="py-3" href="#">Thông tin cá nhân</a>
-            <a class="py-3" href="#">Đơn hàng của tôi</a>
-            <a class="py-3" href="#">Phương thức thanh toán</a>
+        <a class="py-3" href="#">Thông tin cá nhân</a>
+            <a class="py-3" href="/orderhistory">Đơn hàng của tôi</a>
+            <a class="py-3" href="/accountpayment">Phương thức thanh toán</a>
             <a class="py-3" href="#">Đổi mật khẩu</a>
             <button type="button" class="bg-[#FF4141] text-white w-11/12 mx-auto mt-3 py-3 rounded-md">Đăng xuất</button>
         </div>

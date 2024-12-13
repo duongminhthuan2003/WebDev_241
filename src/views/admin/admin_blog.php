@@ -95,23 +95,13 @@
                                         <td class="border border-gray-300 px-4 py-2 text-center">
                                             <input type="checkbox"/>
                                         </td>
-<<<<<<< HEAD
-                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($index + 1); ?></td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['blog_cate']); ?></td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['status']); ?></td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['blog_name']); ?></td>
-                                        <td class="border border-gray-300 px-4 py-2 text-center">
-                                            <div class="space-x-2 space-y-2 text-center">
-=======
                                         <td class="border border-gray-300 px-4 py-2 text-center w-1/12"><?= htmlspecialchars($index + 1); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center w-2/12"><?= htmlspecialchars((new DateTime($news['created_at']))->format('d.m.Y')); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center w-1/12"><?= htmlspecialchars($news['blog_cate']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center w-1/12"><?= htmlspecialchars($news['status']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center w-3/12"><?= htmlspecialchars($news['blog_name']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center w-3/12">
-                                            <div class="space-x-2 space-y-2">
->>>>>>> f70e0e512e99067936febc7df96371fb20c82838
+                                            <div class="space-x-2 space-y-2 text-center">
                                                 <a href="/blog/detail?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-yellow-400 p-2 w-14 rounded-md">Sửa</button></a>
                                                 <a href="/blog/delete?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-red-500 p-2 w-14 rounded-md">Xóa</button></a>
                                             </div>
