@@ -50,6 +50,9 @@
         <img src="/img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
         <p>Blog</p>
       </a>
+      <a href="\logout" class="flex justify-center">
+                            <button class="border rounded-md bg-white text-black p-2">Đăng xuất</button>
+                        </a>
     </div>
 
     <div class="flex-grow">
