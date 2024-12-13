@@ -19,7 +19,7 @@
   <link href="/assets/css/output.css" rel="stylesheet">
 </head>
 <body>
-<div class="flex flex-row font-BeVietnam w-full h-screen">
+<div class="flex flex-row font-BeVietnam">
   <!-- <div class="w-1/5 bg-Cam_Ananas">
     <div class="flex mx-auto">
       <img src="assets/logo-white.png" alt="Logo" class="h-20 flex mx-auto">
