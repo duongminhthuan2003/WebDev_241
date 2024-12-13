@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="flex flex-row font-BeVietnam w-full h-screen">
-  <div class="w-1/5 bg-Cam_Ananas">
+  <!-- <div class="w-1/5 bg-Cam_Ananas">
     <div class="flex mx-auto">
       <img src="assets/logo-white.png" alt="Logo" class="h-20 flex mx-auto">
     </div>
@@ -92,7 +92,46 @@
                             <button class="border rounded-md bg-white text-black p-2">Đăng xuất</button>
                         </a>
     </div>
-  </div>
+  </div> -->
+  <col1 class="bg-Cam_Ananas text-white w-ful sm:w-1/4 md:w-1/5 flex flex-col pb-10">
+                    <div class="px-8 py-4">
+                        <ul class="flex flex-row items-center space-x-2">
+                            <li><img src="img/ananas_logo.png" alt="logo" class="h-16 w-auto"></li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col space-y-11  pt-10 pl-8">
+                        <a class="flex flex-row space-x-3 bg-green-600 rounded-md p-2" href="/dashboard">
+                            <img src="img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Dashboard</p>
+                        </a>
+                        <a href="/order" class="flex flex-row space-x-3">
+                            <img src="img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Đơn hàng</p>
+                        </a>
+                        <a href="/products" class="flex flex-row space-x-3">
+                            <img src="img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Sản phẩm</p>
+                        </a>
+                        <a href="/customers" class="flex flex-row space-x-3 ">
+                            <img src="img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Khách hàng</p>
+                        </a>
+                        <a href="/promotion" class="flex flex-row space-x-3 ">
+                            <img src="img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Khuyến mãi</p>
+                        </a>
+                        <a href="/blog" class="flex flex-row space-x-3  ">
+                            <img src="img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
+                            <p>Blog</p>
+                        </a>
+                        <a href="\logout" class="flex justify-center">
+                            <button class="border rounded-md bg-white text-black p-2">Đăng xuất</button>
+                        </a>
+                        <a href="#" class="flex flex-row space-x-3 pt-96">
+                        </a>
+                    </div>
+                    </ul>
+                </col1><!--end col1-->
 
   <div class="w-4/5 bg-[#333333] text-white">
     <?php 
