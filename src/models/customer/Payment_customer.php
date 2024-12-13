@@ -110,8 +110,17 @@ class Payment {
             $stmt = $this->db->prepare($query);
             $stmt->execute(['order_id' => $order_id]);
             // Update the payment_type in orders
+            $query = "  UPDATE orders
+                        SET payment_type_id  = 2
+                        WHERE order_id = :order_id";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute(['order_id' => $order_id]);
+            // Insert payment_status with order_id
+            $query = "  INSERT INTO payment_status (order_id, `status`)
+                    VALUES (:order_id, 'Đã thanh toán')";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute(['order_id' => $order_id]);
             
-
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

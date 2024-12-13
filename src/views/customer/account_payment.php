@@ -77,7 +77,7 @@
 
         <!--End mobile account navigation-->
 
-        <div class="w-full">
+        <div class="w-full" style="margin-top: 5rem;">
             <?php 
                 $cards = $data['card'];
                 $banks = $data['bank'];
