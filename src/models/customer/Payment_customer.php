@@ -117,10 +117,9 @@ class Payment {
             $stmt->execute(['order_id' => $order_id]);
             // Insert payment_status with order_id
             $query = "  INSERT INTO payment_status (order_id, `status`)
-                    VALUES (:order_id, 'Đã thanh toán')";
+                        VALUES (:order_id, 'Đã thanh toán')";
             $stmt = $this->db->prepare($query);
             $stmt->execute(['order_id' => $order_id]);
-            
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

@@ -14,6 +14,9 @@
             font-family: 'Be Vietnam Pro',sans-serif;
             font-weight: normal;
         }
+        body.h1 {
+            font-family: 'Bayon',sans-serif;
+        }
         .track6_list::-webkit-scrollbar {
              display: none;
         }

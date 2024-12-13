@@ -40,7 +40,7 @@
     </div>
 </nav>
 
-<div id="myNav" class="bg-white/30 fixed invisible md:visible md:hidden flex-col backdrop-blur w-full h-[35vh] z-50 top-16">
+<div id="myNav" class="bg-white/30 fixed invisible md:visible md:hidden flex-col backdrop-blur w-full h-[350px] z-50 top-16">
     <a class="absolute right-8 top-8 cursor-pointer" onclick="closeOverlay()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
             <path d="M19.0005 4.99988L5.00049 18.9999M5.00049 4.99988L19.0005 18.9999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

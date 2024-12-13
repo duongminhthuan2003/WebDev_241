@@ -61,8 +61,7 @@
                 </col1><!--end col1-->
                 <col2 class="bg-back_admin text-white w-4/5 space-y-8 flex flex-col">
                     <row1 class="flex justify-end pr-4 pt-4 space-x-3">
-                        <button><img src="img/donhang_notifi.png" alt="notification"></button>
-                        <button><img src="img/donhang_ava.png" alt="avarta"></button>
+
                     </row1><!--end row1-->
                     <row2 class="font-bold text-2xl pl-8">
                         Blog
@@ -102,7 +101,7 @@
                                         <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['status']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center"><?= htmlspecialchars($news['blog_name']); ?></td>
                                         <td class="border border-gray-300 px-4 py-2 text-center">
-                                            <div class="space-x-2 space-y-2">
+                                            <div class="space-x-2 space-y-2 text-center">
                                                 <a href="/blog/detail?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-yellow-400 p-2 w-14 rounded-md">Sửa</button></a>
                                                 <a href="/blog/delete?blog_id=<?= htmlspecialchars($news['blog_id']); ?>"><button class="bg-red-500 p-2 w-14 rounded-md">Xóa</button></a>
                                             </div>

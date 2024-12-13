@@ -27,29 +27,29 @@
       </ul>
     </div>
     <div class="flex flex-col space-y-3">
-      <a href="#" class="flex flex-row space-x-3 px-7 py-4">
-        <img src="/img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Dashboard</p>
+    <a class="flex flex-row space-x-3" href="/dashboard">
+          <img src="img/donhang_dashboard.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Dashboard</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Đơn hàng</p>
+      <a href="/order" class="flex flex-row space-x-3">
+          <img src="img/donhang_dh.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Đơn hàng</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Sản phẩm</p>
+      <a href="/products" class="flex flex-row space-x-3">
+          <img src="img/donhang_sp.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Sản phẩm</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Khách hàng</p>
+      <a href="/customers" class="flex flex-row space-x-3 ">
+          <img src="img/donhang_kh.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Khách hàng</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7 bg-green-600">
-        <img src="/img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Khuyến mãi</p>
+      <a href="/promotion" class="flex flex-row space-x-3 ">
+          <img src="img/donhang_km.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Khuyến mãi</p>
       </a>
-      <a href="#" class="flex flex-row space-x-3 py-4 px-7">
-        <img src="/img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
-        <p>Blog</p>
+      <a href="/blog" class="flex flex-row space-x-3 bg-green-600 rounded-md p-2">
+          <img src="img/donhang_blog.png" alt="dashboard_icon" class="h-6 w-6">
+          <p>Blog</p>
       </a>
       <a href="\logout" class="flex justify-center">
                             <button class="border rounded-md bg-white text-black p-2">Đăng xuất</button>
